@@ -7,57 +7,71 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet"/>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-:root{--B:#0E4174;--Y:#F1BE48;--YD:#7a5100}
-body{font-family:'Montserrat',sans-serif;background:#eef2f8;color:#1a2e44;min-height:100vh}
-.shell{max-width:900px;margin:0 auto;padding:0 0 60px}
-.hero{background:var(--B);color:#fff;padding:30px 28px 22px;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;right:-40px;top:-50px;width:200px;height:200px;border-radius:50%;background:rgba(241,190,72,.12);pointer-events:none}
-.hero::after{content:'';position:absolute;right:80px;bottom:-70px;width:130px;height:130px;border-radius:50%;background:rgba(241,190,72,.08);pointer-events:none}
-.hero-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
-.logo-txt{font-size:10px;font-weight:800;letter-spacing:.15em;text-transform:uppercase;opacity:.45}
-.hero-badge{display:inline-flex;align-items:center;gap:7px;background:rgba(241,190,72,.2);color:#f5d67a;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:999px;margin-bottom:12px}
-.hero-badge span{width:5px;height:5px;border-radius:50%;background:var(--Y);display:block}
-.hero h1{font-size:22px;font-weight:800;line-height:1.2;margin-bottom:7px}
-.hero p{font-size:12px;opacity:.72;line-height:1.7;max-width:600px}
-.prog-wrap{background:var(--B);padding:0 28px 14px}
-.prog-track{height:5px;background:rgba(255,255,255,.15);border-radius:3px}
-.prog-fill{height:5px;background:var(--Y);border-radius:3px;transition:width .5s cubic-bezier(.4,0,.2,1);width:0%}
-.prog-footer{display:flex;align-items:center;justify-content:space-between;margin-top:7px}
+:root{--B:#0E4174;--Y:#F1BE48;--YD:#7a5100;--BL:#e8f0fb;--BL2:#f0f5fd}
+body{font-family:'Montserrat',sans-serif;background:#e8eef6;color:#1a2e44;min-height:100vh}
+.shell{max-width:1000px;margin:0 auto;padding:0 0 60px}
+
+/* HERO */
+.hero{background:var(--B);color:#fff;padding:30px 32px 24px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;right:-40px;top:-50px;width:220px;height:220px;border-radius:50%;background:rgba(241,190,72,.13);pointer-events:none}
+.hero::after{content:'';position:absolute;right:90px;bottom:-60px;width:140px;height:140px;border-radius:50%;background:rgba(241,190,72,.08);pointer-events:none}
+.hero-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.logo-txt{font-size:10px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;opacity:.42}
+.hero-badge{display:inline-flex;align-items:center;gap:7px;background:rgba(241,190,72,.22);color:#f5d67a;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:5px 14px;border-radius:999px;margin-bottom:13px}
+.hero-badge span{width:6px;height:6px;border-radius:50%;background:var(--Y);display:block}
+.hero h1{font-size:24px;font-weight:800;line-height:1.2;margin-bottom:8px}
+.hero p{font-size:12px;opacity:.72;line-height:1.75;max-width:600px}
+
+/* PROGRESS */
+.prog-wrap{background:var(--B);padding:0 32px 16px}
+.prog-track{height:6px;background:rgba(255,255,255,.14);border-radius:3px}
+.prog-fill{height:6px;background:var(--Y);border-radius:3px;transition:width .5s cubic-bezier(.4,0,.2,1);width:0%}
+.prog-footer{display:flex;align-items:center;justify-content:space-between;margin-top:8px}
 .prog-pct{font-size:12px;font-weight:800;color:var(--Y)}
 .prog-label{font-size:10px;color:rgba(255,255,255,.38);font-weight:600}
-.body{padding:18px}
-.card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 2px 12px rgba(14,65,116,.07);border:1px solid rgba(14,65,116,.06);margin-bottom:14px}
-.ch{background:var(--B);color:#fff;padding:12px 18px;font-size:11px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;display:flex;align-items:center;gap:9px}
-.ch-icon{width:26px;height:26px;border-radius:7px;background:rgba(241,190,72,.18);display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.ch-icon svg{width:13px;height:13px}
-.ch-badge{background:var(--Y);color:var(--YD);font-size:10px;font-weight:800;padding:3px 10px;border-radius:999px}
-.cb{padding:16px}
-.row2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
-.field{margin-bottom:12px}
-.field:last-child{margin-bottom:0}
-.field label{display:block;font-size:10px;font-weight:800;color:var(--B);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px}
-.field input{width:100%;border:1.5px solid #dde5f2;background:#f7f9fd;border-radius:10px;padding:10px 13px;font-size:13px;font-family:inherit;color:#1a2e44;outline:none;transition:.2s}
+
+/* BODY */
+.body{padding:20px 20px}
+
+/* CARDS */
+.card{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 3px 16px rgba(14,65,116,.09);border:1px solid rgba(14,65,116,.07);margin-bottom:16px}
+.ch{background:var(--B);color:#fff;padding:14px 20px;font-size:11px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.ch-icon{width:30px;height:30px;border-radius:8px;background:rgba(241,190,72,.2);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ch-icon svg{width:15px;height:15px}
+.ch-badge{background:var(--Y);color:var(--YD);font-size:11px;font-weight:800;padding:4px 12px;border-radius:999px;flex-shrink:0}
+.cb{padding:18px 20px}
+
+/* DATA GENERAL */
+.row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+.field label{display:block;font-size:10px;font-weight:800;color:var(--B);text-transform:uppercase;letter-spacing:.08em;margin-bottom:7px}
+.field input{width:100%;border:1.5px solid #d8e4f2;background:#f5f8fd;border-radius:10px;padding:11px 14px;font-size:13px;font-family:inherit;color:#1a2e44;outline:none;transition:.2s}
 .field input:focus{border-color:var(--B);background:#fff;box-shadow:0 0 0 3px rgba(14,65,116,.08)}
-.field input[readonly]{background:#edf1f8;color:#607080;cursor:default}
-/* QUESTION HEADER */
-.qblock{border:1.5px solid #eaf0f9;border-radius:13px;padding:15px;margin-bottom:14px;background:linear-gradient(135deg,#fafcff,#f5f8fd)}
-.qblock:last-child{margin-bottom:0}
-.qt{display:flex;align-items:flex-start;gap:10px;margin-bottom:14px}
-.qt-num{min-width:22px;height:22px;border-radius:50%;background:var(--B);color:#fff;font-size:9px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
-.qt-text{font-size:12px;font-weight:700;color:#1a3558;line-height:1.55}
-/* TECH TABLE */
-.tech-table{width:100%;border-collapse:collapse}
-.tech-table th{padding:8px 10px;font-size:10px;font-weight:800;color:#fff;background:var(--B);text-align:left;white-space:nowrap}
-.tech-table th:first-child{border-radius:8px 0 0 0;min-width:140px}
-.tech-table th:last-child{border-radius:0 8px 0 0}
-.tech-table td{padding:10px 10px;border-bottom:1px solid #eaf0f9;vertical-align:middle;background:#fff}
-.tech-table tr:last-child td{border-bottom:none}
-.tech-table tr:hover td{background:#fafcff}
-.tech-name{font-size:12px;font-weight:700;color:#1a3558;white-space:nowrap}
-/* SEMAPHORE 0-10 */
-.scores{display:flex;flex-wrap:wrap;gap:4px}
-.scb{width:30px;height:30px;border-radius:7px;border:none;font-size:11px;font-weight:800;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.15s;font-family:inherit;opacity:.45;color:#fff}
-.scb:hover{opacity:.82;transform:scale(1.05)}
+.field input[readonly]{background:#edf2f9;color:#607080;cursor:default}
+
+/* HINT BOX */
+.hint-box{background:linear-gradient(135deg,#f0f5fd,#e8f0fb);border:1px solid rgba(14,65,116,.12);border-radius:12px;padding:12px 16px;margin-bottom:16px;font-size:11px;color:#1a3558;line-height:1.7}
+.hint-box strong{color:var(--B);font-weight:800}
+.hint-box.yellow{background:linear-gradient(135deg,#fffbf0,#fef5d6);border-color:rgba(241,190,72,.35);color:#5a3800}
+.hint-box.yellow strong{color:var(--YD)}
+
+/* TABLES */
+.tbl-wrap{overflow-x:auto;border-radius:12px;border:1.5px solid rgba(14,65,116,.1)}
+table.main-tbl{width:100%;border-collapse:collapse;min-width:500px}
+table.main-tbl thead tr{background:var(--B)}
+table.main-tbl thead th{padding:12px 16px;font-size:10px;font-weight:800;color:#fff;text-align:left;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
+table.main-tbl thead th:first-child{min-width:160px}
+table.main-tbl tbody tr:nth-child(odd){background:#fff}
+table.main-tbl tbody tr:nth-child(even){background:var(--BL2)}
+table.main-tbl tbody tr:hover td{background:var(--BL)!important}
+table.main-tbl tbody td{padding:12px 16px;border-bottom:1px solid rgba(14,65,116,.06);vertical-align:middle}
+table.main-tbl tbody tr:last-child td{border-bottom:none}
+.tech-name-cell{font-size:13px;font-weight:700;color:var(--B);display:flex;align-items:center;gap:8px}
+.tech-dot{width:8px;height:8px;border-radius:50%;background:var(--Y);flex-shrink:0}
+
+/* SEMAPHORE BUTTONS 0-10 */
+.scores{display:flex;flex-wrap:wrap;gap:5px}
+.scb{width:34px;height:34px;border-radius:8px;border:none;font-size:11px;font-weight:800;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.15s;font-family:inherit;opacity:.45;color:#fff}
+.scb:hover{opacity:.82;transform:scale(1.06)}
 .scb.on{opacity:1;transform:scale(1.12);box-shadow:0 3px 10px rgba(0,0,0,.22)}
 .scb[data-v="0"]{background:#B71C1C}
 .scb[data-v="1"]{background:#D32F2F}
@@ -70,255 +84,283 @@ body{font-family:'Montserrat',sans-serif;background:#eef2f8;color:#1a2e44;min-he
 .scb[data-v="8"]{background:#43A047}
 .scb[data-v="9"]{background:#2E7D32}
 .scb[data-v="10"]{background:#1B5E20}
-/* SEMAPHORE 0-5 */
-.scb5[data-v="0"]{background:#B71C1C}
-.scb5[data-v="1"]{background:#D32F2F}
-.scb5[data-v="2"]{background:#FB8C00;color:#5a3200}
-.scb5[data-v="3"]{background:#FDD835;color:#5a3200}
-.scb5[data-v="4"]{background:#7CB342}
-.scb5[data-v="5"]{background:#1B5E20}
-/* P4 TABLE — techs as columns */
-.p4-table{width:100%;border-collapse:collapse}
-.p4-table th{padding:8px 6px;font-size:10px;font-weight:800;color:#fff;background:var(--B);text-align:center;white-space:nowrap}
-.p4-table th:first-child{text-align:left;min-width:160px;border-radius:8px 0 0 0}
-.p4-table th:last-child{border-radius:0 8px 0 0}
-.p4-table td{padding:8px 6px;border-bottom:1px solid #eaf0f9;vertical-align:middle;background:#fff;text-align:center}
-.p4-table td:first-child{text-align:left;font-size:11px;font-weight:700;color:#1a3558}
-.p4-table tr:last-child td{border-bottom:none}
-.p4-table tr:hover td{background:#fafcff}
-.p4-scores{display:flex;gap:3px;justify-content:center;flex-wrap:wrap}
+
+/* P4 DROPDOWN */
+.p4-select{appearance:none;-webkit-appearance:none;border:1.5px solid #d8e4f2;border-radius:8px;padding:7px 28px 7px 10px;font-size:12px;font-weight:700;font-family:inherit;cursor:pointer;outline:none;min-width:80px;transition:.2s;color:#fff;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' fill='none'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23fff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 8px center}
+.p4-select.empty{background-color:#f5f8fd;color:#8090a8;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' fill='none'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%238090a8' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");border-color:#d8e4f2}
+.p4-select option{color:#1a2e44;background:#fff}
+
 /* RECOMMENDATION */
-.rec-table{width:100%;border-collapse:collapse}
-.rec-table th{padding:8px 10px;font-size:10px;font-weight:800;color:#fff;background:var(--B);text-align:left}
-.rec-table th:first-child{border-radius:8px 0 0 0;min-width:140px}
-.rec-table th:last-child{border-radius:0 8px 0 0}
-.rec-table td{padding:10px;border-bottom:1px solid #eaf0f9;vertical-align:middle;background:#fff}
-.rec-table tr:last-child td{border-bottom:none}
-.rec-table tr:hover td{background:#fafcff}
-.rec-opts{display:flex;gap:6px;flex-wrap:wrap}
-.rec-btn{padding:6px 10px;border-radius:8px;border:1.5px solid #dde5f2;background:#f7f9fd;font-size:11px;font-weight:700;cursor:pointer;color:#3a5272;font-family:inherit;transition:.18s;white-space:nowrap}
-.rec-btn:hover{border-color:#aabbd6;background:#eef3fb}
-.rec-btn.on{background:var(--Y);border-color:var(--Y);color:var(--YD);font-weight:800}
+.rec-opts{display:flex;gap:7px;flex-wrap:wrap}
+.rec-btn{padding:7px 12px;border-radius:9px;border:1.5px solid #d8e4f2;background:#f5f8fd;font-size:11px;font-weight:700;cursor:pointer;color:#3a5272;font-family:inherit;transition:.18s;white-space:nowrap}
+.rec-btn:hover{border-color:rgba(14,65,116,.3);background:var(--BL)}
+.rec-btn.on{background:var(--Y);border-color:var(--Y);color:var(--YD);font-weight:800;box-shadow:0 2px 8px rgba(241,190,72,.3)}
+
 /* DAFO */
-.dafo-outer{overflow-x:auto}
-.dafo-table{border-collapse:collapse;min-width:600px;width:100%}
-.dafo-table th{padding:9px 10px;font-size:10px;font-weight:800;color:#fff;background:var(--B);text-align:center;white-space:nowrap}
-.dafo-table th:first-child{text-align:left;min-width:160px;border-radius:8px 0 0 0}
-.dafo-table th:last-child{border-radius:0 8px 0 0}
-.dafo-table td{padding:7px 8px;border-bottom:1px solid #eaf0f9;vertical-align:middle;background:#fff}
-.dafo-table td:first-child{font-size:11px;font-weight:700;color:#1a3558}
-.dafo-table tr:last-child td{border-bottom:none}
-.dafo-table tr:hover td{background:#fafcff}
-.dafo-section-row td{background:rgba(14,65,116,.06);font-size:10px;font-weight:800;color:var(--B);text-transform:uppercase;letter-spacing:.06em;padding:7px 10px}
-.dafo-section-row.yell td{background:rgba(241,190,72,.15);color:var(--YD)}
-.dsb-wrap{display:flex;gap:3px;justify-content:center}
-.dsb{width:24px;height:24px;border-radius:6px;border:none;font-size:10px;font-weight:800;cursor:pointer;font-family:inherit;transition:.15s;opacity:.42;color:#fff;display:flex;align-items:center;justify-content:center}
-.dsb:hover{opacity:.8;transform:scale(1.06)}
-.dsb.on{opacity:1;box-shadow:0 2px 7px rgba(0,0,0,.2);transform:scale(1.12)}
-.dsb[data-v="1"]{background:#D32F2F}
-.dsb[data-v="2"]{background:#FB8C00;color:#5a3200}
-.dsb[data-v="3"]{background:#FDD835;color:#5a3200}
-.dsb[data-v="4"]{background:#7CB342}
-.dsb[data-v="5"]{background:#1B5E20}
+.dafo-tbl-wrap{overflow-x:auto;border-radius:12px;border:1.5px solid rgba(14,65,116,.1)}
+table.dafo-tbl{width:100%;border-collapse:collapse;min-width:700px}
+table.dafo-tbl thead th{padding:11px 14px;font-size:10px;font-weight:800;color:#fff;background:var(--B);text-align:center;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
+table.dafo-tbl thead th:first-child{text-align:left;min-width:180px}
+table.dafo-tbl .dafo-section td{padding:9px 14px;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.07em}
+table.dafo-tbl .dafo-section.blue td{background:rgba(14,65,116,.08);color:var(--B)}
+table.dafo-tbl .dafo-section.yellow td{background:rgba(241,190,72,.18);color:var(--YD)}
+table.dafo-tbl tbody tr:not(.dafo-section):nth-child(odd){background:#fff}
+table.dafo-tbl tbody tr:not(.dafo-section):nth-child(even){background:var(--BL2)}
+table.dafo-tbl tbody tr:not(.dafo-section):hover td{background:var(--BL)!important}
+table.dafo-tbl tbody td{padding:9px 12px;border-bottom:1px solid rgba(14,65,116,.05);vertical-align:middle}
+table.dafo-tbl tbody tr:last-child td{border-bottom:none}
+.dafo-item-name{font-size:11px;font-weight:700;color:#1a3558}
+.dafo-btns{display:flex;gap:4px;justify-content:center}
+.dbt{width:28px;height:28px;border-radius:7px;border:none;font-size:10px;font-weight:800;cursor:pointer;font-family:inherit;transition:.15s;color:#fff;display:flex;align-items:center;justify-content:center}
+.dbt.blue-off{background:rgba(14,65,116,.12);color:var(--B)}
+.dbt.blue-off:hover{background:rgba(14,65,116,.25)}
+.dbt.blue-on{background:var(--B);color:#fff;box-shadow:0 2px 8px rgba(14,65,116,.3);transform:scale(1.12)}
+.dbt.yell-off{background:rgba(241,190,72,.2);color:var(--YD)}
+.dbt.yell-off:hover{background:rgba(241,190,72,.4)}
+.dbt.yell-on{background:var(--Y);color:var(--YD);box-shadow:0 2px 8px rgba(241,190,72,.35);transform:scale(1.12)}
+
 /* VALUES */
-.val-hint{background:#fff5e0;border:1px solid #f5d67a;border-radius:10px;padding:10px 14px;margin-bottom:14px;font-size:11px;color:#7a5100;font-weight:600;line-height:1.6}
-.val-table{width:100%;border-collapse:collapse}
-.val-table th{padding:9px 10px;font-size:10px;font-weight:800;color:#fff;background:var(--B);text-align:center}
-.val-table th:first-child{text-align:left;border-radius:8px 0 0 0}
-.val-table th:last-child{border-radius:0 8px 0 0}
-.val-table td{padding:8px 10px;border-bottom:1px solid #eaf0f9;vertical-align:middle;background:#fff}
-.val-table td:first-child{font-size:12px;font-weight:700;color:#1a3558}
-.val-table tr:last-child td{border-bottom:none}
-.val-table tr:hover td{background:#fafcff}
-.col-header{display:flex;align-items:center;justify-content:center;gap:5px}
-.col-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
-.val-scores{display:flex;gap:3px;justify-content:center;flex-wrap:wrap}
-.vsb{width:26px;height:26px;border-radius:7px;border:none;font-size:10px;font-weight:800;cursor:pointer;font-family:inherit;transition:.15s;opacity:.42;color:#fff;display:flex;align-items:center;justify-content:center}
+table.val-tbl{width:100%;border-collapse:collapse}
+table.val-tbl thead th{padding:11px 14px;font-size:10px;font-weight:800;color:#fff;background:var(--B);text-align:center;letter-spacing:.06em;text-transform:uppercase}
+table.val-tbl thead th:first-child{text-align:left;min-width:180px}
+table.val-tbl tbody tr:nth-child(odd){background:#fff}
+table.val-tbl tbody tr:nth-child(even){background:var(--BL2)}
+table.val-tbl tbody tr:hover td{background:var(--BL)!important}
+table.val-tbl tbody td{padding:11px 14px;border-bottom:1px solid rgba(14,65,116,.06);vertical-align:middle}
+table.val-tbl tbody tr:last-child td{border-bottom:none}
+.val-name-cell{display:flex;align-items:center;gap:9px;font-size:13px;font-weight:700;color:var(--B)}
+.val-icon{width:28px;height:28px;border-radius:8px;background:var(--BL);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.val-icon svg{width:14px;height:14px}
+.val-scores{display:flex;gap:5px;justify-content:center;flex-wrap:wrap}
+.vsb{width:32px;height:32px;border-radius:8px;border:none;font-size:11px;font-weight:800;cursor:pointer;font-family:inherit;transition:.15s;opacity:.45;color:#fff;display:flex;align-items:center;justify-content:center}
 .vsb:hover{opacity:.82;transform:scale(1.06)}
-.vsb.on{opacity:1;box-shadow:0 2px 8px rgba(0,0,0,.22);transform:scale(1.12)}
+.vsb.on{opacity:1;box-shadow:0 3px 10px rgba(0,0,0,.22);transform:scale(1.12)}
 .vsb[data-v="0"]{background:#B71C1C}
 .vsb[data-v="1"]{background:#D32F2F}
 .vsb[data-v="2"]{background:#FB8C00;color:#5a3200}
 .vsb[data-v="3"]{background:#FDD835;color:#5a3200}
 .vsb[data-v="4"]{background:#7CB342}
 .vsb[data-v="5"]{background:#1B5E20}
+.val-scale{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+.val-scale-item{display:flex;align-items:center;gap:5px;font-size:10px;font-weight:700}
+.val-scale-dot{width:20px;height:20px;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:800;color:#fff;flex-shrink:0}
+.col-head-inner{display:flex;align-items:center;justify-content:center;gap:6px}
+.col-indicator{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+
 /* ACTIONS */
-.actions{display:flex;gap:11px;justify-content:flex-end;align-items:center;padding:0 18px 18px;flex-wrap:wrap}
-.toast{font-size:12px;padding:8px 14px;border-radius:9px;font-weight:700;display:none}
+.actions{display:flex;gap:12px;justify-content:flex-end;align-items:center;padding:4px 0 0;flex-wrap:wrap}
+.toast{font-size:12px;padding:9px 16px;border-radius:10px;font-weight:700;display:none}
 .toast.ok{background:#e4f7ec;color:#155e2e;display:inline-block;border:1px solid #b2dfcc}
 .toast.err{background:#fde8e8;color:#9b1515;display:inline-block;border:1px solid #f5b8b8}
-.btn{border:none;border-radius:10px;padding:12px 24px;font-weight:800;cursor:pointer;font-size:13px;font-family:inherit;transition:.18s}
-.btn-ghost{background:#eef2f8;color:#3a5272;border:1.5px solid #dde5f2}
+.btn{border:none;border-radius:11px;padding:12px 26px;font-weight:800;cursor:pointer;font-size:13px;font-family:inherit;transition:.18s}
+.btn-ghost{background:#eef2f8;color:#3a5272;border:1.5px solid #d8e4f2}
 .btn-ghost:hover{background:#dde5f2}
 .btn-main{background:var(--B);color:#fff;box-shadow:0 4px 14px rgba(14,65,116,.28)}
 .btn-main:hover{background:#0a3260}
 .btn-main:active{transform:scale(.98)}
 .btn-main:disabled{opacity:.5;cursor:not-allowed}
-.done-screen{display:none;padding:70px 24px;text-align:center}
+
+/* DONE */
+.done-screen{display:none;padding:80px 24px;text-align:center}
 .done-screen.show{display:block}
-.done-icon{width:70px;height:70px;border-radius:50%;background:var(--B);margin:0 auto 20px;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(14,65,116,.28)}
-.done-icon svg{width:34px;height:34px}
-.done-title{font-size:23px;font-weight:800;color:var(--B);margin-bottom:10px}
-.done-sub{font-size:13px;color:#607080;margin-bottom:26px;line-height:1.7}
-@media(max-width:640px){
-  .body{padding:10px}
-  .scb{width:24px;height:24px;font-size:10px}
-  .dsb,.vsb{width:22px;height:22px;font-size:9px}
+.done-icon{width:76px;height:76px;border-radius:50%;background:var(--B);margin:0 auto 22px;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 28px rgba(14,65,116,.3)}
+.done-icon svg{width:36px;height:36px}
+.done-title{font-size:24px;font-weight:800;color:var(--B);margin-bottom:10px}
+.done-sub{font-size:13px;color:#607080;margin-bottom:28px;line-height:1.75}
+
+@media(max-width:680px){
+  .body{padding:12px}
+  .row3{grid-template-columns:1fr}
+  .scb{width:28px;height:28px;font-size:10px}
 }
 </style>
 </head>
 <body>
 <div class="shell">
-  <div class="hero">
-    <div class="hero-top"><div class="logo-txt">Polarier · Love your linen</div></div>
-    <div class="hero-badge"><span></span>Proyecto Ibiza · Evaluación técnica</div>
-    <h1>Evaluación de Puesta en Marcha</h1>
-    <p>Evalúa a todos los técnicos del proyecto en una sola sesión. Las respuestas son confidenciales.</p>
+
+<div class="hero">
+  <div class="hero-top"><div class="logo-txt">Polarier · Love your linen</div></div>
+  <div class="hero-badge"><span></span>Proyecto Ibiza · Evaluación técnica</div>
+  <h1>Evaluación de Puesta en Marcha</h1>
+  <p>Evalúa a todos los técnicos del proyecto en una sola sesión. Completa todas las secciones antes de enviar. Tus respuestas son confidenciales.</p>
+</div>
+<div class="prog-wrap">
+  <div class="prog-track"><div class="prog-fill" id="prog"></div></div>
+  <div class="prog-footer">
+    <span class="prog-label">Progreso del formulario</span>
+    <span class="prog-pct" id="prog-txt">0%</span>
   </div>
-  <div class="prog-wrap">
-    <div class="prog-track"><div class="prog-fill" id="prog"></div></div>
-    <div class="prog-footer">
-      <span class="prog-label">Progreso del formulario</span>
-      <span class="prog-pct" id="prog-txt">0%</span>
+</div>
+
+<div id="form-wrap">
+<div class="body">
+
+  <!-- DATOS GENERALES -->
+  <div class="card">
+    <div class="ch">
+      <div class="ch-icon"><svg viewBox="0 0 15 15" fill="none"><path d="M7.5 7.5a3.5 3.5 0 100-7 3.5 3.5 0 000 7zM2 13c0-2.5 2.5-4.5 5.5-4.5S13 10.5 13 13" stroke="#F1BE48" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+      Datos generales
+    </div>
+    <div class="cb">
+      <div class="row3">
+        <div class="field"><label>Proyecto</label><input type="text" value="Puesta en Marcha Ibiza" readonly/></div>
+        <div class="field"><label>Tu nombre completo</label><input id="f-eval" type="text" placeholder="Escribe tu nombre"/></div>
+        <div class="field"><label>Fecha de evaluación</label><input id="f-date" type="date"/></div>
+      </div>
     </div>
   </div>
 
-  <div id="form-wrap">
-  <div class="body">
-
-    <!-- DATOS GENERALES -->
-    <div class="card">
-      <div class="ch">
-        <div class="ch-icon"><svg viewBox="0 0 14 14" fill="none"><path d="M7 7a3 3 0 100-6 3 3 0 000 6zM2 12c0-2.21 2.24-4 5-4s5 1.79 5 4" stroke="#F1BE48" stroke-width="1.4" stroke-linecap="round"/></svg></div>
-        Datos generales
-      </div>
-      <div class="cb">
-        <div class="row2">
-          <div class="field"><label>Proyecto</label><input type="text" value="Puesta en Marcha Ibiza" readonly/></div>
-          <div class="field"><label>Tu nombre</label><input id="f-eval" type="text" placeholder="Escribe tu nombre completo"/></div>
-          <div class="field"><label>Fecha</label><input id="f-date" type="date"/></div>
-        </div>
+  <!-- P1 -->
+  <div class="card">
+    <div class="ch">
+      <div class="ch-badge">1</div>
+      <div class="ch-icon"><svg viewBox="0 0 15 15" fill="none"><path d="M7.5 1l1.6 4.5H14L10 8.3l1.5 4.5L7.5 10 4 12.8 5.5 8.3 1.5 5.5H7L7.5 1z" stroke="#F1BE48" stroke-width="1.3" stroke-linejoin="round"/></svg></div>
+      Desempeño general durante la puesta en marcha
+    </div>
+    <div class="cb">
+      <div class="hint-box">Valora el <strong>desempeño general</strong> de cada técnico a lo largo de toda la puesta en marcha. Considera su actitud, resultados y contribución global.</div>
+      <div class="tbl-wrap">
+        <table class="main-tbl"><thead><tr><th>Técnico</th><th>Puntuación (0 = Muy deficiente · 10 = Excelente)</th></tr></thead>
+        <tbody id="t-q1"></tbody></table>
       </div>
     </div>
+  </div>
 
-    <!-- P1 -->
-    <div class="card">
-      <div class="ch"><div class="ch-badge">1</div>Desempeño general durante la puesta en marcha</div>
-      <div class="cb">
-        <div style="overflow-x:auto">
-          <table class="tech-table">
-            <thead><tr><th>Técnico</th><th>Puntuación (0 — 10)</th></tr></thead>
-            <tbody id="t-q1"></tbody>
-          </table>
-        </div>
+  <!-- P2 -->
+  <div class="card">
+    <div class="ch">
+      <div class="ch-badge">2</div>
+      <div class="ch-icon"><svg viewBox="0 0 15 15" fill="none"><path d="M2 11.5h11M2 7.5h8M2 3.5h5" stroke="#F1BE48" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+      Enfoque metodológico durante la puesta en marcha
+    </div>
+    <div class="cb">
+      <div class="hint-box">Evalúa si el técnico siguió <strong>procesos y metodologías</strong> establecidos, documentó correctamente y trabajó de forma estructurada.</div>
+      <div class="tbl-wrap">
+        <table class="main-tbl"><thead><tr><th>Técnico</th><th>Puntuación (0 = Muy deficiente · 10 = Excelente)</th></tr></thead>
+        <tbody id="t-q2"></tbody></table>
       </div>
     </div>
+  </div>
 
-    <!-- P2 -->
-    <div class="card">
-      <div class="ch"><div class="ch-badge">2</div>Enfoque metodológico durante la puesta en marcha</div>
-      <div class="cb">
-        <div style="overflow-x:auto">
-          <table class="tech-table">
-            <thead><tr><th>Técnico</th><th>Puntuación (0 — 10)</th></tr></thead>
-            <tbody id="t-q2"></tbody>
-          </table>
-        </div>
+  <!-- P3 -->
+  <div class="card">
+    <div class="ch">
+      <div class="ch-badge">3</div>
+      <div class="ch-icon"><svg viewBox="0 0 15 15" fill="none"><path d="M7.5 2v4l2.5 2.5" stroke="#F1BE48" stroke-width="1.5" stroke-linecap="round"/><circle cx="7.5" cy="7.5" r="5.5" stroke="#F1BE48" stroke-width="1.3"/></svg></div>
+      Capacidad para resolver problemas e imprevistos
+    </div>
+    <div class="cb">
+      <div class="hint-box">Valora cómo respondió el técnico ante <strong>situaciones inesperadas</strong>: velocidad de reacción, calidad de las soluciones y autonomía en la toma de decisiones.</div>
+      <div class="tbl-wrap">
+        <table class="main-tbl"><thead><tr><th>Técnico</th><th>Puntuación (0 = Muy deficiente · 10 = Excelente)</th></tr></thead>
+        <tbody id="t-q3"></tbody></table>
       </div>
     </div>
+  </div>
 
-    <!-- P3 -->
-    <div class="card">
-      <div class="ch"><div class="ch-badge">3</div>Capacidad para resolver problemas e imprevistos</div>
-      <div class="cb">
-        <div style="overflow-x:auto">
-          <table class="tech-table">
-            <thead><tr><th>Técnico</th><th>Puntuación (0 — 10)</th></tr></thead>
-            <tbody id="t-q3"></tbody>
-          </table>
-        </div>
+  <!-- P4 -->
+  <div class="card">
+    <div class="ch">
+      <div class="ch-badge">4</div>
+      <div class="ch-icon"><svg viewBox="0 0 15 15" fill="none"><path d="M7.5 1l1.6 4.5H14L10 8.3l1.5 4.5L7.5 10 4 12.8 5.5 8.3 1.5 5.5H7L7.5 1z" stroke="#F1BE48" stroke-width="1.3" stroke-linejoin="round"/></svg></div>
+      Características individuales (0 — 10)
+    </div>
+    <div class="cb">
+      <div class="hint-box">Selecciona una puntuación del <strong>0 al 10</strong> para cada característica y técnico. El color del selector refleja la puntuación elegida.</div>
+      <div class="tbl-wrap">
+        <table class="main-tbl" id="t-p4"></table>
       </div>
     </div>
+  </div>
 
-    <!-- P4 -->
-    <div class="card">
-      <div class="ch"><div class="ch-badge">4</div>Características individuales (0 — 10)</div>
-      <div class="cb">
-        <div style="overflow-x:auto">
-          <table class="p4-table" id="t-p4"></table>
-        </div>
+  <!-- P5 -->
+  <div class="card">
+    <div class="ch">
+      <div class="ch-badge">5</div>
+      <div class="ch-icon"><svg viewBox="0 0 15 15" fill="none"><path d="M7.5 1.5l1.8 3.6 4 .6-2.9 2.8.7 4-3.6-1.9-3.6 1.9.7-4L1.7 5.7l4-.6 1.8-3.6z" stroke="#F1BE48" stroke-width="1.3" stroke-linejoin="round"/></svg></div>
+      Nivel de recomendación para un proyecto similar
+    </div>
+    <div class="cb">
+      <div class="hint-box">¿Volverías a contar con este técnico? Selecciona la opción que mejor refleje tu valoración para cada uno.</div>
+      <div class="tbl-wrap">
+        <table class="main-tbl"><thead><tr><th>Técnico</th><th>Recomendación</th></tr></thead>
+        <tbody id="t-rec"></tbody></table>
       </div>
     </div>
+  </div>
 
-    <!-- P5 -->
-    <div class="card">
-      <div class="ch"><div class="ch-badge">5</div>Nivel de recomendación para un proyecto similar</div>
-      <div class="cb">
-        <div style="overflow-x:auto">
-          <table class="rec-table">
-            <thead><tr><th>Técnico</th><th>Recomendación</th></tr></thead>
-            <tbody id="t-rec"></tbody>
-          </table>
-        </div>
+  <!-- DAFO -->
+  <div class="card">
+    <div class="ch">
+      <div class="ch-icon"><svg viewBox="0 0 15 15" fill="none"><rect x="1.5" y="1.5" width="12" height="12" rx="2" stroke="#F1BE48" stroke-width="1.3"/><path d="M1.5 7.5h12M7.5 1.5v12" stroke="#F1BE48" stroke-width="1.3"/></svg></div>
+      Análisis FODA — Evaluación cualitativa por técnico
+    </div>
+    <div class="cb">
+      <div class="hint-box yellow">
+        <strong>¿Cómo completar el FODA?</strong><br>
+        Para cada aspecto listado, puntúa a cada técnico del <strong>1 al 5</strong> según la intensidad con la que observaste esa característica durante el proyecto.<br><br>
+        <strong>Fortalezas y Oportunidades</strong> → botones en <span style="color:var(--B);font-weight:800">azul</span> &nbsp;·&nbsp; <strong>Debilidades y Amenazas</strong> → botones en <span style="color:var(--YD);font-weight:800">amarillo</span><br>
+        <strong>1</strong> = No la tiene &nbsp;·&nbsp; <strong>3</strong> = Moderada &nbsp;·&nbsp; <strong>5</strong> = Indiscutible
+      </div>
+      <div class="dafo-tbl-wrap">
+        <table class="dafo-tbl" id="t-dafo"></table>
       </div>
     </div>
+  </div>
 
-    <!-- DAFO -->
-    <div class="card">
-      <div class="ch">
-        <div class="ch-icon"><svg viewBox="0 0 14 14" fill="none"><rect x="1.5" y="1.5" width="11" height="11" rx="2" stroke="#F1BE48" stroke-width="1.3"/><path d="M1.5 7h11M7 1.5v11" stroke="#F1BE48" stroke-width="1.3"/></svg></div>
-        Análisis FODA — Puntúa del 1 al 5 cada aspecto por técnico
-      </div>
-      <div class="cb">
-        <div class="val-hint">1 = No la tiene &nbsp;·&nbsp; 2 = Apenas perceptible &nbsp;·&nbsp; 3 = Moderada &nbsp;·&nbsp; 4 = Notable &nbsp;·&nbsp; 5 = Indiscutible</div>
-        <div class="dafo-outer">
-          <table class="dafo-table" id="t-dafo"></table>
-        </div>
-      </div>
+  <!-- P10 VALORES -->
+  <div class="card">
+    <div class="ch">
+      <div class="ch-badge">10</div>
+      <div class="ch-icon"><svg viewBox="0 0 15 15" fill="none"><path d="M7.5 1.5l1.8 3.6 4 .6-2.9 2.8.7 4-3.6-1.9-3.6 1.9.7-4L1.7 5.7l4-.6 1.8-3.6z" stroke="#F1BE48" stroke-width="1.3" stroke-linejoin="round"/></svg></div>
+      Evaluación de valores — Equipo y Proyecto
     </div>
-
-    <!-- P10 VALORES -->
-    <div class="card">
-      <div class="ch"><div class="ch-badge">10</div>Evaluación de valores — Equipo y Proyecto</div>
-      <div class="cb">
-        <div class="val-hint">
-          <strong>Esta pregunta evalúa al equipo y al proyecto en general, no a cada técnico individualmente.</strong><br>
-          0 = Ausente &nbsp;·&nbsp; 3 = Aceptable &nbsp;·&nbsp; 5 = Indiscutible
-        </div>
-        <table class="val-table">
-          <thead>
-            <tr>
-              <th>Valor</th>
-              <th><div class="col-header"><div class="col-dot" style="background:#fff"></div>Equipo</div></th>
-              <th><div class="col-header"><div class="col-dot" style="background:var(--Y);border:1px solid #c8a030"></div>Proyecto</div></th>
-            </tr>
-          </thead>
+    <div class="cb">
+      <div class="hint-box">Esta pregunta evalúa al <strong>equipo y al proyecto en su conjunto</strong>, no a cada técnico individualmente. Puntúa del 0 al 5 en ambas columnas.</div>
+      <div class="val-scale">
+        <div class="val-scale-item"><div class="val-scale-dot" style="background:#B71C1C">0</div><span style="color:#607080">Ausente</span></div>
+        <div class="val-scale-item"><div class="val-scale-dot" style="background:#D32F2F">1</div><span style="color:#607080">Apenas perceptible</span></div>
+        <div class="val-scale-item"><div class="val-scale-dot" style="background:#FB8C00">2</div><span style="color:#607080">En desarrollo</span></div>
+        <div class="val-scale-item"><div class="val-scale-dot" style="background:#FDD835;color:#5a3200">3</div><span style="color:#607080">Consolidado</span></div>
+        <div class="val-scale-item"><div class="val-scale-dot" style="background:#7CB342">4</div><span style="color:#607080">Destacado</span></div>
+        <div class="val-scale-item"><div class="val-scale-dot" style="background:#1B5E20">5</div><span style="color:#607080">Épico</span></div>
+      </div>
+      <div class="tbl-wrap">
+        <table class="val-tbl">
+          <thead><tr>
+            <th>Valor</th>
+            <th><div class="col-head-inner"><div class="col-indicator" style="background:#fff;border:1px solid rgba(255,255,255,.5)"></div>Equipo</div></th>
+            <th><div class="col-head-inner"><div class="col-indicator" style="background:var(--Y)"></div>Proyecto</div></th>
+          </tr></thead>
           <tbody id="val-body"></tbody>
         </table>
       </div>
     </div>
-
-    <div class="actions">
-      <span class="toast" id="toast"></span>
-      <button class="btn btn-ghost" onclick="resetForm()">Limpiar todo</button>
-      <button class="btn btn-main" id="btn-send" onclick="saveResponse()">Enviar evaluación</button>
-    </div>
-  </div>
   </div>
 
-  <div class="done-screen" id="done-screen">
-    <div class="done-icon"><svg viewBox="0 0 36 36" fill="none"><path d="M9 18l7 7 11-12" stroke="#F1BE48" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-    <div class="done-title">¡Evaluación enviada!</div>
-    <div class="done-sub">Tu respuesta fue registrada correctamente.<br>Puedes cerrar esta ventana.</div>
-    <button class="btn btn-main" onclick="newEval()">Enviar otra evaluación</button>
+  <div class="actions">
+    <span class="toast" id="toast"></span>
+    <button class="btn btn-ghost" onclick="resetForm()">Limpiar todo</button>
+    <button class="btn btn-main" id="btn-send" onclick="saveResponse()">Enviar evaluación</button>
   </div>
+
+</div>
+</div>
+
+<div class="done-screen" id="done-screen">
+  <div class="done-icon"><svg viewBox="0 0 36 36" fill="none"><path d="M9 18l7 7 11-12" stroke="#F1BE48" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+  <div class="done-title">¡Evaluación enviada!</div>
+  <div class="done-sub">Tu respuesta fue registrada correctamente en el sistema.<br>Puedes cerrar esta ventana.</div>
+  <button class="btn btn-main" onclick="newEval()">Enviar otra evaluación</button>
+</div>
+
 </div>
 
 <script>
 const SB_URL='https://jjlfqpwgjedgswggwtlm.supabase.co';
 const SB_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpqbGZxcHdnamVkZ3N3Z2d3dGxtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzY3MTMxMzUsImV4cCI6MjA5MjI4OTEzNX0.N_iZREfMulT6mg_TEgy4G2qjpfoelxBYNgw_vyjnfAs';
 const TABLE='evaluaciones';
-const CACHE='ibiza-v6';
+const CACHE='ibiza-v7';
 
 const TECHS=[
   {key:'breidy',name:'Breidy Caamal'},
@@ -339,122 +381,127 @@ const RECS=[
   "No contaría con él",
   "No sin aprendizaje previo",
   "Sí, como ayudante",
-  "Sí, reforzando puntos",
+  "Sí, reforzando puntos débiles",
   "Sí, indiscutiblemente"
 ];
 const DAFO_DATA={
-  strengths:{label:'Fortalezas',items:["Adaptabilidad","Asertividad","Generación de confianza","Pensamiento estructurado","Orientación al cliente","Transferencia de conocimiento","Resiliencia","Autogestión","Escucha activa","Proactividad"]},
-  weaknesses:{label:'Debilidades',items:["Comunicación","Gestión de presión","Reactividad","Documentación","Adaptabilidad comunicativa","Escalabilidad","Organización personal","Asertividad","Escucha activa","Autocontrol"]},
-  opportunities:{label:'Oportunidades',items:["Liderazgo situacional","Diversidad cultural","Red profesional","Inteligencia emocional","Retroalimentación directa","Mentoría","Visibilidad directiva","Negociación","Identidad profesional","Formación continua"]},
-  threats:{label:'Amenazas',items:["Presión externa","Interlocutores conflictivos","Desmotivación ambiental","Falta de reconocimiento","Aislamiento en campo","Expectativas mal gestionadas","Resistencia al cambio","Sobrecarga operativa","Ambigüedad de rol","Dependencia de supervisión externa"]}
+  strengths:{label:'Fortalezas',type:'blue',items:["Adaptabilidad","Asertividad","Generación de confianza","Pensamiento estructurado","Orientación al cliente","Transferencia de conocimiento","Resiliencia","Autogestión","Escucha activa","Proactividad"]},
+  weaknesses:{label:'Debilidades',type:'yell',items:["Comunicación","Gestión de presión","Reactividad","Documentación","Adaptabilidad comunicativa","Escalabilidad","Organización personal","Asertividad","Escucha activa","Autocontrol"]},
+  opportunities:{label:'Oportunidades',type:'blue',items:["Liderazgo situacional","Diversidad cultural","Red profesional","Inteligencia emocional","Retroalimentación directa","Mentoría","Visibilidad directiva","Negociación","Identidad profesional","Formación continua"]},
+  threats:{label:'Amenazas',type:'yell',items:["Presión externa","Interlocutores conflictivos","Desmotivación ambiental","Falta de reconocimiento","Aislamiento en campo","Expectativas mal gestionadas","Resistencia al cambio","Sobrecarga operativa","Ambigüedad de rol","Dependencia de supervisión externa"]}
 };
-const VALUES=["Excelencia","Proactividad","Innovación","Compromiso","Orientación al cliente","Responsabilidad"];
+const VALUES=[
+  {key:'Excelencia',icon:'<svg viewBox="0 0 15 15" fill="none"><path d="M7.5 1.5l1.8 3.6 4 .6-2.9 2.8.7 4-3.6-1.9-3.6 1.9.7-4L1.7 5.7l4-.6z" stroke="#0E4174" stroke-width="1.3" stroke-linejoin="round"/></svg>'},
+  {key:'Proactividad',icon:'<svg viewBox="0 0 15 15" fill="none"><path d="M7.5 2v4l2.5 2" stroke="#0E4174" stroke-width="1.5" stroke-linecap="round"/><circle cx="7.5" cy="7.5" r="5.5" stroke="#0E4174" stroke-width="1.3"/></svg>'},
+  {key:'Innovación',icon:'<svg viewBox="0 0 15 15" fill="none"><path d="M7.5 1.5a4 4 0 014 4c0 1.5-.8 2.8-2 3.5V11H5.5V9a4 4 0 012-7.5z" stroke="#0E4174" stroke-width="1.3"/><path d="M5.5 12.5h4M6.5 14h2" stroke="#0E4174" stroke-width="1.3" stroke-linecap="round"/></svg>'},
+  {key:'Compromiso',icon:'<svg viewBox="0 0 15 15" fill="none"><path d="M7.5 13S2 9.5 2 5.5a3.5 3.5 0 017 0 3.5 3.5 0 017 0C16 9.5 7.5 13 7.5 13z" stroke="#0E4174" stroke-width="1.3" stroke-linejoin="round"/></svg>'},
+  {key:'Orientación al cliente',icon:'<svg viewBox="0 0 15 15" fill="none"><path d="M7.5 7.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM2.5 12.5c0-2 2.2-3.5 5-3.5s5 1.5 5 3.5" stroke="#0E4174" stroke-width="1.3" stroke-linecap="round"/></svg>'},
+  {key:'Responsabilidad',icon:'<svg viewBox="0 0 15 15" fill="none"><path d="M5 7.5l2 2 3.5-3.5" stroke="#0E4174" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><rect x="1.5" y="1.5" width="12" height="12" rx="3" stroke="#0E4174" stroke-width="1.3"/></svg>'}
+];
+
+const SC_COLORS=['#B71C1C','#D32F2F','#F4511E','#FB8C00','#FDD835','#C6D500','#8BC34A','#7CB342','#43A047','#2E7D32','#1B5E20'];
+const SC_TEXT_DARK=[3,4,5,6];
 
 let state={};
 
 function initState(){
   state={eval:'',date:new Date().toISOString().split('T')[0]};
   TECHS.forEach(t=>{
-    state[`q1_${t.key}`]=null;
-    state[`q2_${t.key}`]=null;
-    state[`q3_${t.key}`]=null;
+    ['q1','q2','q3'].forEach(q=>state[`${q}_${t.key}`]=null);
     P4_KEYS.forEach(p=>state[`p4_${p.key}_${t.key}`]=null);
     state[`rec_${t.key}`]=null;
-    const dafoParts={};
-    Object.keys(DAFO_DATA).forEach(dk=>{
-      DAFO_DATA[dk].items.forEach(item=>dafoParts[`${dk}_${item}`]=null);
+    state[`dafo_${t.key}`]={};
+    Object.entries(DAFO_DATA).forEach(([dk,dv])=>{
+      dv.items.forEach(item=>state[`dafo_${t.key}`][`${dk}_${item}`]=null);
     });
-    state[`dafo_${t.key}`]=dafoParts;
   });
-  state.val_equipo={};
-  state.val_proyecto={};
-  VALUES.forEach(v=>{state.val_equipo[v]=null;state.val_proyecto[v]=null;});
+  state.val_equipo={};state.val_proyecto={};
+  VALUES.forEach(v=>{state.val_equipo[v.key]=null;state.val_proyecto[v.key]=null;});
 }
 
 function saveCache(){
-  try{
-    sessionStorage.setItem(CACHE,JSON.stringify({
-      state,
-      ev:document.getElementById('f-eval').value,
-      dt:document.getElementById('f-date').value
-    }));
-  }catch(e){}
+  try{sessionStorage.setItem(CACHE,JSON.stringify({state,ev:document.getElementById('f-eval').value,dt:document.getElementById('f-date').value}));}catch(e){}
 }
-
 function loadCache(){
   try{
-    const d=sessionStorage.getItem(CACHE);
-    if(!d)return false;
-    const p=JSON.parse(d);
-    state=p.state||{};
+    const d=sessionStorage.getItem(CACHE);if(!d)return false;
+    const p=JSON.parse(d);state=p.state||{};
     if(p.ev)document.getElementById('f-eval').value=p.ev;
     if(p.dt)document.getElementById('f-date').value=p.dt;
     return true;
   }catch(e){return false;}
 }
 
-function makeScores10(key,max=10){
-  const wrap=document.createElement('div');
-  wrap.className='scores';
-  for(let i=0;i<=max;i++){
-    const b=document.createElement('button');
-    b.type='button';b.className='scb'+(state[key]===i?' on':'');
-    b.setAttribute('data-v',i);b.textContent=i;
-    b.onclick=(function(v){return function(){
-      state[key]=v;
-      wrap.querySelectorAll('.scb').forEach(x=>x.classList.remove('on'));
-      this.classList.add('on');
-      calcProg();saveCache();
-    };})(i);
-    wrap.appendChild(b);
-  }
-  return wrap;
-}
-
 function buildQ(qKey,tbodyId){
-  const tbody=document.getElementById(tbodyId);
-  tbody.innerHTML='';
+  const tbody=document.getElementById(tbodyId);tbody.innerHTML='';
   TECHS.forEach(t=>{
     const tr=document.createElement('tr');
-    const tdName=document.createElement('td');
-    tdName.innerHTML=`<div class="tech-name">${t.name}</div>`;
-    const tdScore=document.createElement('td');
-    tdScore.appendChild(makeScores10(`${qKey}_${t.key}`));
-    tr.appendChild(tdName);tr.appendChild(tdScore);
-    tbody.appendChild(tr);
+    const tdN=document.createElement('td');
+    tdN.innerHTML=`<div class="tech-name-cell"><div class="tech-dot"></div>${t.name}</div>`;
+    const tdS=document.createElement('td');
+    const wrap=document.createElement('div');wrap.className='scores';
+    for(let i=0;i<=10;i++){
+      const b=document.createElement('button');b.type='button';
+      const key=`${qKey}_${t.key}`;
+      b.className='scb'+(state[key]===i?' on':'');
+      b.setAttribute('data-v',i);b.textContent=i;
+      b.onclick=(function(v,k,w){return function(){
+        state[k]=v;w.querySelectorAll('.scb').forEach(x=>x.classList.remove('on'));
+        this.classList.add('on');calcProg();saveCache();
+      };})(i,key,wrap);
+      wrap.appendChild(b);
+    }
+    tdS.appendChild(wrap);tr.appendChild(tdN);tr.appendChild(tdS);tbody.appendChild(tr);
   });
 }
 
+function getSelectColor(v){
+  if(v===null||v===''||v===undefined)return null;
+  return SC_COLORS[parseInt(v)];
+}
+
 function buildP4(){
-  const tbl=document.getElementById('t-p4');
-  tbl.innerHTML='';
+  const tbl=document.getElementById('t-p4');tbl.innerHTML='';
   const thead=document.createElement('thead');
-  let thRow='<tr><th>Característica</th>';
-  TECHS.forEach(t=>thRow+=`<th>${t.name.split(' ')[0]}</th>`);
-  thRow+='</tr>';
-  thead.innerHTML=thRow;tbl.appendChild(thead);
+  let hr='<tr><th>Característica</th>';
+  TECHS.forEach(t=>hr+=`<th>${t.name.split(' ')[0]}</th>`);
+  hr+='</tr>';thead.innerHTML=hr;tbl.appendChild(thead);
   const tbody=document.createElement('tbody');
   P4_KEYS.forEach(p=>{
     const tr=document.createElement('tr');
-    const tdLabel=document.createElement('td');
-    tdLabel.textContent=p.label;tr.appendChild(tdLabel);
+    const tdL=document.createElement('td');
+    tdL.innerHTML=`<div class="tech-name-cell"><div class="tech-dot"></div>${p.label}</div>`;
+    tr.appendChild(tdL);
     TECHS.forEach(t=>{
-      const td=document.createElement('td');
+      const td=document.createElement('td');td.style.textAlign='center';
       const key=`p4_${p.key}_${t.key}`;
-      const wrap=document.createElement('div');
-      wrap.className='p4-scores';
+      const sel=document.createElement('select');
+      sel.className='p4-select'+(state[key]===null?' empty':'');
+      sel.innerHTML='<option value="">—</option>';
       for(let i=0;i<=10;i++){
-        const b=document.createElement('button');
-        b.type='button';b.className='scb'+(state[key]===i?' on':'');
-        b.setAttribute('data-v',i);b.textContent=i;
-        b.onclick=(function(v,k,w){return function(){
-          state[k]=v;
-          w.querySelectorAll('.scb').forEach(x=>x.classList.remove('on'));
-          this.classList.add('on');calcProg();saveCache();
-        };})(i,key,wrap);
-        wrap.appendChild(b);
+        const opt=document.createElement('option');
+        opt.value=i;opt.textContent=i;
+        if(state[key]===i)opt.selected=true;
+        sel.appendChild(opt);
       }
-      td.appendChild(wrap);tr.appendChild(td);
+      function updateSelStyle(){
+        const v=sel.value;
+        if(v===''||v===null){sel.className='p4-select empty';sel.style.background='';sel.style.borderColor='';return;}
+        const vi=parseInt(v);const col=SC_COLORS[vi];
+        sel.className='p4-select';
+        sel.style.background=col;sel.style.borderColor=col;
+        sel.style.color=SC_TEXT_DARK.includes(vi)?'#3a4000':'#fff';
+        sel.style.backgroundImage=SC_TEXT_DARK.includes(vi)
+          ?`url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' fill='none'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%233a4000' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")`
+          :`url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' fill='none'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23fff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")`;
+        sel.style.backgroundRepeat='no-repeat';sel.style.backgroundPosition='right 8px center';
+      }
+      updateSelStyle();
+      sel.onchange=function(){
+        const v=this.value===''?null:parseInt(this.value);
+        state[key]=v;updateSelStyle();calcProg();saveCache();
+      };
+      td.appendChild(sel);tr.appendChild(td);
     });
     tbody.appendChild(tr);
   });
@@ -462,66 +509,63 @@ function buildP4(){
 }
 
 function buildRec(){
-  const tbody=document.getElementById('t-rec');
-  tbody.innerHTML='';
+  const tbody=document.getElementById('t-rec');tbody.innerHTML='';
   TECHS.forEach(t=>{
     const tr=document.createElement('tr');
-    const tdName=document.createElement('td');
-    tdName.innerHTML=`<div class="tech-name">${t.name}</div>`;
-    const tdOpts=document.createElement('td');
-    const wrap=document.createElement('div');
-    wrap.className='rec-opts';
+    const tdN=document.createElement('td');
+    tdN.innerHTML=`<div class="tech-name-cell"><div class="tech-dot"></div>${t.name}</div>`;
+    const tdO=document.createElement('td');
+    const wrap=document.createElement('div');wrap.className='rec-opts';
     const key=`rec_${t.key}`;
     RECS.forEach((txt,i)=>{
-      const b=document.createElement('button');
-      b.type='button';b.className='rec-btn'+(state[key]===i+1?' on':'');
+      const b=document.createElement('button');b.type='button';
+      b.className='rec-btn'+(state[key]===i+1?' on':'');
       b.textContent=`${i+1}. ${txt}`;
       b.onclick=(function(v,k,w){return function(){
-        state[k]=v;
-        w.querySelectorAll('.rec-btn').forEach(x=>x.classList.remove('on'));
+        state[k]=v;w.querySelectorAll('.rec-btn').forEach(x=>x.classList.remove('on'));
         this.classList.add('on');calcProg();saveCache();
       };})(i+1,key,wrap);
       wrap.appendChild(b);
     });
-    tdOpts.appendChild(wrap);
-    tr.appendChild(tdName);tr.appendChild(tdOpts);
-    tbody.appendChild(tr);
+    tdO.appendChild(wrap);tr.appendChild(tdN);tr.appendChild(tdO);tbody.appendChild(tr);
   });
 }
 
 function buildDafo(){
-  const tbl=document.getElementById('t-dafo');
-  tbl.innerHTML='';
+  const tbl=document.getElementById('t-dafo');tbl.innerHTML='';
   const thead=document.createElement('thead');
-  let thRow='<tr><th>Aspecto</th>';
-  TECHS.forEach(t=>thRow+=`<th>${t.name.split(' ')[0]}</th>`);
-  thRow+='</tr>';
-  thead.innerHTML=thRow;tbl.appendChild(thead);
+  let hr='<tr><th>Aspecto</th>';
+  TECHS.forEach(t=>hr+=`<th>${t.name.split(' ')[0]}</th>`);
+  hr+='</tr>';thead.innerHTML=hr;tbl.appendChild(thead);
   const tbody=document.createElement('tbody');
   Object.entries(DAFO_DATA).forEach(([dk,dv])=>{
-    const secRow=document.createElement('tr');
-    secRow.className='dafo-section-row'+(dk==='weaknesses'||dk==='threats'?' yell':'');
-    secRow.innerHTML=`<td colspan="${TECHS.length+1}">${dv.label}</td>`;
-    tbody.appendChild(secRow);
+    const secR=document.createElement('tr');
+    secR.className=`dafo-section ${dv.type}`;
+    secR.innerHTML=`<td colspan="${TECHS.length+1}">${dv.label}</td>`;
+    tbody.appendChild(secR);
     dv.items.forEach(item=>{
       const tr=document.createElement('tr');
-      const tdLabel=document.createElement('td');
-      tdLabel.textContent=item;tr.appendChild(tdLabel);
+      const tdL=document.createElement('td');
+      tdL.innerHTML=`<div class="dafo-item-name">${item}</div>`;tr.appendChild(tdL);
       TECHS.forEach(t=>{
         const td=document.createElement('td');
-        const wrap=document.createElement('div');
-        wrap.className='dsb-wrap';
-        const curVal=state[`dafo_${t.key}`]?.[`${dk}_${item}`];
+        const wrap=document.createElement('div');wrap.className='dafo-btns';
+        const cur=state[`dafo_${t.key}`]?.[`${dk}_${item}`];
+        const isYell=dv.type==='yell';
         for(let v=1;v<=5;v++){
-          const b=document.createElement('button');
-          b.type='button';b.className='dsb'+(curVal===v?' on':'');
-          b.setAttribute('data-v',v);b.textContent=v;
-          b.onclick=(function(vv,tk,dk2,it,w){return function(){
+          const b=document.createElement('button');b.type='button';
+          const isOn=cur===v;
+          b.className=`dbt ${isOn?(isYell?'yell-on':'blue-on'):(isYell?'yell-off':'blue-off')}`;
+          b.textContent=v;
+          b.onclick=(function(vv,tk,dk2,it,w,iy){return function(){
             if(!state[`dafo_${tk}`])state[`dafo_${tk}`]={};
             state[`dafo_${tk}`][`${dk2}_${it}`]=vv;
-            w.querySelectorAll('.dsb').forEach(x=>x.classList.remove('on'));
-            this.classList.add('on');calcProg();saveCache();
-          };})(v,t.key,dk,item,wrap);
+            w.querySelectorAll('.dbt').forEach(x=>{
+              x.className=`dbt ${iy?'yell-off':'blue-off'}`;
+            });
+            this.className=`dbt ${iy?'yell-on':'blue-on'}`;
+            calcProg();saveCache();
+          };})(v,t.key,dk,item,wrap,isYell);
           wrap.appendChild(b);
         }
         td.appendChild(wrap);tr.appendChild(td);
@@ -533,25 +577,23 @@ function buildDafo(){
 }
 
 function buildValues(){
-  const tbody=document.getElementById('val-body');
-  tbody.innerHTML='';
+  const tbody=document.getElementById('val-body');tbody.innerHTML='';
   VALUES.forEach(val=>{
     const tr=document.createElement('tr');
-    const tdName=document.createElement('td');tdName.textContent=val;tr.appendChild(tdName);
-    ['val_equipo','val_proyecto'].forEach(target=>{
+    const tdN=document.createElement('td');
+    tdN.innerHTML=`<div class="val-name-cell"><div class="val-icon">${val.icon}</div>${val.key}</div>`;tr.appendChild(tdN);
+    ['val_equipo','val_proyecto'].forEach(tgt=>{
       const td=document.createElement('td');
       const wrap=document.createElement('div');wrap.className='val-scores';
-      const cur=state[target]?.[val];
+      const cur=state[tgt]?.[val.key];
       for(let v=0;v<=5;v++){
-        const b=document.createElement('button');
-        b.type='button';b.className='vsb'+(cur===v?' on':'');
-        b.setAttribute('data-v',v);b.textContent=v;
-        b.onclick=(function(vv,tgt,vname,w){return function(){
-          if(!state[tgt])state[tgt]={};
-          state[tgt][vname]=vv;
+        const b=document.createElement('button');b.type='button';
+        b.className='vsb'+(cur===v?' on':'');b.setAttribute('data-v',v);b.textContent=v;
+        b.onclick=(function(vv,tg,vk,w){return function(){
+          if(!state[tg])state[tg]={};state[tg][vk]=vv;
           w.querySelectorAll('.vsb').forEach(x=>x.classList.remove('on'));
           this.classList.add('on');calcProg();saveCache();
-        };})(v,target,val,wrap);
+        };})(v,tgt,val.key,wrap);
         wrap.appendChild(b);
       }
       td.appendChild(wrap);tr.appendChild(td);
@@ -560,16 +602,7 @@ function buildValues(){
   });
 }
 
-function buildAll(){
-  buildQ('q1','t-q1');
-  buildQ('q2','t-q2');
-  buildQ('q3','t-q3');
-  buildP4();
-  buildRec();
-  buildDafo();
-  buildValues();
-  calcProg();
-}
+function buildAll(){buildQ('q1','t-q1');buildQ('q2','t-q2');buildQ('q3','t-q3');buildP4();buildRec();buildDafo();buildValues();calcProg();}
 
 function calcProg(){
   let f=0,t=0;
@@ -580,15 +613,12 @@ function calcProg(){
     P4_KEYS.forEach(p=>{t++;if(state[`p4_${p.key}_${tech.key}`]!==null)f++;});
     t++;if(state[`rec_${tech.key}`]!==null)f++;
     Object.entries(DAFO_DATA).forEach(([dk,dv])=>{
-      dv.items.forEach(item=>{
-        t++;
-        if(state[`dafo_${tech.key}`]&&state[`dafo_${tech.key}`][`${dk}_${item}`]!==null&&state[`dafo_${tech.key}`][`${dk}_${item}`]!==undefined)f++;
-      });
+      dv.items.forEach(item=>{t++;if(state[`dafo_${tech.key}`]&&state[`dafo_${tech.key}`][`${dk}_${item}`]!==null&&state[`dafo_${tech.key}`][`${dk}_${item}`]!==undefined)f++;});
     });
   });
   VALUES.forEach(v=>{
-    t++;if(state.val_equipo&&state.val_equipo[v]!==null)f++;
-    t++;if(state.val_proyecto&&state.val_proyecto[v]!==null)f++;
+    t++;if(state.val_equipo&&state.val_equipo[v.key]!==null)f++;
+    t++;if(state.val_proyecto&&state.val_proyecto[v.key]!==null)f++;
   });
   const p=Math.round(f/t*100);
   const el=document.getElementById('prog');if(el)el.style.width=p+'%';
@@ -599,16 +629,12 @@ function validateAll(){
   const ev=document.getElementById('f-eval');
   if(!ev||!ev.value.trim())return'Escribe tu nombre antes de enviar.';
   for(const tech of TECHS){
-    for(const q of['q1','q2','q3']){
-      if(state[`${q}_${tech.key}`]===null)return`Falta puntuar ${q.toUpperCase()} para ${tech.name}.`;
-    }
-    for(const p of P4_KEYS){
-      if(state[`p4_${p.key}_${tech.key}`]===null)return`Falta puntuar "${p.label}" para ${tech.name}.`;
-    }
+    for(const q of['q1','q2','q3']){if(state[`${q}_${tech.key}`]===null)return`Falta puntuar P${q.slice(1)} para ${tech.name}.`;}
+    for(const p of P4_KEYS){if(state[`p4_${p.key}_${tech.key}`]===null)return`Falta "${p.label}" para ${tech.name}.`;}
     if(state[`rec_${tech.key}`]===null)return`Falta la recomendación para ${tech.name}.`;
   }
   for(const v of VALUES){
-    if(state.val_equipo[v]===null||state.val_proyecto[v]===null)return`Falta puntuar el valor "${v}" en equipo o proyecto.`;
+    if(state.val_equipo[v.key]===null||state.val_proyecto[v.key]===null)return`Falta puntuar "${v.key}" en equipo o proyecto.`;
   }
   return null;
 }
@@ -619,32 +645,23 @@ function showToast(msg,type){
   setTimeout(()=>{t.className='toast';},5000);
 }
 
-function serDafo(techKey){
-  const d=state[`dafo_${techKey}`]||{};
-  return Object.entries(d).filter(([,v])=>v!==null).map(([k,v])=>`${k}:${v}`).join('||');
-}
-function serVals(obj){
-  return Object.entries(obj||{}).filter(([,v])=>v!==null).map(([k,v])=>`${k}:${v}`).join('||');
-}
+function serObj(obj){return Object.entries(obj||{}).filter(([,v])=>v!==null).map(([k,v])=>`${k}:${v}`).join('||');}
 
 async function saveResponse(){
-  const err=validateAll();
-  if(err){showToast(err,'err');return;}
+  const err=validateAll();if(err){showToast(err,'err');return;}
   const btn=document.getElementById('btn-send');
   if(btn){btn.disabled=true;btn.textContent='Enviando...';}
   const ev=document.getElementById('f-eval').value.trim();
   const dt=document.getElementById('f-date').value;
   const record={evaluador:ev,fecha:dt};
   TECHS.forEach(t=>{
-    record[`q1_${t.key}`]=state[`q1_${t.key}`];
-    record[`q2_${t.key}`]=state[`q2_${t.key}`];
-    record[`q3_${t.key}`]=state[`q3_${t.key}`];
+    ['q1','q2','q3'].forEach(q=>record[`${q}_${t.key}`]=state[`${q}_${t.key}`]);
     P4_KEYS.forEach(p=>record[`p4_${p.key}_${t.key}`]=state[`p4_${p.key}_${t.key}`]);
     record[`rec_${t.key}`]=state[`rec_${t.key}`];
-    record[`dafo_${t.key}`]=serDafo(t.key);
+    record[`dafo_${t.key}`]=serObj(state[`dafo_${t.key}`]);
   });
-  record.valores_equipo=serVals(state.val_equipo);
-  record.valores_proyecto=serVals(state.val_proyecto);
+  record.valores_equipo=serObj(state.val_equipo);
+  record.valores_proyecto=serObj(state.val_proyecto);
   try{
     const res=await fetch(`${SB_URL}/rest/v1/${TABLE}`,{
       method:'POST',
@@ -685,7 +702,7 @@ document.getElementById('f-date').addEventListener('input',saveCache);
 document.getElementById('f-date').value=new Date().toISOString().split('T')[0];
 
 initState();
-if(!loadCache()){}
+loadCache();
 buildAll();
 </script>
 </body>
