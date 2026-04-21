@@ -11,7 +11,6 @@
 :root{--B:#0E4174;--Y:#F1BE48;--YD:#7a5100}
 body{font-family:'Montserrat',sans-serif;background:#eef2f8;color:#1a2e44;min-height:100vh}
 .shell{max-width:1100px;margin:0 auto;padding:0 18px 60px}
-/* LOGIN */
 .login-wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px;background:#eef2f8}
 .login-card{background:#fff;border-radius:20px;padding:40px 36px;max-width:380px;width:100%;box-shadow:0 8px 32px rgba(14,65,116,.12);text-align:center}
 .login-logo{font-size:10px;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:rgba(14,65,116,.35);margin-bottom:20px}
@@ -24,7 +23,6 @@ body{font-family:'Montserrat',sans-serif;background:#eef2f8;color:#1a2e44;min-he
 .login-btn{width:100%;background:var(--B);color:#fff;border:none;border-radius:11px;padding:13px;font-weight:800;font-size:14px;cursor:pointer;font-family:inherit;box-shadow:0 4px 14px rgba(14,65,116,.3);transition:.18s}
 .login-btn:hover{background:#0a3260}
 .login-err{font-size:12px;color:#c0392b;margin-top:8px;display:none;font-weight:600}
-/* HERO */
 .hero{background:var(--B);color:#fff;padding:22px 26px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
 .hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(241,190,72,.18);color:#f5d67a;font-size:10px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;padding:4px 11px;border-radius:999px;margin-bottom:9px}
 .hero-badge span{width:5px;height:5px;border-radius:50%;background:var(--Y);display:block}
@@ -35,7 +33,6 @@ body{font-family:'Montserrat',sans-serif;background:#eef2f8;color:#1a2e44;min-he
 .btn-white{background:rgba(255,255,255,.14);color:#fff;border:1.5px solid rgba(255,255,255,.28)}
 .btn-white:hover{background:rgba(255,255,255,.24)}
 .btn-danger{background:#fde8e8;color:#9b1515;border:1px solid #f5b8b8}
-/* BODY */
 .body{padding:18px 0}
 .kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:16px}
 .kpi{background:#fff;border-radius:14px;padding:15px 13px;box-shadow:0 2px 10px rgba(14,65,116,.06);border:1px solid rgba(14,65,116,.06);position:relative;overflow:hidden}
@@ -46,21 +43,19 @@ body{font-family:'Montserrat',sans-serif;background:#eef2f8;color:#1a2e44;min-he
 .ch{background:var(--B);color:#fff;padding:11px 17px;font-size:10px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;display:flex;align-items:center;justify-content:space-between;gap:8px}
 .ch-left{display:flex;align-items:center;gap:8px}
 .ch-dot{width:6px;height:6px;border-radius:50%;background:var(--Y)}
+.ch-badge{background:var(--Y);color:var(--YD);font-size:10px;font-weight:800;padding:3px 9px;border-radius:999px}
 .cb{padding:16px}
 .grid2{display:grid;grid-template-columns:1.1fr 1fr;gap:15px;margin-bottom:15px}
-.chart-h{position:relative;width:100%;height:210px}
-.chart-h-lg{position:relative;width:100%;height:270px}
-/* TABS */
+.chart-h{position:relative;width:100%;height:220px}
+.chart-h-lg{position:relative;width:100%;height:280px}
 .tabs-row{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:13px}
 .tab{padding:7px 12px;border-radius:8px;border:1.5px solid #dde5f2;background:#f7f9fd;cursor:pointer;font-size:11px;font-weight:800;color:var(--B);font-family:inherit;transition:.18s}
 .tab:hover{background:#eef3fb}
 .tab.on{background:var(--B);color:#fff;border-color:var(--B)}
-/* TECH DETAIL */
 .tech-kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:14px}
 .sk{background:#f7f9fd;border-radius:10px;padding:11px 9px;text-align:center;border:1px solid rgba(14,65,116,.07)}
 .sk-val{font-size:21px;font-weight:800;color:var(--B)}
 .sk-lbl{font-size:9px;font-weight:800;color:#8090a8;text-transform:uppercase;letter-spacing:.05em;margin-top:3px}
-/* DAFO RESULTS */
 .dafo-results-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}
 .dafo-res-card{border-radius:11px;overflow:hidden;border:1px solid rgba(14,65,116,.08)}
 .drh{padding:9px 13px;font-size:10px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;display:flex;align-items:center;gap:6px}
@@ -70,8 +65,7 @@ body{font-family:'Montserrat',sans-serif;background:#eef2f8;color:#1a2e44;min-he
 .dafo-pill{display:inline-flex;align-items:center;gap:5px;border-radius:999px;padding:4px 10px;font-size:10px;font-weight:700;margin:2px 3px 2px 0}
 .dafo-pill.blue{background:#e8f0fb;color:var(--B)}
 .dafo-pill.amber{background:#fef8e7;color:var(--YD)}
-.score-badge{width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:800;color:#fff;flex-shrink:0}
-/* VALUES TABLE */
+.score-badge{width:17px;height:17px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:800;color:#fff;flex-shrink:0}
 .val-legend{display:flex;gap:14px;margin-bottom:10px;flex-wrap:wrap}
 .val-legend-item{display:flex;align-items:center;gap:6px;font-size:11px;font-weight:700;color:#3a5272}
 .val-legend-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
@@ -82,7 +76,6 @@ body{font-family:'Montserrat',sans-serif;background:#eef2f8;color:#1a2e44;min-he
 .val-tbl tr:last-child td{border-bottom:none}
 .val-tbl td:first-child{text-align:left;font-weight:700;font-size:12px;color:#1a3558}
 .score-chip{display:inline-block;padding:3px 10px;border-radius:999px;font-size:11px;font-weight:800;color:#fff}
-/* TABLE */
 .tbl{width:100%;border-collapse:collapse;font-size:11px;table-layout:fixed}
 .tbl th,.tbl td{padding:8px 7px;border-bottom:1px solid #eef2f8;text-align:left;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .tbl th{font-size:10px;font-weight:800;color:var(--B);letter-spacing:.05em;text-transform:uppercase;background:#f7f9fd}
@@ -94,10 +87,7 @@ body{font-family:'Montserrat',sans-serif;background:#eef2f8;color:#1a2e44;min-he
 .empty-title{font-size:17px;font-weight:800;color:var(--B);margin-bottom:8px}
 .empty-sub{font-size:13px;color:#8090a8;line-height:1.7}
 .loading-state{padding:30px;text-align:center;color:#8090a8;font-size:13px;font-weight:600}
-@media(max-width:700px){
-  .kpi-row,.grid2,.tech-kpis,.dafo-results-grid{grid-template-columns:1fr 1fr}
-  .kpi-row{grid-template-columns:repeat(2,1fr)}
-}
+@media(max-width:700px){.kpi-row,.grid2,.tech-kpis,.dafo-results-grid{grid-template-columns:1fr 1fr}}
 </style>
 </head>
 <body>
@@ -107,10 +97,10 @@ body{font-family:'Montserrat',sans-serif;background:#eef2f8;color:#1a2e44;min-he
     <div class="login-logo">Polarier · Love your linen</div>
     <div class="login-icon"><svg viewBox="0 0 28 28" fill="none"><path d="M14 4a5 5 0 100 10 5 5 0 000-10zM5 22c0-4 4-7 9-7s9 3 9 7" stroke="#F1BE48" stroke-width="2" stroke-linecap="round"/></svg></div>
     <div class="login-title">Dashboard privado</div>
-    <div class="login-sub">Ingresa la contraseña para acceder a los resultados de las evaluaciones.</div>
+    <div class="login-sub">Ingresa la contraseña para acceder a los resultados.</div>
     <input class="login-input" type="password" id="pwd-input" placeholder="••••••••" onkeydown="if(event.key==='Enter')checkPwd()"/>
     <button class="login-btn" onclick="checkPwd()">Acceder</button>
-    <div class="login-err" id="pwd-err">Contraseña incorrecta. Inténtalo de nuevo.</div>
+    <div class="login-err" id="pwd-err">Contraseña incorrecta.</div>
   </div>
 </div>
 
@@ -132,12 +122,33 @@ body{font-family:'Montserrat',sans-serif;background:#eef2f8;color:#1a2e44;min-he
 </div>
 
 <script>
-const SUPABASE_URL='https://jjlfqpwgjedgswggwtlm.supabase.co';
-const SUPABASE_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpqbGZxcHdnamVkZ3N3Z2d3dGxtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzY3MTMxMzUsImV4cCI6MjA5MjI4OTEzNX0.N_iZREfMulT6mg_TEgy4G2qjpfoelxBYNgw_vyjnfAs';
+const SB_URL='https://jjlfqpwgjedgswggwtlm.supabase.co';
+const SB_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpqbGZxcHdnamVkZ3N3Z2d3dGxtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzY3MTMxMzUsImV4cCI6MjA5MjI4OTEzNX0.N_iZREfMulT6mg_TEgy4G2qjpfoelxBYNgw_vyjnfAs';
 const TABLE='evaluaciones';
 const PWD='Polarier2025';
+const TECHS=[
+  {key:'breidy',name:'Breidy Caamal'},
+  {key:'melvin',name:'Melvin Romero'},
+  {key:'marcos',name:'Marcos Gómez'},
+  {key:'eric',name:'Eric Tejeda'},
+  {key:'gaspar',name:'Gaspar López'},
+  {key:'jacob',name:'Jacob Tec'}
+];
+const P4_KEYS=[
+  {key:'plan',label:'Planificación'},
+  {key:'res',label:'Resultados'},
+  {key:'resp',label:'Responsabilidad'},
+  {key:'impl',label:'Implicación'},
+  {key:'team',label:'Trabajo equipo'}
+];
 const VALUES=["Excelencia","Proactividad","Innovación","Compromiso","Orientación al cliente","Responsabilidad"];
 const RECS_SHORT=["No contaría","Aprendizaje previo","Como ayudante","Reforzando puntos","Indiscutiblemente"];
+const DAFO_SECTIONS={
+  strengths:'Fortalezas',
+  weaknesses:'Debilidades',
+  opportunities:'Oportunidades',
+  threats:'Amenazas'
+};
 
 let charts=[];let allR=[];
 
@@ -154,28 +165,18 @@ function checkPwd(){
 function destCharts(){charts.forEach(c=>{try{c.destroy();}catch(e){}});charts=[];}
 function avg(a){const v=a.filter(x=>typeof x==='number'&&x!==null&&!isNaN(x));return v.length?v.reduce((a,b)=>a+b,0)/v.length:null;}
 function fmt(n){return n===null||isNaN(n)?'—':n.toFixed(1);}
-
-function scoreColor(v){
-  if(v===null||v===undefined)return '#ccc';
+function scoreColor(v,max=10){
+  if(v===null||v===undefined)return'#ccc';
+  if(max===5){const c=['#B71C1C','#D32F2F','#FB8C00','#FDD835','#7CB342','#1B5E20'];return c[Math.min(5,Math.max(0,Math.round(v)))];}
   const c=['#B71C1C','#D32F2F','#F4511E','#FB8C00','#FDD835','#C6D500','#8BC34A','#7CB342','#43A047','#2E7D32','#1B5E20'];
-  return c[Math.min(10,Math.max(0,Math.round(v)))]||'#ccc';
+  return c[Math.min(10,Math.max(0,Math.round(v)))];
 }
-function scoreColor5(v){
-  if(v===null||v===undefined)return '#ccc';
-  const c=['#B71C1C','#D32F2F','#FB8C00','#FDD835','#7CB342','#1B5E20'];
-  return c[Math.min(5,Math.max(0,Math.round(v)))]||'#ccc';
-}
-
 function parseKV(str){
-  if(!str)return {};
+  if(!str)return{};
   const m={};
-  str.split('||').forEach(p=>{
-    const i=p.indexOf(':');
-    if(i>-1){const k=p.slice(0,i);const v=parseInt(p.slice(i+1));if(!isNaN(v))m[k]=v;}
-  });
+  str.split('||').forEach(p=>{const i=p.indexOf(':');if(i>-1){const k=p.slice(0,i);const v=parseInt(p.slice(i+1));if(!isNaN(v))m[k]=v;}});
   return m;
 }
-
 function freqScored(list,minScore){
   const m={};
   list.forEach(kv=>{Object.entries(kv).forEach(([k,v])=>{if(v>=minScore){if(!m[k])m[k]={count:0,total:0};m[k].count++;m[k].total+=v;}});});
@@ -183,28 +184,20 @@ function freqScored(list,minScore){
 }
 
 async function loadR(){
-  const res=await fetch(`${SUPABASE_URL}/rest/v1/${TABLE}?select=*&order=created_at.desc`,{
-    headers:{'apikey':SUPABASE_KEY,'Authorization':`Bearer ${SUPABASE_KEY}`}
+  const res=await fetch(`${SB_URL}/rest/v1/${TABLE}?select=*&order=created_at.desc`,{
+    headers:{'apikey':SB_KEY,'Authorization':`Bearer ${SB_KEY}`}
   });
-  if(!res.ok)throw new Error('Error cargando datos');
+  if(!res.ok)throw new Error('Error');
   return res.json();
 }
-
 async function deleteRow(id){
   if(!confirm('¿Eliminar esta respuesta?'))return;
-  await fetch(`${SUPABASE_URL}/rest/v1/${TABLE}?id=eq.${id}`,{
-    method:'DELETE',
-    headers:{'apikey':SUPABASE_KEY,'Authorization':`Bearer ${SUPABASE_KEY}`}
-  });
+  await fetch(`${SB_URL}/rest/v1/${TABLE}?id=eq.${id}`,{method:'DELETE',headers:{'apikey':SB_KEY,'Authorization':`Bearer ${SB_KEY}`}});
   init();
 }
-
 async function clearAll(){
-  if(!confirm('¿Borrar TODAS las respuestas? No se puede deshacer.'))return;
-  await fetch(`${SUPABASE_URL}/rest/v1/${TABLE}?id=neq.0`,{
-    method:'DELETE',
-    headers:{'apikey':SUPABASE_KEY,'Authorization':`Bearer ${SUPABASE_KEY}`}
-  });
+  if(!confirm('¿Borrar TODAS las respuestas?'))return;
+  await fetch(`${SB_URL}/rest/v1/${TABLE}?id=neq.0`,{method:'DELETE',headers:{'apikey':SB_KEY,'Authorization':`Bearer ${SB_KEY}`}});
   init();
 }
 
@@ -213,24 +206,27 @@ async function init(){
   d.innerHTML='<div class="loading-state">Cargando respuestas...</div>';
   destCharts();
   try{allR=await loadR();}catch(e){
-    d.innerHTML='<div class="empty-state"><div class="empty-title">Error de conexión</div><div class="empty-sub">No se pudo conectar con la base de datos.<br>Verifica tu conexión e intenta de nuevo.</div></div>';
+    d.innerHTML='<div class="empty-state"><div class="empty-title">Error de conexión</div><div class="empty-sub">Verifica tu conexión e intenta de nuevo.</div></div>';
     return;
   }
   if(!allR.length){
-    d.innerHTML='<div class="empty-state"><div class="empty-title">Sin respuestas todavía</div><div class="empty-sub">Comparte el link del formulario con los evaluadores.<br>Las respuestas aparecerán aquí automáticamente.</div></div>';
+    d.innerHTML='<div class="empty-state"><div class="empty-title">Sin respuestas todavía</div><div class="empty-sub">Comparte el formulario con los evaluadores.</div></div>';
     return;
   }
 
-  const byT={};allR.forEach(r=>(byT[r.tecnico]||(byT[r.tecnico]=[])).push(r));
-  const tNames=Object.keys(byT);
-  const overallAvg=avg(allR.flatMap(r=>[r.q1,r.q2,r.q3]));
-  const recAvg=avg(allR.map(r=>r.rec));
+  const techAvgs=TECHS.map(t=>{
+    const vals=allR.flatMap(r=>[r[`q1_${t.key}`],r[`q2_${t.key}`],r[`q3_${t.key}`]]);
+    return{name:t.name,key:t.key,avg:avg(vals)};
+  });
+  const overallAvg=avg(techAvgs.map(t=>t.avg));
+  const recVals=allR.flatMap(r=>TECHS.map(t=>r[`rec_${t.key}`]));
+  const recAvg=avg(recVals);
 
   d.innerHTML=`
     <div class="kpi-row">
       <div class="kpi"><div class="kpi-val">${allR.length}</div><div class="kpi-lbl">Evaluaciones</div></div>
-      <div class="kpi"><div class="kpi-val">${tNames.length}</div><div class="kpi-lbl">Técnicos</div></div>
-      <div class="kpi"><div class="kpi-val">${fmt(overallAvg)}</div><div class="kpi-lbl">Prom. P1–P3</div></div>
+      <div class="kpi"><div class="kpi-val">${TECHS.length}</div><div class="kpi-lbl">Técnicos</div></div>
+      <div class="kpi"><div class="kpi-val">${fmt(overallAvg)}</div><div class="kpi-lbl">Prom. general</div></div>
       <div class="kpi"><div class="kpi-val">${fmt(recAvg)}</div><div class="kpi-lbl">Recomendación</div></div>
     </div>
     <div class="grid2">
@@ -240,13 +236,13 @@ async function init(){
       </div>
       <div class="card">
         <div class="ch"><div class="ch-left"><div class="ch-dot"></div>Escala de recomendación</div></div>
-        <div class="cb"><div class="chart-h"><canvas id="c-pie" role="img" aria-label="Distribución de recomendación"></canvas></div></div>
+        <div class="cb"><div class="chart-h"><canvas id="c-pie" role="img" aria-label="Distribución recomendación"></canvas></div></div>
       </div>
     </div>
     <div class="card">
       <div class="ch"><div class="ch-left"><div class="ch-dot"></div>Análisis por técnico</div></div>
       <div class="cb">
-        <div class="tabs-row" id="tech-tabs">${tNames.map((t,i)=>`<button class="tab${i===0?' on':''}" onclick="showTech('${t.replace(/'/g,"\\'")}',this)">${t.split(' ')[0]}</button>`).join('')}</div>
+        <div class="tabs-row" id="tech-tabs">${TECHS.map((t,i)=>`<button class="tab${i===0?' on':''}" onclick="showTech('${t.key}',this)">${t.name.split(' ')[0]}</button>`).join('')}</div>
         <div id="tech-detail"></div>
       </div>
     </div>
@@ -254,7 +250,7 @@ async function init(){
       <div class="ch"><div class="ch-left"><div class="ch-dot"></div>Todas las respuestas</div></div>
       <div class="cb" style="overflow-x:auto">
         <table class="tbl">
-          <thead><tr><th style="width:15%">Evaluador</th><th style="width:10%">Fecha</th><th style="width:16%">Técnico</th><th style="width:8%">P1</th><th style="width:8%">P2</th><th style="width:8%">P3</th><th style="width:8%">Rec.</th><th style="width:8%"></th></tr></thead>
+          <thead><tr><th style="width:20%">Evaluador</th><th style="width:12%">Fecha</th>${TECHS.map(t=>`<th style="width:11%">${t.name.split(' ')[0]}</th>`).join('')}<th style="width:8%"></th></tr></thead>
           <tbody id="tbl-body"></tbody>
         </table>
       </div>
@@ -262,82 +258,82 @@ async function init(){
 
   document.getElementById('tbl-body').innerHTML=allR.map(r=>`
     <tr>
-      <td>${r.evaluador||'—'}</td><td>${r.fecha||'—'}</td><td>${r.tecnico}</td>
-      <td><span class="sdot" style="background:${scoreColor(r.q1)}"></span>${r.q1??'—'}</td>
-      <td><span class="sdot" style="background:${scoreColor(r.q2)}"></span>${r.q2??'—'}</td>
-      <td><span class="sdot" style="background:${scoreColor(r.q3)}"></span>${r.q3??'—'}</td>
-      <td>${r.rec??'—'}</td>
+      <td>${r.evaluador||'—'}</td>
+      <td>${r.fecha||'—'}</td>
+      ${TECHS.map(t=>`<td><span class="sdot" style="background:${scoreColor(avg([r[`q1_${t.key}`],r[`q2_${t.key}`],r[`q3_${t.key}`]]))}"></span>${fmt(avg([r[`q1_${t.key}`],r[`q2_${t.key}`],r[`q3_${t.key}`]]))}</td>`).join('')}
       <td><button class="del-btn" onclick="deleteRow(${r.id})">Borrar</button></td>
     </tr>`).join('');
 
-  const barLabels=tNames.map(t=>t.split(' ')[0]);
-  const barData=tNames.map(t=>{const v=avg(byT[t].flatMap(r=>[r.q1,r.q2,r.q3]));return v!==null?+v.toFixed(1):0;});
+  const barData=techAvgs.map(t=>t.avg!==null?+t.avg.toFixed(1):0);
   const c1=new Chart(document.getElementById('c-bar'),{
     type:'bar',
-    data:{labels:barLabels,datasets:[{data:barData,backgroundColor:barData.map(v=>scoreColor(v)),borderRadius:8,borderSkipped:false}]},
+    data:{labels:TECHS.map(t=>t.name.split(' ')[0]),datasets:[{data:barData,backgroundColor:barData.map(v=>scoreColor(v)),borderRadius:8,borderSkipped:false}]},
     options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{y:{beginAtZero:true,max:10,ticks:{stepSize:2,font:{size:10}}},x:{grid:{display:false},ticks:{font:{size:10}}}}}
   });
   charts.push(c1);
 
-  const recC=[1,2,3,4,5].map(n=>allR.filter(r=>r.rec===n).length);
+  const recCounts=[1,2,3,4,5].map(n=>allR.reduce((acc,r)=>acc+TECHS.filter(t=>r[`rec_${t.key}`]===n).length,0));
   const c2=new Chart(document.getElementById('c-pie'),{
     type:'doughnut',
-    data:{labels:RECS_SHORT,datasets:[{data:recC,backgroundColor:['#B71C1C','#FB8C00','#FDD835','#7CB342','#1B5E20'],borderWidth:2,borderColor:'#fff'}]},
+    data:{labels:RECS_SHORT,datasets:[{data:recCounts,backgroundColor:['#B71C1C','#FB8C00','#FDD835','#7CB342','#1B5E20'],borderWidth:2,borderColor:'#fff'}]},
     options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{font:{size:9},boxWidth:9,padding:7}}},cutout:'55%'}
   });
   charts.push(c2);
 
-  if(tNames[0])showTech(tNames[0],document.querySelector('.tab.on'));
+  showTech(TECHS[0].key,document.querySelector('.tab.on'));
 }
 
-function showTech(name,btn){
+function showTech(key,btn){
   document.querySelectorAll('.tab').forEach(b=>b.classList.remove('on'));
   if(btn)btn.classList.add('on');
-  const tr=allR.filter(r=>r.tecnico===name);
-  if(!tr.length){document.getElementById('tech-detail').innerHTML='<div style="padding:20px;text-align:center;color:#8090a8;font-size:12px">Sin respuestas para este técnico.</div>';return;}
+  const tech=TECHS.find(t=>t.key===key);
+  const p1avg=avg(allR.map(r=>r[`q1_${key}`]));
+  const p2avg=avg(allR.map(r=>r[`q2_${key}`]));
+  const p3avg=avg(allR.map(r=>r[`q3_${key}`]));
 
-  const p1avg=avg(tr.map(r=>r.q1));const p2avg=avg(tr.map(r=>r.q2));const p3avg=avg(tr.map(r=>r.q3));
-
-  const dafoParsed={
-    fortalezas:freqScored(tr.map(r=>parseKV(r.fortalezas)),3),
-    debilidades:freqScored(tr.map(r=>parseKV(r.debilidades)),3),
-    oportunidades:freqScored(tr.map(r=>parseKV(r.oportunidades)),3),
-    amenazas:freqScored(tr.map(r=>parseKV(r.amenazas)),3)
-  };
+  const dafoBySection={};
+  Object.keys(DAFO_SECTIONS).forEach(dk=>{
+    const parsed=allR.map(r=>{
+      const kv=parseKV(r[`dafo_${key}`]);
+      const filtered={};
+      Object.entries(kv).forEach(([k,v])=>{if(k.startsWith(dk+'_'))filtered[k.replace(dk+'_','')]=v;});
+      return filtered;
+    });
+    dafoBySection[dk]=freqScored(parsed,3);
+  });
 
   const pillBox=(items,type)=>items.length
-    ?items.map(([k,d])=>{
-      const sc=Math.round(d.total/d.count);
-      return `<span class="dafo-pill ${type}"><span class="score-badge" style="background:${scoreColor5(sc)}">${sc}</span>${k}</span>`;
-    }).join('')
+    ?items.map(([k,d])=>{const sc=Math.round(d.total/d.count);return`<span class="dafo-pill ${type}"><span class="score-badge" style="background:${scoreColor(sc,5)}">${sc}</span>${k}</span>`}).join('')
     :'<span style="font-size:10px;color:#a0b0c0">Sin puntuaciones ≥ 3</span>';
 
   const valAvgEq={};const valAvgPr={};
   VALUES.forEach(v=>{
-    valAvgEq[v]=avg(tr.map(r=>{const kv=parseKV(r.valores_equipo);return kv[v]??null;}));
-    valAvgPr[v]=avg(tr.map(r=>{const kv=parseKV(r.valores_proyecto);return kv[v]??null;}));
+    valAvgEq[v]=avg(allR.map(r=>{const kv=parseKV(r.valores_equipo);return kv[v]??null;}));
+    valAvgPr[v]=avg(allR.map(r=>{const kv=parseKV(r.valores_proyecto);return kv[v]??null;}));
   });
 
-  const rid='radar-'+Math.random().toString(36).slice(2,6);
+  const rid='r'+Math.random().toString(36).slice(2,6);
+  const rcid='rc'+Math.random().toString(36).slice(2,6);
   const radarEq=VALUES.map(v=>valAvgEq[v]!==null?+valAvgEq[v].toFixed(1):0);
   const radarPr=VALUES.map(v=>valAvgPr[v]!==null?+valAvgPr[v].toFixed(1):0);
+  const radarComp=P4_KEYS.map(p=>avg(allR.map(r=>r[`p4_${p.key}_${key}`]))).map(v=>v!==null?+v.toFixed(1):0);
 
   document.getElementById('tech-detail').innerHTML=`
     <div class="tech-kpis">
-      <div class="sk"><div class="sk-val">${tr.length}</div><div class="sk-lbl">Evaluaciones</div></div>
+      <div class="sk"><div class="sk-val">${allR.length}</div><div class="sk-lbl">Evaluaciones</div></div>
       <div class="sk"><div class="sk-val" style="color:${scoreColor(p1avg)}">${fmt(p1avg)}</div><div class="sk-lbl">P1 Desempeño</div></div>
       <div class="sk"><div class="sk-val" style="color:${scoreColor(p2avg)}">${fmt(p2avg)}</div><div class="sk-lbl">P2 Metodología</div></div>
       <div class="sk"><div class="sk-val" style="color:${scoreColor(p3avg)}">${fmt(p3avg)}</div><div class="sk-lbl">P3 Resolución</div></div>
     </div>
     <div class="card" style="margin-bottom:12px">
-      <div class="ch"><div class="ch-left"><div class="ch-dot"></div>Competencias (P4) — radar</div></div>
-      <div class="cb"><div class="chart-h" style="height:240px"><canvas id="radar-comp-${rid}" role="img" aria-label="Radar competencias ${name}"></canvas></div></div>
+      <div class="ch"><div class="ch-left"><div class="ch-dot"></div>Competencias (P4)</div></div>
+      <div class="cb"><div style="position:relative;width:100%;height:240px"><canvas id="${rcid}" role="img" aria-label="Radar competencias ${tech.name}"></canvas></div></div>
     </div>
     <div class="dafo-results-grid">
-      <div class="dafo-res-card"><div class="drh blue">Fortalezas (≥3)</div><div class="drb">${pillBox(dafoParsed.fortalezas,'blue')}</div></div>
-      <div class="dafo-res-card"><div class="drh yell">Debilidades (≥3)</div><div class="drb">${pillBox(dafoParsed.debilidades,'amber')}</div></div>
-      <div class="dafo-res-card"><div class="drh blue">Oportunidades (≥3)</div><div class="drb">${pillBox(dafoParsed.oportunidades,'blue')}</div></div>
-      <div class="dafo-res-card"><div class="drh yell">Amenazas (≥3)</div><div class="drb">${pillBox(dafoParsed.amenazas,'amber')}</div></div>
+      <div class="dafo-res-card"><div class="drh blue">Fortalezas (≥3)</div><div class="drb">${pillBox(dafoBySection.strengths,'blue')}</div></div>
+      <div class="dafo-res-card"><div class="drh yell">Debilidades (≥3)</div><div class="drb">${pillBox(dafoBySection.weaknesses,'amber')}</div></div>
+      <div class="dafo-res-card"><div class="drh blue">Oportunidades (≥3)</div><div class="drb">${pillBox(dafoBySection.opportunities,'blue')}</div></div>
+      <div class="dafo-res-card"><div class="drh yell">Amenazas (≥3)</div><div class="drb">${pillBox(dafoBySection.threats,'amber')}</div></div>
     </div>
     <div class="card" style="margin-top:12px">
       <div class="ch"><div class="ch-left"><div class="ch-dot"></div>Valores — Equipo vs Proyecto</div></div>
@@ -347,33 +343,18 @@ function showTech(name,btn){
           <div class="val-legend-item"><div class="val-legend-dot" style="background:#F1BE48;border:1px solid #c8a030"></div>Proyecto</div>
         </div>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start">
-          <div class="chart-h-lg"><canvas id="${rid}" role="img" aria-label="Radar valores equipo vs proyecto ${name}"></canvas></div>
+          <div class="chart-h-lg"><canvas id="${rid}" role="img" aria-label="Radar valores equipo vs proyecto"></canvas></div>
           <table class="val-tbl">
             <thead><tr><th>Valor</th><th>Equipo</th><th>Proyecto</th></tr></thead>
-            <tbody>
-              ${VALUES.map(v=>`
-                <tr>
-                  <td>${v}</td>
-                  <td><span class="score-chip" style="background:${scoreColor5(valAvgEq[v])}">${fmt(valAvgEq[v])}</span></td>
-                  <td><span class="score-chip" style="background:${scoreColor5(valAvgPr[v])}">${fmt(valAvgPr[v])}</span></td>
-                </tr>`).join('')}
-            </tbody>
+            <tbody>${VALUES.map(v=>`<tr><td>${v}</td><td><span class="score-chip" style="background:${scoreColor(valAvgEq[v],5)}">${fmt(valAvgEq[v])}</span></td><td><span class="score-chip" style="background:${scoreColor(valAvgPr[v],5)}">${fmt(valAvgPr[v])}</span></td></tr>`).join('')}</tbody>
           </table>
         </div>
       </div>
     </div>`;
 
-  const compVals=[
-    avg(tr.map(r=>r.r_plan)),avg(tr.map(r=>r.r_res)),
-    avg(tr.map(r=>r.r_resp)),avg(tr.map(r=>r.r_impl)),avg(tr.map(r=>r.r_team))
-  ].map(v=>v!==null?+v.toFixed(1):0);
-
-  const cr0=new Chart(document.getElementById('radar-comp-'+rid),{
+  const cr0=new Chart(document.getElementById(rcid),{
     type:'radar',
-    data:{
-      labels:['Planificación','Resultados','Responsabilidad','Implicación','Trabajo equipo'],
-      datasets:[{label:name,data:compVals,backgroundColor:'rgba(14,65,116,.1)',borderColor:'#0E4174',pointBackgroundColor:'#F1BE48',pointRadius:5,borderWidth:2}]
-    },
+    data:{labels:P4_KEYS.map(p=>p.label),datasets:[{label:tech.name,data:radarComp,backgroundColor:'rgba(14,65,116,.1)',borderColor:'#0E4174',pointBackgroundColor:'#F1BE48',pointRadius:5,borderWidth:2}]},
     options:{responsive:true,maintainAspectRatio:false,scales:{r:{beginAtZero:true,max:10,ticks:{stepSize:2,font:{size:9}},pointLabels:{font:{size:10},color:'#1a2e44'},grid:{color:'rgba(14,65,116,.08)'},angleLines:{color:'rgba(14,65,116,.1)'}}},plugins:{legend:{display:false}}}
   });
   charts.push(cr0);
