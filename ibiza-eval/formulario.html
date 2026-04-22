@@ -4,174 +4,181 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>Evaluación Puesta en Marcha Ibiza — Polarier</title>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-:root{--B:#0E4174;--Y:#F1BE48;--YD:#7a5100;--BL:#e8f0fb;--BL2:#f0f5fd}
+:root{
+  --B:#0E4174;--B2:#1a5a9e;--B3:#0a2d54;
+  --Y:#F1BE48;--YD:#7a5100;
+  --S1:#D32F2F;--S2:#F4511E;--S3:#FDD835;--S3t:#5a3800;
+  --S4:#8BC34A;--S4t:#2a4a00;--S5:#4CAF50;
+}
 body{font-family:'Montserrat',sans-serif;background:#e8eef6;color:#1a2e44;min-height:100vh}
-.shell{max-width:1000px;margin:0 auto;padding:0 0 60px}
+.shell{max-width:1020px;margin:0 auto;padding:0 0 80px}
 
 /* HERO */
-.hero{background:var(--B);color:#fff;padding:30px 32px 24px;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;right:-40px;top:-50px;width:220px;height:220px;border-radius:50%;background:rgba(241,190,72,.13);pointer-events:none}
-.hero::after{content:'';position:absolute;right:90px;bottom:-60px;width:140px;height:140px;border-radius:50%;background:rgba(241,190,72,.08);pointer-events:none}
-.hero-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
-.logo-txt{font-size:10px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;opacity:.42}
-.hero-badge{display:inline-flex;align-items:center;gap:7px;background:rgba(241,190,72,.22);color:#f5d67a;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:5px 14px;border-radius:999px;margin-bottom:13px}
-.hero-badge span{width:6px;height:6px;border-radius:50%;background:var(--Y);display:block}
-.hero h1{font-size:24px;font-weight:800;line-height:1.2;margin-bottom:8px}
-.hero p{font-size:12px;opacity:.72;line-height:1.75;max-width:600px}
+.hero{background:linear-gradient(135deg,var(--B3) 0%,var(--B) 60%,var(--B2) 100%);color:#fff;padding:36px 36px 28px;position:relative;overflow:hidden}
+.orb{position:absolute;border-radius:50%;pointer-events:none}
+.orb1{width:260px;height:260px;right:-60px;top:-60px;background:rgba(241,190,72,.1)}
+.orb2{width:160px;height:160px;right:100px;bottom:-80px;background:rgba(241,190,72,.07)}
+.hero-top{display:flex;align-items:center;gap:10px;margin-bottom:20px}
+.logo-mark{width:36px;height:36px;border-radius:10px;background:rgba(241,190,72,.2);display:flex;align-items:center;justify-content:center}
+.logo-mark svg{width:20px;height:20px}
+.logo-txt{font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;opacity:.5}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(241,190,72,.18);border:1px solid rgba(241,190,72,.3);color:#f5d67a;font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:6px 16px;border-radius:999px;margin-bottom:14px}
+.bdot{width:6px;height:6px;border-radius:50%;background:var(--Y)}
+.hero h1{font-size:26px;font-weight:900;line-height:1.2;margin-bottom:8px}
+.hero h1 span{color:var(--Y)}
+.hero p{font-size:13px;opacity:.68;line-height:1.8;max-width:580px}
 
 /* PROGRESS */
-.prog-wrap{background:var(--B);padding:0 32px 16px}
-.prog-track{height:6px;background:rgba(255,255,255,.14);border-radius:3px}
-.prog-fill{height:6px;background:var(--Y);border-radius:3px;transition:width .5s cubic-bezier(.4,0,.2,1);width:0%}
-.prog-footer{display:flex;align-items:center;justify-content:space-between;margin-top:8px}
-.prog-pct{font-size:12px;font-weight:800;color:var(--Y)}
-.prog-label{font-size:10px;color:rgba(255,255,255,.38);font-weight:600}
+.prog-wrap{background:var(--B3);padding:14px 36px 18px}
+.prog-header{display:flex;justify-content:space-between;margin-bottom:10px}
+.prog-label{font-size:11px;font-weight:700;color:rgba(255,255,255,.42);text-transform:uppercase;letter-spacing:.05em}
+.prog-pct{font-size:20px;font-weight:900;color:var(--Y)}
+.prog-track{height:6px;background:rgba(255,255,255,.1);border-radius:3px;overflow:hidden}
+.prog-fill{height:6px;background:linear-gradient(90deg,var(--Y),#f5d67a);border-radius:3px;transition:width .6s cubic-bezier(.4,0,.2,1);width:0%}
 
 /* BODY */
-.body{padding:20px 20px}
+.body{padding:24px}
 
-/* CARDS */
-.card{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 3px 16px rgba(14,65,116,.09);border:1px solid rgba(14,65,116,.07);margin-bottom:16px}
-.ch{background:var(--B);color:#fff;padding:14px 20px;font-size:11px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;display:flex;align-items:center;gap:10px}
-.ch-icon{width:30px;height:30px;border-radius:8px;background:rgba(241,190,72,.2);display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.ch-icon svg{width:15px;height:15px}
-.ch-badge{background:var(--Y);color:var(--YD);font-size:11px;font-weight:800;padding:4px 12px;border-radius:999px;flex-shrink:0}
-.cb{padding:18px 20px}
+/* SECTION CARD */
+.scard{background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 4px 24px rgba(14,65,116,.08);border:1px solid rgba(14,65,116,.06);margin-bottom:20px}
+.scard-head{background:linear-gradient(135deg,var(--B3),var(--B));padding:16px 22px;display:flex;align-items:center;gap:12px}
+.snum{width:34px;height:34px;border-radius:10px;background:var(--Y);color:var(--YD);font-size:13px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.sico{width:34px;height:34px;border-radius:10px;background:rgba(241,190,72,.18);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.sico svg{width:16px;height:16px}
+.stitle{font-size:13px;font-weight:800;color:#fff;flex:1}
+.scard-body{padding:22px 24px}
 
-/* DATA GENERAL */
-.row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
-.field label{display:block;font-size:10px;font-weight:800;color:var(--B);text-transform:uppercase;letter-spacing:.08em;margin-bottom:7px}
-.field input{width:100%;border:1.5px solid #d8e4f2;background:#f5f8fd;border-radius:10px;padding:11px 14px;font-size:13px;font-family:inherit;color:#1a2e44;outline:none;transition:.2s}
-.field input:focus{border-color:var(--B);background:#fff;box-shadow:0 0 0 3px rgba(14,65,116,.08)}
-.field input[readonly]{background:#edf2f9;color:#607080;cursor:default}
+/* HINT */
+.hint{border-radius:14px;padding:14px 18px;margin-bottom:18px;font-size:12px;line-height:1.8;font-weight:500}
+.hint-b{background:linear-gradient(135deg,#f0f6ff,#e8f0fb);border:1px solid rgba(14,65,116,.12);color:#1a3558}
+.hint-b strong{color:var(--B);font-weight:800}
+.hint-y{background:linear-gradient(135deg,#fffbf0,#fef5d6);border:1px solid rgba(241,190,72,.3);color:#5a3800}
+.hint-y strong{color:var(--YD);font-weight:800}
 
-/* HINT BOX */
-.hint-box{background:linear-gradient(135deg,#f0f5fd,#e8f0fb);border:1px solid rgba(14,65,116,.12);border-radius:12px;padding:12px 16px;margin-bottom:16px;font-size:11px;color:#1a3558;line-height:1.7}
-.hint-box strong{color:var(--B);font-weight:800}
-.hint-box.yellow{background:linear-gradient(135deg,#fffbf0,#fef5d6);border-color:rgba(241,190,72,.35);color:#5a3800}
-.hint-box.yellow strong{color:var(--YD)}
+/* GENERAL DATA */
+.row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+.field label{display:block;font-size:10px;font-weight:800;color:var(--B);text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px}
+.finput{width:100%;border:1.5px solid #dde8f5;background:#f7fafd;border-radius:12px;padding:12px 16px;font-size:13px;font-family:inherit;color:#1a2e44;outline:none;transition:.2s;font-weight:500}
+.finput:focus{border-color:var(--B);background:#fff;box-shadow:0 0 0 4px rgba(14,65,116,.07)}
+.finput[readonly]{background:#eef2f8;color:#607080;cursor:default}
 
-/* TABLES */
-.tbl-wrap{overflow-x:auto;border-radius:12px;border:1.5px solid rgba(14,65,116,.1)}
-table.main-tbl{width:100%;border-collapse:collapse;min-width:500px}
-table.main-tbl thead tr{background:var(--B)}
-table.main-tbl thead th{padding:12px 16px;font-size:10px;font-weight:800;color:#fff;text-align:left;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
-table.main-tbl thead th:first-child{min-width:160px}
-table.main-tbl tbody tr:nth-child(odd){background:#fff}
-table.main-tbl tbody tr:nth-child(even){background:var(--BL2)}
-table.main-tbl tbody tr:hover td{background:var(--BL)!important}
-table.main-tbl tbody td{padding:12px 16px;border-bottom:1px solid rgba(14,65,116,.06);vertical-align:middle}
-table.main-tbl tbody tr:last-child td{border-bottom:none}
-.tech-name-cell{font-size:13px;font-weight:700;color:var(--B);display:flex;align-items:center;gap:8px}
-.tech-dot{width:8px;height:8px;border-radius:50%;background:var(--Y);flex-shrink:0}
+/* TABLE */
+.tbl-outer{border-radius:16px;overflow:hidden;border:1.5px solid rgba(14,65,116,.09)}
+table.ptbl{width:100%;border-collapse:collapse}
+table.ptbl thead tr{background:linear-gradient(90deg,var(--B3),var(--B))}
+table.ptbl thead th{padding:13px 16px;font-size:10px;font-weight:800;color:#fff;text-align:left;letter-spacing:.07em;text-transform:uppercase;white-space:nowrap}
+table.ptbl thead th:first-child{width:25%;min-width:160px}
+table.ptbl thead th:last-child{width:75%}
+table.ptbl tbody tr:nth-child(odd){background:#fff}
+table.ptbl tbody tr:nth-child(even){background:#f7fafd}
+table.ptbl tbody tr:hover td{background:#eef4fb!important;transition:.15s}
+table.ptbl tbody td{padding:12px 16px;border-bottom:1px solid rgba(14,65,116,.05);vertical-align:middle}
+table.ptbl tbody tr:last-child td{border-bottom:none}
+.tname{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:700;color:var(--B)}
+.tav{width:32px;height:32px;border-radius:10px;background:linear-gradient(135deg,var(--B),var(--B2));color:#fff;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 
-/* SEMAPHORE BUTTONS 0-10 */
-.scores{display:flex;flex-wrap:wrap;gap:5px}
-.scb{width:34px;height:34px;border-radius:8px;border:none;font-size:11px;font-weight:800;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.15s;font-family:inherit;opacity:.45;color:#fff}
-.scb:hover{opacity:.82;transform:scale(1.06)}
-.scb.on{opacity:1;transform:scale(1.12);box-shadow:0 3px 10px rgba(0,0,0,.22)}
-.scb[data-v="0"]{background:#B71C1C}
-.scb[data-v="1"]{background:#D32F2F}
-.scb[data-v="2"]{background:#F4511E}
-.scb[data-v="3"]{background:#FB8C00;color:#5a3200}
-.scb[data-v="4"]{background:#FDD835;color:#5a3200}
-.scb[data-v="5"]{background:#C6D500;color:#3a4000}
-.scb[data-v="6"]{background:#8BC34A;color:#1a3000}
-.scb[data-v="7"]{background:#7CB342}
-.scb[data-v="8"]{background:#43A047}
-.scb[data-v="9"]{background:#2E7D32}
-.scb[data-v="10"]{background:#1B5E20}
+/* SEMAPHORE 1-5 BUTTONS — used in P1 P2 P3 P5 */
+.sc5{display:flex;gap:8px;width:100%}
+.sb5{flex:1;height:38px;border-radius:10px;border:none;font-size:14px;font-weight:900;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.15s;font-family:inherit;opacity:.38;color:#fff}
+.sb5:hover{opacity:.78;transform:scale(.98)}
+.sb5.on{opacity:1;transform:scale(1.05);box-shadow:0 5px 14px rgba(0,0,0,.2)}
+.sb5[data-v="1"]{background:var(--S1)}
+.sb5[data-v="2"]{background:var(--S2)}
+.sb5[data-v="3"]{background:var(--S3);color:var(--S3t)}
+.sb5[data-v="4"]{background:var(--S4);color:var(--S4t)}
+.sb5[data-v="5"]{background:var(--S5)}
 
-/* P4 DROPDOWN */
-.p4-select{appearance:none;-webkit-appearance:none;border:1.5px solid #d8e4f2;border-radius:8px;padding:7px 28px 7px 10px;font-size:12px;font-weight:700;font-family:inherit;cursor:pointer;outline:none;min-width:80px;transition:.2s;color:#fff;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' fill='none'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23fff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 8px center}
-.p4-select.empty{background-color:#f5f8fd;color:#8090a8;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' fill='none'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%238090a8' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");border-color:#d8e4f2}
-.p4-select option{color:#1a2e44;background:#fff}
+/* SEMAPHORE 1-5 BUTTONS — used in P10 values (smaller, centered) */
+.vsc5{display:flex;gap:6px;justify-content:center}
+.vsb{width:36px;height:36px;border-radius:9px;border:none;font-size:13px;font-weight:900;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.15s;font-family:inherit;opacity:.38;color:#fff}
+.vsb:hover{opacity:.78;transform:scale(.98)}
+.vsb.on{opacity:1;transform:scale(1.1);box-shadow:0 4px 12px rgba(0,0,0,.2)}
+.vsb[data-v="1"]{background:var(--S1)}
+.vsb[data-v="2"]{background:var(--S2)}
+.vsb[data-v="3"]{background:var(--S3);color:var(--S3t)}
+.vsb[data-v="4"]{background:var(--S4);color:var(--S4t)}
+.vsb[data-v="5"]{background:var(--S5)}
 
-/* RECOMMENDATION */
-.rec-opts{display:flex;gap:7px;flex-wrap:wrap}
-.rec-btn{padding:7px 12px;border-radius:9px;border:1.5px solid #d8e4f2;background:#f5f8fd;font-size:11px;font-weight:700;cursor:pointer;color:#3a5272;font-family:inherit;transition:.18s;white-space:nowrap}
-.rec-btn:hover{border-color:rgba(14,65,116,.3);background:var(--BL)}
-.rec-btn.on{background:var(--Y);border-color:var(--Y);color:var(--YD);font-weight:800;box-shadow:0 2px 8px rgba(241,190,72,.3)}
+/* DROPDOWN SEMAPHORE 1-5 — used in P4 and DAFO */
+.sel5{appearance:none;-webkit-appearance:none;border:1.5px solid #dde8f5;border-radius:10px;padding:8px 28px 8px 12px;font-size:12px;font-weight:700;font-family:inherit;cursor:pointer;outline:none;min-width:72px;transition:.2s;background-repeat:no-repeat;background-position:right 8px center;background-size:10px}
+.sel5.empty{background-color:#f7fafd;color:#8090a8;border-color:#dde8f5;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' fill='none'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%238090a8' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}
+.sel5 option{color:#1a2e44;background:#fff}
+.sel5.s1{background-color:var(--S1);color:#fff;border-color:var(--S1);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' fill='none'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23fff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}
+.sel5.s2{background-color:var(--S2);color:#fff;border-color:var(--S2);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' fill='none'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23fff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}
+.sel5.s3{background-color:var(--S3);color:var(--S3t);border-color:var(--S3);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' fill='none'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%235a3800' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}
+.sel5.s4{background-color:var(--S4);color:var(--S4t);border-color:var(--S4);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' fill='none'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%232a4a00' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}
+.sel5.s5{background-color:var(--S5);color:#fff;border-color:var(--S5);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' fill='none'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23fff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}
 
-/* DAFO */
-.dafo-tbl-wrap{overflow-x:auto;border-radius:12px;border:1.5px solid rgba(14,65,116,.1)}
-table.dafo-tbl{width:100%;border-collapse:collapse;min-width:700px}
-table.dafo-tbl thead th{padding:11px 14px;font-size:10px;font-weight:800;color:#fff;background:var(--B);text-align:center;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
-table.dafo-tbl thead th:first-child{text-align:left;min-width:180px}
-table.dafo-tbl .dafo-section td{padding:9px 14px;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.07em}
-table.dafo-tbl .dafo-section.blue td{background:rgba(14,65,116,.08);color:var(--B)}
-table.dafo-tbl .dafo-section.yellow td{background:rgba(241,190,72,.18);color:var(--YD)}
-table.dafo-tbl tbody tr:not(.dafo-section):nth-child(odd){background:#fff}
-table.dafo-tbl tbody tr:not(.dafo-section):nth-child(even){background:var(--BL2)}
-table.dafo-tbl tbody tr:not(.dafo-section):hover td{background:var(--BL)!important}
-table.dafo-tbl tbody td{padding:9px 12px;border-bottom:1px solid rgba(14,65,116,.05);vertical-align:middle}
-table.dafo-tbl tbody tr:last-child td{border-bottom:none}
-.dafo-item-name{font-size:11px;font-weight:700;color:#1a3558}
-.dafo-btns{display:flex;gap:4px;justify-content:center}
-.dbt{width:28px;height:28px;border-radius:7px;border:none;font-size:10px;font-weight:800;cursor:pointer;font-family:inherit;transition:.15s;color:#fff;display:flex;align-items:center;justify-content:center}
-.dbt.blue-off{background:rgba(14,65,116,.12);color:var(--B)}
-.dbt.blue-off:hover{background:rgba(14,65,116,.25)}
-.dbt.blue-on{background:var(--B);color:#fff;box-shadow:0 2px 8px rgba(14,65,116,.3);transform:scale(1.12)}
-.dbt.yell-off{background:rgba(241,190,72,.2);color:var(--YD)}
-.dbt.yell-off:hover{background:rgba(241,190,72,.4)}
-.dbt.yell-on{background:var(--Y);color:var(--YD);box-shadow:0 2px 8px rgba(241,190,72,.35);transform:scale(1.12)}
+/* RECOMMENDATION LEGEND */
+.rec-legend{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:18px}
+.rl-item{border-radius:14px;padding:12px 8px;text-align:center;border:1.5px solid transparent}
+.rl-num{width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;margin:0 auto 8px;color:#fff}
+.rl-txt{font-size:10px;font-weight:600;color:#3a5272;line-height:1.45}
 
-/* VALUES */
-table.val-tbl{width:100%;border-collapse:collapse}
-table.val-tbl thead th{padding:11px 14px;font-size:10px;font-weight:800;color:#fff;background:var(--B);text-align:center;letter-spacing:.06em;text-transform:uppercase}
-table.val-tbl thead th:first-child{text-align:left;min-width:180px}
-table.val-tbl tbody tr:nth-child(odd){background:#fff}
-table.val-tbl tbody tr:nth-child(even){background:var(--BL2)}
-table.val-tbl tbody tr:hover td{background:var(--BL)!important}
-table.val-tbl tbody td{padding:11px 14px;border-bottom:1px solid rgba(14,65,116,.06);vertical-align:middle}
-table.val-tbl tbody tr:last-child td{border-bottom:none}
-.val-name-cell{display:flex;align-items:center;gap:9px;font-size:13px;font-weight:700;color:var(--B)}
-.val-icon{width:28px;height:28px;border-radius:8px;background:var(--BL);display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.val-icon svg{width:14px;height:14px}
-.val-scores{display:flex;gap:5px;justify-content:center;flex-wrap:wrap}
-.vsb{width:32px;height:32px;border-radius:8px;border:none;font-size:11px;font-weight:800;cursor:pointer;font-family:inherit;transition:.15s;opacity:.45;color:#fff;display:flex;align-items:center;justify-content:center}
-.vsb:hover{opacity:.82;transform:scale(1.06)}
-.vsb.on{opacity:1;box-shadow:0 3px 10px rgba(0,0,0,.22);transform:scale(1.12)}
-.vsb[data-v="0"]{background:#B71C1C}
-.vsb[data-v="1"]{background:#D32F2F}
-.vsb[data-v="2"]{background:#FB8C00;color:#5a3200}
-.vsb[data-v="3"]{background:#FDD835;color:#5a3200}
-.vsb[data-v="4"]{background:#7CB342}
-.vsb[data-v="5"]{background:#1B5E20}
-.val-scale{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
-.val-scale-item{display:flex;align-items:center;gap:5px;font-size:10px;font-weight:700}
-.val-scale-dot{width:20px;height:20px;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:800;color:#fff;flex-shrink:0}
-.col-head-inner{display:flex;align-items:center;justify-content:center;gap:6px}
-.col-indicator{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+/* P4 TABLE — techs as columns */
+.tbl-outer-x{border-radius:16px;overflow-x:auto;border:1.5px solid rgba(14,65,116,.09)}
+table.ctbl{width:100%;border-collapse:collapse;min-width:700px}
+table.ctbl thead tr{background:linear-gradient(90deg,var(--B3),var(--B))}
+table.ctbl thead th{padding:12px 10px;font-size:10px;font-weight:800;color:#fff;text-align:center;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
+table.ctbl thead th:first-child{text-align:left;min-width:180px}
+table.ctbl tbody tr:nth-child(odd){background:#fff}
+table.ctbl tbody tr:nth-child(even){background:#f7fafd}
+table.ctbl tbody tr:hover td{background:#eef4fb!important}
+table.ctbl tbody td{padding:10px 8px;border-bottom:1px solid rgba(14,65,116,.05);vertical-align:middle;text-align:center}
+table.ctbl tbody td:first-child{text-align:left;padding-left:14px}
+table.ctbl tbody tr:last-child td{border-bottom:none}
+.row-label{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:700;color:var(--B)}
+.row-av{width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,var(--B),var(--B2));color:#fff;font-size:9px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+
+/* VALUES TABLE */
+.val-scale{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px}
+.vs-item{display:flex;align-items:center;gap:6px;font-size:11px;font-weight:600;color:#4a5568}
+.vs-chip{width:26px;height:26px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:#fff;flex-shrink:0}
+table.vtbl{width:100%;border-collapse:collapse}
+table.vtbl thead tr{background:linear-gradient(90deg,var(--B3),var(--B))}
+table.vtbl thead th{padding:13px 16px;font-size:10px;font-weight:800;color:#fff;text-align:center;letter-spacing:.07em;text-transform:uppercase}
+table.vtbl thead th:first-child{text-align:left;min-width:200px}
+table.vtbl tbody tr:nth-child(odd){background:#fff}
+table.vtbl tbody tr:nth-child(even){background:#f7fafd}
+table.vtbl tbody tr:hover td{background:#eef4fb!important}
+table.vtbl tbody td{padding:12px 16px;border-bottom:1px solid rgba(14,65,116,.05);vertical-align:middle}
+table.vtbl tbody tr:last-child td{border-bottom:none}
+.vname{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:700;color:var(--B)}
+.vico{width:32px;height:32px;border-radius:10px;background:#eef4fb;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.vico svg{width:15px;height:15px}
+.col-hd{display:flex;align-items:center;justify-content:center;gap:6px;font-size:10px}
+.col-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
 
 /* ACTIONS */
-.actions{display:flex;gap:12px;justify-content:flex-end;align-items:center;padding:4px 0 0;flex-wrap:wrap}
-.toast{font-size:12px;padding:9px 16px;border-radius:10px;font-weight:700;display:none}
+.actions{display:flex;gap:12px;justify-content:flex-end;align-items:center;margin-top:8px;flex-wrap:wrap}
+.toast{font-size:12px;padding:10px 18px;border-radius:12px;font-weight:700;display:none}
 .toast.ok{background:#e4f7ec;color:#155e2e;display:inline-block;border:1px solid #b2dfcc}
 .toast.err{background:#fde8e8;color:#9b1515;display:inline-block;border:1px solid #f5b8b8}
-.btn{border:none;border-radius:11px;padding:12px 26px;font-weight:800;cursor:pointer;font-size:13px;font-family:inherit;transition:.18s}
-.btn-ghost{background:#eef2f8;color:#3a5272;border:1.5px solid #d8e4f2}
-.btn-ghost:hover{background:#dde5f2}
-.btn-main{background:var(--B);color:#fff;box-shadow:0 4px 14px rgba(14,65,116,.28)}
-.btn-main:hover{background:#0a3260}
+.btn{border:none;border-radius:12px;padding:13px 28px;font-weight:800;cursor:pointer;font-size:13px;font-family:inherit;transition:.2s}
+.btn-ghost{background:#eef2f8;color:#3a5272;border:1.5px solid #dde8f2}
+.btn-ghost:hover{background:#dde8f2}
+.btn-main{background:linear-gradient(135deg,var(--B3),var(--B));color:#fff;box-shadow:0 6px 20px rgba(14,65,116,.3)}
+.btn-main:hover{box-shadow:0 8px 24px rgba(14,65,116,.4);transform:translateY(-1px)}
 .btn-main:active{transform:scale(.98)}
-.btn-main:disabled{opacity:.5;cursor:not-allowed}
+.btn-main:disabled{opacity:.5;cursor:not-allowed;transform:none;box-shadow:none}
 
 /* DONE */
-.done-screen{display:none;padding:80px 24px;text-align:center}
+.done-screen{display:none;padding:90px 28px;text-align:center}
 .done-screen.show{display:block}
-.done-icon{width:76px;height:76px;border-radius:50%;background:var(--B);margin:0 auto 22px;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 28px rgba(14,65,116,.3)}
-.done-icon svg{width:36px;height:36px}
-.done-title{font-size:24px;font-weight:800;color:var(--B);margin-bottom:10px}
-.done-sub{font-size:13px;color:#607080;margin-bottom:28px;line-height:1.75}
+.done-ring{width:90px;height:90px;border-radius:50%;background:linear-gradient(135deg,var(--B3),var(--B));margin:0 auto 24px;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 36px rgba(14,65,116,.32)}
+.done-ring svg{width:42px;height:42px}
+.done-title{font-size:26px;font-weight:900;color:var(--B);margin-bottom:10px}
+.done-sub{font-size:14px;color:#607080;margin-bottom:32px;line-height:1.8}
 
-@media(max-width:680px){
-  .body{padding:12px}
+@media(max-width:720px){
+  .body{padding:14px}
   .row3{grid-template-columns:1fr}
-  .scb{width:28px;height:28px;font-size:10px}
+  .rec-legend{grid-template-columns:1fr 1fr}
+  .sb5{height:32px;font-size:12px}
+  .vsb{width:30px;height:30px;font-size:11px}
 }
 </style>
 </head>
@@ -179,158 +186,145 @@ table.val-tbl tbody tr:last-child td{border-bottom:none}
 <div class="shell">
 
 <div class="hero">
-  <div class="hero-top"><div class="logo-txt">Polarier · Love your linen</div></div>
-  <div class="hero-badge"><span></span>Proyecto Ibiza · Evaluación técnica</div>
-  <h1>Evaluación de Puesta en Marcha</h1>
-  <p>Evalúa a todos los técnicos del proyecto en una sola sesión. Completa todas las secciones antes de enviar. Tus respuestas son confidenciales.</p>
+  <div class="orb orb1"></div><div class="orb orb2"></div>
+  <div class="hero-top">
+    <div class="logo-mark"><svg viewBox="0 0 20 20" fill="none"><path d="M10 2l2 6h6l-5 3.5 2 6L10 14l-5 3.5 2-6L2 8h6z" stroke="#F1BE48" stroke-width="1.5" stroke-linejoin="round"/></svg></div>
+    <span class="logo-txt">Polarier · Love your linen</span>
+  </div>
+  <div class="hero-badge"><div class="bdot"></div>Proyecto Ibiza · Evaluación técnica</div>
+  <h1>Evaluación de <span>Puesta en Marcha</span></h1>
+  <p>Evalúa a todos los técnicos del proyecto en una sola sesión. Completa todas las secciones con objetividad antes de enviar. Tus respuestas son estrictamente confidenciales.</p>
 </div>
 <div class="prog-wrap">
-  <div class="prog-track"><div class="prog-fill" id="prog"></div></div>
-  <div class="prog-footer">
+  <div class="prog-header">
     <span class="prog-label">Progreso del formulario</span>
     <span class="prog-pct" id="prog-txt">0%</span>
   </div>
+  <div class="prog-track"><div class="prog-fill" id="prog"></div></div>
 </div>
 
 <div id="form-wrap">
 <div class="body">
 
   <!-- DATOS GENERALES -->
-  <div class="card">
-    <div class="ch">
-      <div class="ch-icon"><svg viewBox="0 0 15 15" fill="none"><path d="M7.5 7.5a3.5 3.5 0 100-7 3.5 3.5 0 000 7zM2 13c0-2.5 2.5-4.5 5.5-4.5S13 10.5 13 13" stroke="#F1BE48" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-      Datos generales
+  <div class="scard">
+    <div class="scard-head">
+      <div class="sico"><svg viewBox="0 0 16 16" fill="none"><path d="M8 8a3.5 3.5 0 100-7 3.5 3.5 0 000 7zM2 14c0-2.8 2.7-5 6-5s6 2.2 6 5" stroke="#F1BE48" stroke-width="1.4" stroke-linecap="round"/></svg></div>
+      <span class="stitle">Datos generales</span>
     </div>
-    <div class="cb">
+    <div class="scard-body">
       <div class="row3">
-        <div class="field"><label>Proyecto</label><input type="text" value="Puesta en Marcha Ibiza" readonly/></div>
-        <div class="field"><label>Tu nombre completo</label><input id="f-eval" type="text" placeholder="Escribe tu nombre"/></div>
-        <div class="field"><label>Fecha de evaluación</label><input id="f-date" type="date"/></div>
+        <div class="field"><label>Proyecto</label><input class="finput" type="text" value="Puesta en Marcha Ibiza" readonly/></div>
+        <div class="field"><label>Tu nombre completo</label><input class="finput" id="f-eval" type="text" placeholder="Escribe tu nombre"/></div>
+        <div class="field"><label>Fecha de evaluación</label><input class="finput" id="f-date" type="date"/></div>
       </div>
     </div>
   </div>
 
   <!-- P1 -->
-  <div class="card">
-    <div class="ch">
-      <div class="ch-badge">1</div>
-      <div class="ch-icon"><svg viewBox="0 0 15 15" fill="none"><path d="M7.5 1l1.6 4.5H14L10 8.3l1.5 4.5L7.5 10 4 12.8 5.5 8.3 1.5 5.5H7L7.5 1z" stroke="#F1BE48" stroke-width="1.3" stroke-linejoin="round"/></svg></div>
-      Desempeño general durante la puesta en marcha
+  <div class="scard">
+    <div class="scard-head">
+      <div class="snum">1</div>
+      <div class="sico"><svg viewBox="0 0 16 16" fill="none"><path d="M8 1.5l2 5h5l-4 3 1.5 5L8 12 3.5 15l1.5-5-4-3h5z" stroke="#F1BE48" stroke-width="1.3" stroke-linejoin="round"/></svg></div>
+      <span class="stitle">Desempeño general durante la puesta en marcha</span>
     </div>
-    <div class="cb">
-      <div class="hint-box">Valora el <strong>desempeño general</strong> de cada técnico a lo largo de toda la puesta en marcha. Considera su actitud, resultados y contribución global.</div>
-      <div class="tbl-wrap">
-        <table class="main-tbl"><thead><tr><th>Técnico</th><th>Puntuación (0 = Muy deficiente · 10 = Excelente)</th></tr></thead>
-        <tbody id="t-q1"></tbody></table>
-      </div>
+    <div class="scard-body">
+      <div class="hint hint-b">Valora el <strong>desempeño global</strong> de cada técnico a lo largo de toda la puesta en marcha. Considera su actitud, los resultados obtenidos y su contribución al éxito del proyecto. <strong>1 = Muy deficiente · 3 = Aceptable · 5 = Excelente</strong></div>
+      <div class="tbl-outer"><table class="ptbl"><thead><tr><th>Técnico</th><th>Puntuación (1–5)</th></tr></thead><tbody id="t-q1"></tbody></table></div>
     </div>
   </div>
 
   <!-- P2 -->
-  <div class="card">
-    <div class="ch">
-      <div class="ch-badge">2</div>
-      <div class="ch-icon"><svg viewBox="0 0 15 15" fill="none"><path d="M2 11.5h11M2 7.5h8M2 3.5h5" stroke="#F1BE48" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-      Enfoque metodológico durante la puesta en marcha
+  <div class="scard">
+    <div class="scard-head">
+      <div class="snum">2</div>
+      <div class="sico"><svg viewBox="0 0 16 16" fill="none"><path d="M2 12h12M2 8h9M2 4h6" stroke="#F1BE48" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+      <span class="stitle">Enfoque metodológico y capacidad de comunicar durante la puesta en marcha</span>
     </div>
-    <div class="cb">
-      <div class="hint-box">Evalúa si el técnico siguió <strong>procesos y metodologías</strong> establecidos, documentó correctamente y trabajó de forma estructurada.</div>
-      <div class="tbl-wrap">
-        <table class="main-tbl"><thead><tr><th>Técnico</th><th>Puntuación (0 = Muy deficiente · 10 = Excelente)</th></tr></thead>
-        <tbody id="t-q2"></tbody></table>
-      </div>
+    <div class="scard-body">
+      <div class="hint hint-b">Evalúa en qué medida el técnico siguió los <strong>procesos y metodologías Polarier</strong>, documentó correctamente y fue capaz de <strong>comunicar con claridad</strong> el estado del proyecto a todos los interlocutores clave, tanto internos como externos. <strong>1 = Muy deficiente · 3 = Aceptable · 5 = Excelente</strong></div>
+      <div class="tbl-outer"><table class="ptbl"><thead><tr><th>Técnico</th><th>Puntuación (1–5)</th></tr></thead><tbody id="t-q2"></tbody></table></div>
     </div>
   </div>
 
   <!-- P3 -->
-  <div class="card">
-    <div class="ch">
-      <div class="ch-badge">3</div>
-      <div class="ch-icon"><svg viewBox="0 0 15 15" fill="none"><path d="M7.5 2v4l2.5 2.5" stroke="#F1BE48" stroke-width="1.5" stroke-linecap="round"/><circle cx="7.5" cy="7.5" r="5.5" stroke="#F1BE48" stroke-width="1.3"/></svg></div>
-      Capacidad para resolver problemas e imprevistos
+  <div class="scard">
+    <div class="scard-head">
+      <div class="snum">3</div>
+      <div class="sico"><svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="#F1BE48" stroke-width="1.3"/><path d="M8 5v3.5l2.5 1.5" stroke="#F1BE48" stroke-width="1.3" stroke-linecap="round"/></svg></div>
+      <span class="stitle">Capacidad para resolver problemas e imprevistos</span>
     </div>
-    <div class="cb">
-      <div class="hint-box">Valora cómo respondió el técnico ante <strong>situaciones inesperadas</strong>: velocidad de reacción, calidad de las soluciones y autonomía en la toma de decisiones.</div>
-      <div class="tbl-wrap">
-        <table class="main-tbl"><thead><tr><th>Técnico</th><th>Puntuación (0 = Muy deficiente · 10 = Excelente)</th></tr></thead>
-        <tbody id="t-q3"></tbody></table>
-      </div>
+    <div class="scard-body">
+      <div class="hint hint-b">Valora cómo respondió el técnico ante <strong>situaciones inesperadas</strong>: velocidad de reacción, calidad de las soluciones y capacidad de decisión autónoma bajo presión. <strong>1 = Muy deficiente · 3 = Aceptable · 5 = Excelente</strong></div>
+      <div class="tbl-outer"><table class="ptbl"><thead><tr><th>Técnico</th><th>Puntuación (1–5)</th></tr></thead><tbody id="t-q3"></tbody></table></div>
     </div>
   </div>
 
   <!-- P4 -->
-  <div class="card">
-    <div class="ch">
-      <div class="ch-badge">4</div>
-      <div class="ch-icon"><svg viewBox="0 0 15 15" fill="none"><path d="M7.5 1l1.6 4.5H14L10 8.3l1.5 4.5L7.5 10 4 12.8 5.5 8.3 1.5 5.5H7L7.5 1z" stroke="#F1BE48" stroke-width="1.3" stroke-linejoin="round"/></svg></div>
-      Características individuales (0 — 10)
+  <div class="scard">
+    <div class="scard-head">
+      <div class="snum">4</div>
+      <div class="sico"><svg viewBox="0 0 16 16" fill="none"><path d="M8 2l1.5 4H14l-3.5 2.5 1.3 4L8 10.5 4.2 12.5l1.3-4L2 6h4.5z" stroke="#F1BE48" stroke-width="1.3" stroke-linejoin="round"/></svg></div>
+      <span class="stitle">Características individuales — Selector 1 a 5</span>
     </div>
-    <div class="cb">
-      <div class="hint-box">Selecciona una puntuación del <strong>0 al 10</strong> para cada característica y técnico. El color del selector refleja la puntuación elegida.</div>
-      <div class="tbl-wrap">
-        <table class="main-tbl" id="t-p4"></table>
-      </div>
+    <div class="scard-body">
+      <div class="hint hint-b">Selecciona del <strong>1 al 5</strong> para cada técnico y característica. El selector cambia de color según el nivel elegido. <strong>1 = Muy bajo · 3 = Aceptable · 5 = Excelente</strong></div>
+      <div class="tbl-outer-x"><table class="ctbl" id="t-p4"></table></div>
     </div>
   </div>
 
   <!-- P5 -->
-  <div class="card">
-    <div class="ch">
-      <div class="ch-badge">5</div>
-      <div class="ch-icon"><svg viewBox="0 0 15 15" fill="none"><path d="M7.5 1.5l1.8 3.6 4 .6-2.9 2.8.7 4-3.6-1.9-3.6 1.9.7-4L1.7 5.7l4-.6 1.8-3.6z" stroke="#F1BE48" stroke-width="1.3" stroke-linejoin="round"/></svg></div>
-      Nivel de recomendación para un proyecto similar
+  <div class="scard">
+    <div class="scard-head">
+      <div class="snum">5</div>
+      <div class="sico"><svg viewBox="0 0 16 16" fill="none"><path d="M8 1.5l1.8 3.8 4.2.6-3 3 .7 4.2L8 11l-3.7 2.1.7-4.2-3-3 4.2-.6z" stroke="#F1BE48" stroke-width="1.3" stroke-linejoin="round"/></svg></div>
+      <span class="stitle">Nivel de recomendación para un proyecto similar</span>
     </div>
-    <div class="cb">
-      <div class="hint-box">¿Volverías a contar con este técnico? Selecciona la opción que mejor refleje tu valoración para cada uno.</div>
-      <div class="tbl-wrap">
-        <table class="main-tbl"><thead><tr><th>Técnico</th><th>Recomendación</th></tr></thead>
-        <tbody id="t-rec"></tbody></table>
-      </div>
+    <div class="scard-body">
+      <div class="hint hint-b">Consulta la leyenda y selecciona el nivel que mejor refleje tu valoración para cada técnico. Sé objetivo — tu respuesta influirá en decisiones de equipo futuras.</div>
+      <div class="rec-legend" id="rec-legend"></div>
+      <div class="tbl-outer"><table class="ptbl"><thead><tr><th>Técnico</th><th>Puntuación (1–5)</th></tr></thead><tbody id="t-rec"></tbody></table></div>
     </div>
   </div>
 
   <!-- DAFO -->
-  <div class="card">
-    <div class="ch">
-      <div class="ch-icon"><svg viewBox="0 0 15 15" fill="none"><rect x="1.5" y="1.5" width="12" height="12" rx="2" stroke="#F1BE48" stroke-width="1.3"/><path d="M1.5 7.5h12M7.5 1.5v12" stroke="#F1BE48" stroke-width="1.3"/></svg></div>
-      Análisis FODA — Evaluación cualitativa por técnico
+  <div class="scard">
+    <div class="scard-head">
+      <div class="snum">6</div>
+      <div class="sico"><svg viewBox="0 0 16 16" fill="none"><rect x="1.5" y="1.5" width="13" height="13" rx="2.5" stroke="#F1BE48" stroke-width="1.3"/><path d="M1.5 8h13M8 1.5v13" stroke="#F1BE48" stroke-width="1.3"/></svg></div>
+      <span class="stitle">6. Evaluación de competencias — Análisis FODA automático</span>
     </div>
-    <div class="cb">
-      <div class="hint-box yellow">
-        <strong>¿Cómo completar el FODA?</strong><br>
-        Para cada aspecto listado, puntúa a cada técnico del <strong>1 al 5</strong> según la intensidad con la que observaste esa característica durante el proyecto.<br><br>
-        <strong>Fortalezas y Oportunidades</strong> → botones en <span style="color:var(--B);font-weight:800">azul</span> &nbsp;·&nbsp; <strong>Debilidades y Amenazas</strong> → botones en <span style="color:var(--YD);font-weight:800">amarillo</span><br>
-        <strong>1</strong> = No la tiene &nbsp;·&nbsp; <strong>3</strong> = Moderada &nbsp;·&nbsp; <strong>5</strong> = Indiscutible
+    <div class="scard-body">
+      <div class="hint hint-y">
+        <strong>¿Cómo funciona?</strong> Puntúa cada competencia del <strong>1 al 5</strong> para cada técnico. El sistema clasificará automáticamente:<br>
+        🔴 <strong>1–2 = Debilidad</strong> &nbsp;·&nbsp; 🔵 <strong>3 = Oportunidad de mejora</strong> &nbsp;·&nbsp; 🟢 <strong>4–5 = Fortaleza</strong>
       </div>
-      <div class="dafo-tbl-wrap">
-        <table class="dafo-tbl" id="t-dafo"></table>
-      </div>
+      <div class="tbl-outer-x"><table class="ctbl" id="t-dafo"></table></div>
     </div>
   </div>
 
-  <!-- P10 VALORES -->
-  <div class="card">
-    <div class="ch">
-      <div class="ch-badge">10</div>
-      <div class="ch-icon"><svg viewBox="0 0 15 15" fill="none"><path d="M7.5 1.5l1.8 3.6 4 .6-2.9 2.8.7 4-3.6-1.9-3.6 1.9.7-4L1.7 5.7l4-.6 1.8-3.6z" stroke="#F1BE48" stroke-width="1.3" stroke-linejoin="round"/></svg></div>
-      Evaluación de valores — Equipo y Proyecto
+  <!-- P10 -->
+  <div class="scard">
+    <div class="scard-head">
+      <div class="snum">7</div>
+      <div class="sico"><svg viewBox="0 0 16 16" fill="none"><path d="M8 1.5l1.8 3.8 4.2.6-3 3 .7 4.2L8 11l-3.7 2.1.7-4.2-3-3 4.2-.6z" stroke="#F1BE48" stroke-width="1.3" stroke-linejoin="round"/></svg></div>
+      <span class="stitle">7. Evaluación de valores Polarier — Equipo y Proyecto</span>
     </div>
-    <div class="cb">
-      <div class="hint-box">Esta pregunta evalúa al <strong>equipo y al proyecto en su conjunto</strong>, no a cada técnico individualmente. Puntúa del 0 al 5 en ambas columnas.</div>
+    <div class="scard-body">
+      <div class="hint hint-b">Evalúa en qué medida el <strong>equipo técnico</strong> vivió y transmitió los valores de Polarier durante el proyecto, y en qué medida el <strong>proyecto en sí mismo</strong> reflejó dichos valores desde su inicio hasta su ejecución, en todos los ámbitos de la empresa.</div>
       <div class="val-scale">
-        <div class="val-scale-item"><div class="val-scale-dot" style="background:#B71C1C">0</div><span style="color:#607080">Ausente</span></div>
-        <div class="val-scale-item"><div class="val-scale-dot" style="background:#D32F2F">1</div><span style="color:#607080">Apenas perceptible</span></div>
-        <div class="val-scale-item"><div class="val-scale-dot" style="background:#FB8C00">2</div><span style="color:#607080">En desarrollo</span></div>
-        <div class="val-scale-item"><div class="val-scale-dot" style="background:#FDD835;color:#5a3200">3</div><span style="color:#607080">Consolidado</span></div>
-        <div class="val-scale-item"><div class="val-scale-dot" style="background:#7CB342">4</div><span style="color:#607080">Destacado</span></div>
-        <div class="val-scale-item"><div class="val-scale-dot" style="background:#1B5E20">5</div><span style="color:#607080">Épico</span></div>
+        <div class="vs-item"><div class="vs-chip" style="background:var(--S1)">1</div>Apenas perceptible</div>
+        <div class="vs-item"><div class="vs-chip" style="background:var(--S2)">2</div>En desarrollo</div>
+        <div class="vs-item"><div class="vs-chip" style="background:var(--S3);color:var(--S3t)">3</div>Consolidado</div>
+        <div class="vs-item"><div class="vs-chip" style="background:var(--S4);color:var(--S4t)">4</div>Destacado</div>
+        <div class="vs-item"><div class="vs-chip" style="background:var(--S5)">5</div>Épico</div>
       </div>
-      <div class="tbl-wrap">
-        <table class="val-tbl">
+      <div class="tbl-outer">
+        <table class="vtbl">
           <thead><tr>
-            <th>Valor</th>
-            <th><div class="col-head-inner"><div class="col-indicator" style="background:#fff;border:1px solid rgba(255,255,255,.5)"></div>Equipo</div></th>
-            <th><div class="col-head-inner"><div class="col-indicator" style="background:var(--Y)"></div>Proyecto</div></th>
+            <th>Valor Polarier</th>
+            <th><div class="col-hd"><div class="col-dot" style="background:rgba(255,255,255,.7)"></div>Equipo</div></th>
+            <th><div class="col-hd"><div class="col-dot" style="background:var(--Y)"></div>Proyecto</div></th>
           </tr></thead>
           <tbody id="val-body"></tbody>
         </table>
@@ -343,77 +337,67 @@ table.val-tbl tbody tr:last-child td{border-bottom:none}
     <button class="btn btn-ghost" onclick="resetForm()">Limpiar todo</button>
     <button class="btn btn-main" id="btn-send" onclick="saveResponse()">Enviar evaluación</button>
   </div>
-
 </div>
 </div>
 
 <div class="done-screen" id="done-screen">
-  <div class="done-icon"><svg viewBox="0 0 36 36" fill="none"><path d="M9 18l7 7 11-12" stroke="#F1BE48" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+  <div class="done-ring"><svg viewBox="0 0 42 42" fill="none"><path d="M10 21l8 8 14-14" stroke="#F1BE48" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
   <div class="done-title">¡Evaluación enviada!</div>
-  <div class="done-sub">Tu respuesta fue registrada correctamente en el sistema.<br>Puedes cerrar esta ventana.</div>
+  <div class="done-sub">Tu respuesta fue registrada correctamente en el sistema Polarier.<br>Puedes cerrar esta ventana con total confianza.</div>
   <button class="btn btn-main" onclick="newEval()">Enviar otra evaluación</button>
 </div>
-
 </div>
 
 <script>
 const SB_URL='https://jjlfqpwgjedgswggwtlm.supabase.co';
 const SB_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpqbGZxcHdnamVkZ3N3Z2d3dGxtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzY3MTMxMzUsImV4cCI6MjA5MjI4OTEzNX0.N_iZREfMulT6mg_TEgy4G2qjpfoelxBYNgw_vyjnfAs';
 const TABLE='evaluaciones';
-const CACHE='ibiza-v7';
+const CACHE='ibiza-v9';
 
 const TECHS=[
-  {key:'breidy',name:'Breidy Caamal'},
-  {key:'melvin',name:'Melvin Romero'},
-  {key:'marcos',name:'Marcos Gómez'},
-  {key:'eric',name:'Eric Tejeda'},
-  {key:'gaspar',name:'Gaspar López'},
-  {key:'jacob',name:'Jacob Tec'}
+  {key:'breidy',name:'Breidy Caamal',init:'BC'},
+  {key:'melvin',name:'Melvin Romero',init:'MR'},
+  {key:'marcos',name:'Marcos Gómez',init:'MG'},
+  {key:'eric',name:'Eric Tejeda',init:'ET'},
+  {key:'gaspar',name:'Gaspar López',init:'GL'},
+  {key:'jacob',name:'Jacob Tec',init:'JT'}
 ];
 const P4_KEYS=[
   {key:'plan',label:'Planificación y organización'},
   {key:'res',label:'Enfoque a resultados'},
   {key:'resp',label:'Responsabilidad'},
   {key:'impl',label:'Implicación'},
-  {key:'team',label:'Trabajo en equipo'}
+  {key:'team',label:'Trabajo en equipo'},
+  {key:'com',label:'Comunicación'}
 ];
 const RECS=[
-  "No contaría con él",
-  "No sin aprendizaje previo",
-  "Sí, como ayudante",
-  "Sí, reforzando puntos débiles",
-  "Sí, indiscutiblemente"
+  "No contaría con él para este tipo de proyectos",
+  "No sin un proceso de aprendizaje previo muy acentuado",
+  "Sí, como ayudante de un técnico más experimentado",
+  "Sí, pero reforzaría los puntos débiles identificados",
+  "Sí, indiscutiblemente y sin reservas"
 ];
-const DAFO_DATA={
-  strengths:{label:'Fortalezas',type:'blue',items:["Adaptabilidad","Asertividad","Generación de confianza","Pensamiento estructurado","Orientación al cliente","Transferencia de conocimiento","Resiliencia","Autogestión","Escucha activa","Proactividad"]},
-  weaknesses:{label:'Debilidades',type:'yell',items:["Comunicación","Gestión de presión","Reactividad","Documentación","Adaptabilidad comunicativa","Escalabilidad","Organización personal","Asertividad","Escucha activa","Autocontrol"]},
-  opportunities:{label:'Oportunidades',type:'blue',items:["Liderazgo situacional","Diversidad cultural","Red profesional","Inteligencia emocional","Retroalimentación directa","Mentoría","Visibilidad directiva","Negociación","Identidad profesional","Formación continua"]},
-  threats:{label:'Amenazas',type:'yell',items:["Presión externa","Interlocutores conflictivos","Desmotivación ambiental","Falta de reconocimiento","Aislamiento en campo","Expectativas mal gestionadas","Resistencia al cambio","Sobrecarga operativa","Ambigüedad de rol","Dependencia de supervisión externa"]}
-};
+const DAFO_ITEMS=["Adaptabilidad","Asertividad","Generación de confianza","Pensamiento estructurado","Orientación al cliente","Transferencia de conocimiento","Resiliencia","Autogestión","Escucha activa","Proactividad","Comunicación","Gestión de presión","Documentación","Organización personal","Autocontrol","Liderazgo situacional","Inteligencia emocional","Negociación"];
 const VALUES=[
-  {key:'Excelencia',icon:'<svg viewBox="0 0 15 15" fill="none"><path d="M7.5 1.5l1.8 3.6 4 .6-2.9 2.8.7 4-3.6-1.9-3.6 1.9.7-4L1.7 5.7l4-.6z" stroke="#0E4174" stroke-width="1.3" stroke-linejoin="round"/></svg>'},
-  {key:'Proactividad',icon:'<svg viewBox="0 0 15 15" fill="none"><path d="M7.5 2v4l2.5 2" stroke="#0E4174" stroke-width="1.5" stroke-linecap="round"/><circle cx="7.5" cy="7.5" r="5.5" stroke="#0E4174" stroke-width="1.3"/></svg>'},
-  {key:'Innovación',icon:'<svg viewBox="0 0 15 15" fill="none"><path d="M7.5 1.5a4 4 0 014 4c0 1.5-.8 2.8-2 3.5V11H5.5V9a4 4 0 012-7.5z" stroke="#0E4174" stroke-width="1.3"/><path d="M5.5 12.5h4M6.5 14h2" stroke="#0E4174" stroke-width="1.3" stroke-linecap="round"/></svg>'},
-  {key:'Compromiso',icon:'<svg viewBox="0 0 15 15" fill="none"><path d="M7.5 13S2 9.5 2 5.5a3.5 3.5 0 017 0 3.5 3.5 0 017 0C16 9.5 7.5 13 7.5 13z" stroke="#0E4174" stroke-width="1.3" stroke-linejoin="round"/></svg>'},
-  {key:'Orientación al cliente',icon:'<svg viewBox="0 0 15 15" fill="none"><path d="M7.5 7.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM2.5 12.5c0-2 2.2-3.5 5-3.5s5 1.5 5 3.5" stroke="#0E4174" stroke-width="1.3" stroke-linecap="round"/></svg>'},
-  {key:'Responsabilidad',icon:'<svg viewBox="0 0 15 15" fill="none"><path d="M5 7.5l2 2 3.5-3.5" stroke="#0E4174" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><rect x="1.5" y="1.5" width="12" height="12" rx="3" stroke="#0E4174" stroke-width="1.3"/></svg>'}
+  {key:'Excelencia',svg:'<svg viewBox="0 0 15 15" fill="none"><path d="M7.5 1.5l1.8 3.6 4 .6-2.9 2.8.7 4-3.6-1.9-3.6 1.9.7-4L1.7 5.7l4-.6z" stroke="#0E4174" stroke-width="1.3" stroke-linejoin="round"/></svg>'},
+  {key:'Proactividad',svg:'<svg viewBox="0 0 15 15" fill="none"><path d="M7.5 2.5v4l2 2" stroke="#0E4174" stroke-width="1.4" stroke-linecap="round"/><circle cx="7.5" cy="7.5" r="5.5" stroke="#0E4174" stroke-width="1.3"/></svg>'},
+  {key:'Innovación',svg:'<svg viewBox="0 0 15 15" fill="none"><path d="M7.5 1.5a4 4 0 014 4c0 1.5-.8 2.8-2 3.5V11h-4V9a4 4 0 012-7.5z" stroke="#0E4174" stroke-width="1.3"/><path d="M5.5 12.5h4M6.5 14h2" stroke="#0E4174" stroke-width="1.3" stroke-linecap="round"/></svg>'},
+  {key:'Compromiso',svg:'<svg viewBox="0 0 15 15" fill="none"><path d="M7.5 13S2 9.5 2 5.5a3.5 3.5 0 017 0 3.5 3.5 0 017 0C16 9.5 7.5 13 7.5 13z" stroke="#0E4174" stroke-width="1.3" stroke-linejoin="round"/></svg>'},
+  {key:'Orientación al cliente',svg:'<svg viewBox="0 0 15 15" fill="none"><path d="M7.5 7.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM2.5 12.5c0-2 2.2-3.5 5-3.5s5 1.5 5 3.5" stroke="#0E4174" stroke-width="1.3" stroke-linecap="round"/></svg>'},
+  {key:'Responsabilidad',svg:'<svg viewBox="0 0 15 15" fill="none"><path d="M5 7.5l2 2 3.5-3.5" stroke="#0E4174" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><rect x="1.5" y="1.5" width="12" height="12" rx="3" stroke="#0E4174" stroke-width="1.3"/></svg>'}
 ];
 
-const SC_COLORS=['#B71C1C','#D32F2F','#F4511E','#FB8C00','#FDD835','#C6D500','#8BC34A','#7CB342','#43A047','#2E7D32','#1B5E20'];
-const SC_TEXT_DARK=[3,4,5,6];
-
+const SC5=['','s1','s2','s3','s4','s5'];
 let state={};
 
 function initState(){
-  state={eval:'',date:new Date().toISOString().split('T')[0]};
+  state={};
   TECHS.forEach(t=>{
     ['q1','q2','q3'].forEach(q=>state[`${q}_${t.key}`]=null);
     P4_KEYS.forEach(p=>state[`p4_${p.key}_${t.key}`]=null);
     state[`rec_${t.key}`]=null;
     state[`dafo_${t.key}`]={};
-    Object.entries(DAFO_DATA).forEach(([dk,dv])=>{
-      dv.items.forEach(item=>state[`dafo_${t.key}`][`${dk}_${item}`]=null);
-    });
+    DAFO_ITEMS.forEach(item=>state[`dafo_${t.key}`][item]=null);
   });
   state.val_equipo={};state.val_proyecto={};
   VALUES.forEach(v=>{state.val_equipo[v.key]=null;state.val_proyecto[v.key]=null;});
@@ -432,34 +416,55 @@ function loadCache(){
   }catch(e){return false;}
 }
 
+/* Build P1, P2, P3 — 1-5 semaphore buttons */
 function buildQ(qKey,tbodyId){
   const tbody=document.getElementById(tbodyId);tbody.innerHTML='';
   TECHS.forEach(t=>{
     const tr=document.createElement('tr');
     const tdN=document.createElement('td');
-    tdN.innerHTML=`<div class="tech-name-cell"><div class="tech-dot"></div>${t.name}</div>`;
+    tdN.innerHTML=`<div class="tname"><div class="tav">${t.init}</div>${t.name}</div>`;
     const tdS=document.createElement('td');
-    const wrap=document.createElement('div');wrap.className='scores';
-    for(let i=0;i<=10;i++){
+    const wrap=document.createElement('div');wrap.className='sc5';
+    const key=`${qKey}_${t.key}`;
+    for(let v=1;v<=5;v++){
       const b=document.createElement('button');b.type='button';
-      const key=`${qKey}_${t.key}`;
-      b.className='scb'+(state[key]===i?' on':'');
-      b.setAttribute('data-v',i);b.textContent=i;
-      b.onclick=(function(v,k,w){return function(){
-        state[k]=v;w.querySelectorAll('.scb').forEach(x=>x.classList.remove('on'));
+      b.className='sb5'+(state[key]===v?' on':'');
+      b.setAttribute('data-v',v);b.textContent=v;
+      b.onclick=(function(vv,k,w){return function(){
+        state[k]=vv;
+        w.querySelectorAll('.sb5').forEach(x=>x.classList.remove('on'));
         this.classList.add('on');calcProg();saveCache();
-      };})(i,key,wrap);
+      };})(v,key,wrap);
       wrap.appendChild(b);
     }
     tdS.appendChild(wrap);tr.appendChild(tdN);tr.appendChild(tdS);tbody.appendChild(tr);
   });
 }
 
-function getSelectColor(v){
-  if(v===null||v===''||v===undefined)return null;
-  return SC_COLORS[parseInt(v)];
+/* Apply class to sel5 based on value */
+function applySelClass(sel,v){
+  sel.className='sel5'+(v===null?' empty':' '+SC5[v]);
 }
 
+/* Make a dropdown selector 1-5 */
+function makeSel(curVal,onChangeFn){
+  const sel=document.createElement('select');
+  sel.className='sel5'+(curVal===null?' empty':' '+SC5[curVal]);
+  sel.innerHTML='<option value="">—</option>';
+  for(let v=1;v<=5;v++){
+    const opt=document.createElement('option');opt.value=v;opt.textContent=v;
+    if(curVal===v)opt.selected=true;
+    sel.appendChild(opt);
+  }
+  sel.onchange=function(){
+    const v=this.value===''?null:parseInt(this.value);
+    applySelClass(this,v);
+    onChangeFn(v);calcProg();saveCache();
+  };
+  return sel;
+}
+
+/* Build P4 — characteristics x techs dropdown */
 function buildP4(){
   const tbl=document.getElementById('t-p4');tbl.innerHTML='';
   const thead=document.createElement('thead');
@@ -470,37 +475,12 @@ function buildP4(){
   P4_KEYS.forEach(p=>{
     const tr=document.createElement('tr');
     const tdL=document.createElement('td');
-    tdL.innerHTML=`<div class="tech-name-cell"><div class="tech-dot"></div>${p.label}</div>`;
+    tdL.innerHTML=`<div class="row-label"><div class="row-av">${p.label.substring(0,2).toUpperCase()}</div>${p.label}</div>`;
     tr.appendChild(tdL);
     TECHS.forEach(t=>{
-      const td=document.createElement('td');td.style.textAlign='center';
+      const td=document.createElement('td');
       const key=`p4_${p.key}_${t.key}`;
-      const sel=document.createElement('select');
-      sel.className='p4-select'+(state[key]===null?' empty':'');
-      sel.innerHTML='<option value="">—</option>';
-      for(let i=0;i<=10;i++){
-        const opt=document.createElement('option');
-        opt.value=i;opt.textContent=i;
-        if(state[key]===i)opt.selected=true;
-        sel.appendChild(opt);
-      }
-      function updateSelStyle(){
-        const v=sel.value;
-        if(v===''||v===null){sel.className='p4-select empty';sel.style.background='';sel.style.borderColor='';return;}
-        const vi=parseInt(v);const col=SC_COLORS[vi];
-        sel.className='p4-select';
-        sel.style.background=col;sel.style.borderColor=col;
-        sel.style.color=SC_TEXT_DARK.includes(vi)?'#3a4000':'#fff';
-        sel.style.backgroundImage=SC_TEXT_DARK.includes(vi)
-          ?`url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' fill='none'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%233a4000' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")`
-          :`url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' fill='none'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23fff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")`;
-        sel.style.backgroundRepeat='no-repeat';sel.style.backgroundPosition='right 8px center';
-      }
-      updateSelStyle();
-      sel.onchange=function(){
-        const v=this.value===''?null:parseInt(this.value);
-        state[key]=v;updateSelStyle();calcProg();saveCache();
-      };
+      const sel=makeSel(state[key],(v)=>{state[key]=v;});
       td.appendChild(sel);tr.appendChild(td);
     });
     tbody.appendChild(tr);
@@ -508,89 +488,92 @@ function buildP4(){
   tbl.appendChild(tbody);
 }
 
+/* Build recommendation legend */
+function buildRecLegend(){
+  const wrap=document.getElementById('rec-legend');wrap.innerHTML='';
+  const bgs=['#fde8e8','#fef0ea','#fffde7','#f1f8e9','#e8f5e9'];
+  const cols=['','#D32F2F','#F4511E','#FDD835','#8BC34A','#4CAF50'];
+  const txts=['','#fff','#fff','#5a3800','#2a4a00','#fff'];
+  RECS.forEach((txt,i)=>{
+    const d=document.createElement('div');
+    d.className='rl-item';
+    d.style.background=bgs[i];d.style.borderColor=cols[i+1]+'66';
+    d.innerHTML=`<div class="rl-num" style="background:${cols[i+1]};color:${txts[i+1]}">${i+1}</div><div class="rl-txt">${txt}</div>`;
+    wrap.appendChild(d);
+  });
+}
+
+/* Build P5 — recommendation 1-5 buttons */
 function buildRec(){
   const tbody=document.getElementById('t-rec');tbody.innerHTML='';
   TECHS.forEach(t=>{
     const tr=document.createElement('tr');
     const tdN=document.createElement('td');
-    tdN.innerHTML=`<div class="tech-name-cell"><div class="tech-dot"></div>${t.name}</div>`;
-    const tdO=document.createElement('td');
-    const wrap=document.createElement('div');wrap.className='rec-opts';
+    tdN.innerHTML=`<div class="tname"><div class="tav">${t.init}</div>${t.name}</div>`;
+    const tdS=document.createElement('td');
+    const wrap=document.createElement('div');wrap.className='sc5';
     const key=`rec_${t.key}`;
-    RECS.forEach((txt,i)=>{
+    for(let v=1;v<=5;v++){
       const b=document.createElement('button');b.type='button';
-      b.className='rec-btn'+(state[key]===i+1?' on':'');
-      b.textContent=`${i+1}. ${txt}`;
-      b.onclick=(function(v,k,w){return function(){
-        state[k]=v;w.querySelectorAll('.rec-btn').forEach(x=>x.classList.remove('on'));
+      b.className='sb5'+(state[key]===v?' on':'');
+      b.setAttribute('data-v',v);b.textContent=v;
+      b.onclick=(function(vv,k,w){return function(){
+        state[k]=vv;
+        w.querySelectorAll('.sb5').forEach(x=>x.classList.remove('on'));
         this.classList.add('on');calcProg();saveCache();
-      };})(i+1,key,wrap);
+      };})(v,key,wrap);
       wrap.appendChild(b);
-    });
-    tdO.appendChild(wrap);tr.appendChild(tdN);tr.appendChild(tdO);tbody.appendChild(tr);
+    }
+    tdS.appendChild(wrap);tr.appendChild(tdN);tr.appendChild(tdS);tbody.appendChild(tr);
   });
 }
 
+/* Build DAFO — competencies x techs dropdown */
 function buildDafo(){
   const tbl=document.getElementById('t-dafo');tbl.innerHTML='';
   const thead=document.createElement('thead');
-  let hr='<tr><th>Aspecto</th>';
+  let hr='<tr><th>Competencia</th>';
   TECHS.forEach(t=>hr+=`<th>${t.name.split(' ')[0]}</th>`);
   hr+='</tr>';thead.innerHTML=hr;tbl.appendChild(thead);
   const tbody=document.createElement('tbody');
-  Object.entries(DAFO_DATA).forEach(([dk,dv])=>{
-    const secR=document.createElement('tr');
-    secR.className=`dafo-section ${dv.type}`;
-    secR.innerHTML=`<td colspan="${TECHS.length+1}">${dv.label}</td>`;
-    tbody.appendChild(secR);
-    dv.items.forEach(item=>{
-      const tr=document.createElement('tr');
-      const tdL=document.createElement('td');
-      tdL.innerHTML=`<div class="dafo-item-name">${item}</div>`;tr.appendChild(tdL);
-      TECHS.forEach(t=>{
-        const td=document.createElement('td');
-        const wrap=document.createElement('div');wrap.className='dafo-btns';
-        const cur=state[`dafo_${t.key}`]?.[`${dk}_${item}`];
-        const isYell=dv.type==='yell';
-        for(let v=1;v<=5;v++){
-          const b=document.createElement('button');b.type='button';
-          const isOn=cur===v;
-          b.className=`dbt ${isOn?(isYell?'yell-on':'blue-on'):(isYell?'yell-off':'blue-off')}`;
-          b.textContent=v;
-          b.onclick=(function(vv,tk,dk2,it,w,iy){return function(){
-            if(!state[`dafo_${tk}`])state[`dafo_${tk}`]={};
-            state[`dafo_${tk}`][`${dk2}_${it}`]=vv;
-            w.querySelectorAll('.dbt').forEach(x=>{
-              x.className=`dbt ${iy?'yell-off':'blue-off'}`;
-            });
-            this.className=`dbt ${iy?'yell-on':'blue-on'}`;
-            calcProg();saveCache();
-          };})(v,t.key,dk,item,wrap,isYell);
-          wrap.appendChild(b);
-        }
-        td.appendChild(wrap);tr.appendChild(td);
+  DAFO_ITEMS.forEach(item=>{
+    const tr=document.createElement('tr');
+    const tdL=document.createElement('td');
+    tdL.innerHTML=`<div class="row-label"><div class="row-av" style="font-size:8px">${item.substring(0,2).toUpperCase()}</div>${item}</div>`;
+    tr.appendChild(tdL);
+    TECHS.forEach(t=>{
+      const td=document.createElement('td');
+      const cur=state[`dafo_${t.key}`]?.[item]??null;
+      const sel=makeSel(cur,(v)=>{
+        if(!state[`dafo_${t.key}`])state[`dafo_${t.key}`]={};
+        state[`dafo_${t.key}`][item]=v;
       });
-      tbody.appendChild(tr);
+      td.appendChild(sel);tr.appendChild(td);
     });
+    tbody.appendChild(tr);
   });
   tbl.appendChild(tbody);
 }
 
+/* Build P10 — values equipo/proyecto 1-5 buttons */
 function buildValues(){
   const tbody=document.getElementById('val-body');tbody.innerHTML='';
   VALUES.forEach(val=>{
     const tr=document.createElement('tr');
     const tdN=document.createElement('td');
-    tdN.innerHTML=`<div class="val-name-cell"><div class="val-icon">${val.icon}</div>${val.key}</div>`;tr.appendChild(tdN);
+    tdN.innerHTML=`<div class="vname"><div class="vico">${val.svg}</div>${val.key}</div>`;
+    tr.appendChild(tdN);
     ['val_equipo','val_proyecto'].forEach(tgt=>{
       const td=document.createElement('td');
-      const wrap=document.createElement('div');wrap.className='val-scores';
-      const cur=state[tgt]?.[val.key];
-      for(let v=0;v<=5;v++){
+      const wrap=document.createElement('div');wrap.className='vsc5';
+      const cur=state[tgt]?.[val.key]??null;
+      for(let v=1;v<=5;v++){
         const b=document.createElement('button');b.type='button';
-        b.className='vsb'+(cur===v?' on':'');b.setAttribute('data-v',v);b.textContent=v;
+        b.className='vsb'+(cur===v?' on':'');
+        b.setAttribute('data-v',v);b.textContent=v;
         b.onclick=(function(vv,tg,vk,w){return function(){
-          if(!state[tg])state[tg]={};state[tg][vk]=vv;
+          if(!state[tg])state[tg]={};
+          state[tg][vk]=vv;
           w.querySelectorAll('.vsb').forEach(x=>x.classList.remove('on'));
           this.classList.add('on');calcProg();saveCache();
         };})(v,tgt,val.key,wrap);
@@ -602,7 +585,10 @@ function buildValues(){
   });
 }
 
-function buildAll(){buildQ('q1','t-q1');buildQ('q2','t-q2');buildQ('q3','t-q3');buildP4();buildRec();buildDafo();buildValues();calcProg();}
+function buildAll(){
+  buildQ('q1','t-q1');buildQ('q2','t-q2');buildQ('q3','t-q3');
+  buildP4();buildRecLegend();buildRec();buildDafo();buildValues();calcProg();
+}
 
 function calcProg(){
   let f=0,t=0;
@@ -612,29 +598,30 @@ function calcProg(){
     ['q1','q2','q3'].forEach(q=>{t++;if(state[`${q}_${tech.key}`]!==null)f++;});
     P4_KEYS.forEach(p=>{t++;if(state[`p4_${p.key}_${tech.key}`]!==null)f++;});
     t++;if(state[`rec_${tech.key}`]!==null)f++;
-    Object.entries(DAFO_DATA).forEach(([dk,dv])=>{
-      dv.items.forEach(item=>{t++;if(state[`dafo_${tech.key}`]&&state[`dafo_${tech.key}`][`${dk}_${item}`]!==null&&state[`dafo_${tech.key}`][`${dk}_${item}`]!==undefined)f++;});
-    });
+    DAFO_ITEMS.forEach(item=>{t++;const v=state[`dafo_${tech.key}`]?.[item];if(v!==null&&v!==undefined)f++;});
   });
   VALUES.forEach(v=>{
-    t++;if(state.val_equipo&&state.val_equipo[v.key]!==null)f++;
-    t++;if(state.val_proyecto&&state.val_proyecto[v.key]!==null)f++;
+    t++;const eq=state.val_equipo?.[v.key];if(eq!==null&&eq!==undefined)f++;
+    t++;const pr=state.val_proyecto?.[v.key];if(pr!==null&&pr!==undefined)f++;
   });
   const p=Math.round(f/t*100);
-  const el=document.getElementById('prog');if(el)el.style.width=p+'%';
-  const tl=document.getElementById('prog-txt');if(tl)tl.textContent=p+'%';
+  document.getElementById('prog').style.width=p+'%';
+  document.getElementById('prog-txt').textContent=p+'%';
 }
 
 function validateAll(){
   const ev=document.getElementById('f-eval');
   if(!ev||!ev.value.trim())return'Escribe tu nombre antes de enviar.';
   for(const tech of TECHS){
-    for(const q of['q1','q2','q3']){if(state[`${q}_${tech.key}`]===null)return`Falta puntuar P${q.slice(1)} para ${tech.name}.`;}
-    for(const p of P4_KEYS){if(state[`p4_${p.key}_${tech.key}`]===null)return`Falta "${p.label}" para ${tech.name}.`;}
-    if(state[`rec_${tech.key}`]===null)return`Falta la recomendación para ${tech.name}.`;
+    for(const q of['q1','q2','q3'])if(state[`${q}_${tech.key}`]===null)return`Falta P${q.slice(1)} para ${tech.name}.`;
+    for(const p of P4_KEYS)if(state[`p4_${p.key}_${tech.key}`]===null)return`Falta "${p.label}" para ${tech.name}.`;
+    if(state[`rec_${tech.key}`]===null)return`Falta recomendación para ${tech.name}.`;
+    for(const item of DAFO_ITEMS){const v=state[`dafo_${tech.key}`]?.[item];if(v===null||v===undefined)return`Falta "${item}" en FODA para ${tech.name}.`;}
   }
   for(const v of VALUES){
-    if(state.val_equipo[v.key]===null||state.val_proyecto[v.key]===null)return`Falta puntuar "${v.key}" en equipo o proyecto.`;
+    const eq=state.val_equipo?.[v.key];const pr=state.val_proyecto?.[v.key];
+    if(eq===null||eq===undefined)return`Falta "${v.key}" — Equipo.`;
+    if(pr===null||pr===undefined)return`Falta "${v.key}" — Proyecto.`;
   }
   return null;
 }
@@ -642,10 +629,12 @@ function validateAll(){
 function showToast(msg,type){
   const t=document.getElementById('toast');if(!t)return;
   t.textContent=msg;t.className='toast '+type;
-  setTimeout(()=>{t.className='toast';},5000);
+  setTimeout(()=>{t.className='toast';},6000);
 }
 
-function serObj(obj){return Object.entries(obj||{}).filter(([,v])=>v!==null).map(([k,v])=>`${k}:${v}`).join('||');}
+function serObj(obj){
+  return Object.entries(obj||{}).filter(([,v])=>v!==null&&v!==undefined).map(([k,v])=>`${k}:${v}`).join('||');
+}
 
 async function saveResponse(){
   const err=validateAll();if(err){showToast(err,'err');return;}
@@ -687,23 +676,18 @@ function newEval(){
   document.getElementById('f-date').value=new Date().toISOString().split('T')[0];
   buildAll();
 }
-
 function resetForm(){
   if(!confirm('¿Limpiar todos los datos del formulario?'))return;
   initState();
   document.getElementById('f-eval').value='';
   document.getElementById('f-date').value=new Date().toISOString().split('T')[0];
-  sessionStorage.removeItem(CACHE);
-  buildAll();
+  sessionStorage.removeItem(CACHE);buildAll();
 }
 
 document.getElementById('f-eval').addEventListener('input',()=>{calcProg();saveCache();});
 document.getElementById('f-date').addEventListener('input',saveCache);
 document.getElementById('f-date').value=new Date().toISOString().split('T')[0];
-
-initState();
-loadCache();
-buildAll();
+initState();loadCache();buildAll();
 </script>
 </body>
 </html>
