@@ -8,228 +8,186 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --B:#0E4174;--B2:#1a5a9e;--B3:#0a2d54;
-  --Y:#F1BE48;--YD:#7a5100;
-  --S1:#D32F2F;--S2:#F4511E;--S3:#FDD835;--S3t:#5a3800;
-  --S4:#8BC34A;--S4t:#2a4a00;--S5:#4CAF50;
-  --bg:#e8eef6;
-}
-body{font-family:'Montserrat',sans-serif;background:var(--bg);color:#1a2e44;min-height:100vh}
+:root{--B:#0E4174;--B2:#1a5a9e;--B3:#0a2d54;--Y:#F1BE48;--YD:#7a5100}
+body{font-family:'Montserrat',sans-serif;background:#e8eef6;color:#1a2e44;min-height:100vh}
 
-/* LOGIN */
 .login-wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px;background:linear-gradient(135deg,var(--B3),var(--B))}
 .login-card{background:#fff;border-radius:24px;padding:44px 40px;max-width:400px;width:100%;box-shadow:0 24px 64px rgba(0,0,0,.25);text-align:center}
 .login-logo{display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:24px}
-.login-logo-mark{width:40px;height:40px;border-radius:12px;background:var(--B);display:flex;align-items:center;justify-content:center}
-.login-logo-mark svg{width:22px;height:22px}
-.login-logo-txt{font-size:11px;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:var(--B);opacity:.6}
+.login-mark{width:40px;height:40px;border-radius:12px;background:var(--B);display:flex;align-items:center;justify-content:center}
+.login-mark svg{width:22px;height:22px}
+.login-lbl{font-size:11px;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:var(--B);opacity:.6}
 .login-icon{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--B3),var(--B));margin:0 auto 20px;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(14,65,116,.3)}
 .login-icon svg{width:30px;height:30px}
 .login-title{font-size:22px;font-weight:900;color:var(--B);margin-bottom:6px}
 .login-sub{font-size:12px;color:#607080;margin-bottom:28px;line-height:1.6}
 .login-input{width:100%;border:1.5px solid #dde8f5;background:#f7fafd;border-radius:12px;padding:13px 18px;font-size:14px;font-family:inherit;color:#1a2e44;outline:none;margin-bottom:14px;text-align:center;letter-spacing:.2em;transition:.2s}
-.login-input:focus{border-color:var(--B);background:#fff;box-shadow:0 0 0 4px rgba(14,65,116,.07)}
+.login-input:focus{border-color:var(--B);background:#fff}
 .login-btn{width:100%;background:linear-gradient(135deg,var(--B3),var(--B));color:#fff;border:none;border-radius:12px;padding:14px;font-weight:800;font-size:14px;cursor:pointer;font-family:inherit;box-shadow:0 6px 20px rgba(14,65,116,.3);transition:.2s}
-.login-btn:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(14,65,116,.4)}
+.login-btn:hover{transform:translateY(-1px)}
 .login-err{font-size:12px;color:#c0392b;margin-top:10px;font-weight:700;display:none}
 
-/* SHELL */
 .shell{max-width:1200px;margin:0 auto;padding:0 20px 80px}
-
-/* HERO */
 .hero{background:linear-gradient(135deg,var(--B3) 0%,var(--B) 60%,var(--B2) 100%);color:#fff;padding:24px 32px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
-.hero-left{}
 .hero-badge{display:inline-flex;align-items:center;gap:7px;background:rgba(241,190,72,.18);border:1px solid rgba(241,190,72,.28);color:#f5d67a;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:5px 13px;border-radius:999px;margin-bottom:10px}
 .bdot{width:5px;height:5px;border-radius:50%;background:var(--Y)}
 .hero h1{font-size:20px;font-weight:900;margin-bottom:3px}
 .hero p{font-size:11px;opacity:.65}
-.hero-actions{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.hero-actions{display:flex;gap:8px;flex-wrap:wrap}
 .hbtn{border:none;border-radius:10px;padding:9px 18px;font-weight:800;cursor:pointer;font-size:12px;font-family:inherit;transition:.2s}
-.hbtn-white{background:rgba(255,255,255,.14);color:#fff;border:1.5px solid rgba(255,255,255,.28)}
-.hbtn-white:hover{background:rgba(255,255,255,.24)}
-.hbtn-yellow{background:var(--Y);color:var(--YD)}
-.hbtn-yellow:hover{background:#f5d067}
-.hbtn-red{background:#fde8e8;color:#9b1515;border:1px solid #f5b8b8}
-
-/* FILTERS */
-.filters{background:#fff;padding:14px 20px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;border-bottom:1px solid rgba(14,65,116,.07)}
-.filter-label{font-size:11px;font-weight:800;color:var(--B);text-transform:uppercase;letter-spacing:.06em}
-.fsel{border:1.5px solid #dde8f5;background:#f7fafd;border-radius:10px;padding:8px 14px;font-size:12px;font-weight:700;font-family:inherit;color:var(--B);outline:none;cursor:pointer;transition:.2s}
-.fsel:focus{border-color:var(--B)}
-
-/* BODY */
+.hbtn-w{background:rgba(255,255,255,.14);color:#fff;border:1.5px solid rgba(255,255,255,.28)}
+.hbtn-w:hover{background:rgba(255,255,255,.24)}
+.hbtn-y{background:var(--Y);color:var(--YD)}
+.hbtn-r{background:#fde8e8;color:#9b1515;border:1px solid #f5b8b8}
+.fbar{background:#fff;padding:14px 24px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;border-bottom:1px solid rgba(14,65,116,.07)}
+.flbl{font-size:11px;font-weight:800;color:var(--B);text-transform:uppercase;letter-spacing:.06em}
+.fsel{border:1.5px solid #dde8f5;background:#f7fafd;border-radius:10px;padding:8px 14px;font-size:12px;font-weight:700;font-family:inherit;color:var(--B);outline:none;cursor:pointer}
 .body{padding:20px 0}
-
-/* TABS */
 .tabs{display:flex;gap:4px;background:#fff;border-radius:16px;padding:6px;box-shadow:0 2px 12px rgba(14,65,116,.07);border:1px solid rgba(14,65,116,.06);margin-bottom:20px;flex-wrap:wrap}
 .tab{padding:10px 18px;border-radius:12px;font-size:12px;font-weight:800;cursor:pointer;color:#607080;border:none;background:transparent;font-family:inherit;transition:.18s}
 .tab:hover{background:#f0f6ff;color:var(--B)}
 .tab.on{background:linear-gradient(135deg,var(--B3),var(--B));color:#fff;box-shadow:0 4px 12px rgba(14,65,116,.25)}
 
-/* VIEW */
-.view{display:none}
-.view.on{display:block}
-
-/* KPI ROW */
 .kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:20px}
 .kpi{background:#fff;border-radius:18px;padding:18px 16px;box-shadow:0 3px 16px rgba(14,65,116,.07);border:1px solid rgba(14,65,116,.06);position:relative;overflow:hidden}
 .kpi::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--B3),var(--B))}
-.kpi-val{font-size:32px;font-weight:900;color:var(--B);line-height:1;margin-bottom:6px}
+.kpi-val{font-size:30px;font-weight:900;color:var(--B);line-height:1;margin-bottom:6px}
 .kpi-lbl{font-size:10px;font-weight:700;color:#8090a8;text-transform:uppercase;letter-spacing:.06em}
 
-/* CARDS */
+.global-score{background:linear-gradient(135deg,var(--B3),var(--B));border-radius:20px;padding:24px 28px;margin-bottom:20px;display:flex;align-items:center;gap:24px;flex-wrap:wrap;box-shadow:0 6px 24px rgba(14,65,116,.2)}
+.gs-circle{width:100px;height:100px;border-radius:50%;background:rgba(255,255,255,.1);border:3px solid var(--Y);display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0}
+.gs-num{font-size:28px;font-weight:900;line-height:1}
+.gs-max{font-size:11px;color:rgba(255,255,255,.5);font-weight:600}
+.gs-title{font-size:16px;font-weight:900;color:#fff;margin-bottom:6px}
+.gs-sub{font-size:12px;color:rgba(255,255,255,.65);line-height:1.6;max-width:500px}
+.gs-chips{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+.gs-chip{padding:5px 12px;border-radius:999px;font-size:11px;font-weight:700;background:rgba(255,255,255,.14);color:#fff}
+
+.tech-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:20px}
+.tcard{background:#fff;border-radius:18px;padding:18px;box-shadow:0 3px 16px rgba(14,65,116,.07);border:1px solid rgba(14,65,116,.06);cursor:pointer;transition:.2s}
+.tcard:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(14,65,116,.12)}
+.tcard-head{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.tav{width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,var(--B),var(--B2));color:#fff;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.tcard-name{font-size:14px;font-weight:800;color:var(--B)}
+.tcard-role{font-size:10px;color:#8090a8;font-weight:600;margin-top:2px}
+.tcard-score{font-size:30px;font-weight:900;line-height:1}
+.tcard-score-lbl{font-size:10px;color:#8090a8;font-weight:600;margin-top:3px}
+.mini-bar{margin-bottom:7px}
+.mini-bar-head{display:flex;justify-content:space-between;margin-bottom:3px}
+.mini-bar-lbl{font-size:10px;font-weight:600;color:#607080}
+.mini-bar-val{font-size:10px;font-weight:800}
+.mini-track{height:5px;background:#eef2f8;border-radius:999px;overflow:hidden}
+.mini-fill{height:5px;border-radius:999px}
+
 .card{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 3px 16px rgba(14,65,116,.07);border:1px solid rgba(14,65,116,.06);margin-bottom:18px}
 .ch{background:linear-gradient(135deg,var(--B3),var(--B));padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:10px}
 .ch-left{display:flex;align-items:center;gap:10px}
 .ch-dot{width:7px;height:7px;border-radius:50%;background:var(--Y);flex-shrink:0}
-.ch-title{font-size:12px;font-weight:800;color:#fff;letter-spacing:.03em}
+.ch-title{font-size:12px;font-weight:800;color:#fff}
 .ch-badge{background:rgba(241,190,72,.22);color:#f5d67a;font-size:10px;font-weight:800;padding:3px 10px;border-radius:999px}
 .cb{padding:18px 20px}
-
-/* GRID */
 .g2{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px}
-.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;margin-bottom:18px}
 
-/* CHARTS */
-.ch-wrap{position:relative;width:100%;height:240px}
-.ch-wrap-lg{position:relative;width:100%;height:300px}
-.ch-wrap-sm{position:relative;width:100%;height:180px}
+.chw{position:relative;width:100%;height:240px}
+.chw-lg{position:relative;width:100%;height:300px}
 
-/* SCORE COLOR CHIPS */
-.schip{display:inline-block;padding:3px 10px;border-radius:999px;font-size:11px;font-weight:800;color:#fff}
+.schip{display:inline-block;padding:4px 11px;border-radius:999px;font-size:11px;font-weight:800;color:#fff}
 
-/* TECH TABS */
 .tech-tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px}
 .ttab{padding:8px 14px;border-radius:10px;border:1.5px solid #dde8f5;background:#f7fafd;cursor:pointer;font-size:11px;font-weight:800;color:var(--B);font-family:inherit;transition:.18s}
 .ttab:hover{background:#eef4fb}
 .ttab.on{background:linear-gradient(135deg,var(--B3),var(--B));color:#fff;border-color:var(--B)}
 
-/* HORIZONTAL BAR */
 .hbar-wrap{margin-bottom:12px}
-.hbar-label{display:flex;align-items:center;justify-content:space-between;margin-bottom:5px}
-.hbar-name{font-size:12px;font-weight:700;color:#1a3558}
-.hbar-val{font-size:13px;font-weight:900;color:var(--B)}
+.hbar-head{display:flex;justify-content:space-between;margin-bottom:5px}
+.hbar-lbl{font-size:12px;font-weight:700;color:#1a3558}
+.hbar-val{font-size:13px;font-weight:900}
 .hbar-track{height:10px;background:#eef2f8;border-radius:999px;overflow:hidden}
 .hbar-fill{height:10px;border-radius:999px;transition:width .6s cubic-bezier(.4,0,.2,1)}
 
-/* DAFO RESULTS */
-.dafo-results{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:14px}
+.dafo-cols{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:14px}
 .dafo-col{border-radius:14px;overflow:hidden;border:1px solid rgba(14,65,116,.08)}
-.dafo-col-head{padding:10px 14px;font-size:10px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;display:flex;align-items:center;gap:7px}
-.dafo-col-head.f{background:#e8f5e9;color:#2E7D32}
-.dafo-col-head.o{background:#e3f2fd;color:#1565C0}
-.dafo-col-head.d{background:#fde8e8;color:#c62828}
-.dafo-col-body{padding:10px;background:#fafcff;min-height:60px}
+.dafo-head{padding:10px 14px;font-size:10px;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
+.dafo-head.f{background:#e8f5e9;color:#2E7D32}
+.dafo-head.o{background:#e3f2fd;color:#1565C0}
+.dafo-head.d{background:#fde8e8;color:#c62828}
+.dafo-body{padding:10px;background:#fafcff;min-height:60px}
 .dpill{display:inline-flex;align-items:center;gap:5px;border-radius:999px;padding:4px 10px;font-size:10px;font-weight:700;margin:2px 3px 2px 0}
 .dpill.f{background:#e8f5e9;color:#2E7D32}
 .dpill.o{background:#e3f2fd;color:#1565C0}
 .dpill.d{background:#fde8e8;color:#c62828}
-.dpill-score{width:16px;height:16px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:800;color:#fff;flex-shrink:0}
+.dpscore{width:16px;height:16px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:800;color:#fff;flex-shrink:0}
 
-/* VALUES TABLE IN DASH */
 .vtbl{width:100%;border-collapse:collapse;font-size:12px}
-.vtbl th{padding:10px 12px;font-size:10px;font-weight:800;color:var(--B);text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid #dde8f5;background:#f7fafd;text-align:center}
+.vtbl th{padding:10px 14px;font-size:10px;font-weight:800;color:var(--B);text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid #dde8f5;background:#f7fafd;text-align:center}
 .vtbl th:first-child{text-align:left}
-.vtbl td{padding:10px 12px;border-bottom:1px solid #eef2f8;vertical-align:middle;text-align:center}
+.vtbl td{padding:10px 14px;border-bottom:1px solid #eef2f8;vertical-align:middle;text-align:center}
 .vtbl tr:last-child td{border-bottom:none}
-.vtbl td:first-child{text-align:left;font-weight:700;color:#1a3558}
+.vtbl td:first-child{text-align:left;font-weight:700;font-size:13px;color:#1a3558}
 
-/* SUMMARY TABLE */
-.stbl{width:100%;border-collapse:collapse;font-size:11px}
-.stbl thead tr{background:linear-gradient(90deg,var(--B3),var(--B))}
-.stbl thead th{padding:11px 12px;font-size:10px;font-weight:800;color:#fff;text-align:center;letter-spacing:.05em;text-transform:uppercase;white-space:nowrap}
-.stbl thead th:first-child{text-align:left;min-width:130px}
-.stbl tbody tr:nth-child(odd){background:#fff}
-.stbl tbody tr:nth-child(even){background:#f7fafd}
-.stbl tbody tr:hover td{background:#eef4fb!important}
-.stbl tbody td{padding:10px 12px;border-bottom:1px solid rgba(14,65,116,.05);vertical-align:middle;text-align:center}
-.stbl tbody td:first-child{text-align:left;font-weight:700;color:var(--B)}
-.stbl tbody tr:last-child td{border-bottom:none}
-.tav{width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,var(--B),var(--B2));color:#fff;font-size:9px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;display:inline-flex;margin-right:6px;vertical-align:middle}
+.rtbl{width:100%;border-collapse:collapse;font-size:13px}
+.rtbl thead tr{background:linear-gradient(90deg,var(--B3),var(--B))}
+.rtbl thead th{padding:13px 18px;font-size:11px;font-weight:800;color:#fff;text-align:left;letter-spacing:.05em;text-transform:uppercase}
+.rtbl tbody tr:nth-child(odd){background:#fff}
+.rtbl tbody tr:nth-child(even){background:#f7fafd}
+.rtbl tbody tr:hover td{background:#eef4fb!important}
+.rtbl tbody td{padding:13px 18px;border-bottom:1px solid rgba(14,65,116,.05);vertical-align:middle}
+.rtbl tbody tr:last-child td{border-bottom:none}
+.del-btn{border:none;background:#fde8e8;color:#9b1515;padding:6px 14px;border-radius:8px;font-size:11px;font-weight:800;cursor:pointer;font-family:inherit}
 
-/* REC TABLE */
-.rec-tbl{width:100%;border-collapse:collapse;font-size:12px}
-.rec-tbl th{padding:10px 14px;font-size:10px;font-weight:800;color:var(--B);text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid #dde8f5;background:#f7fafd}
-.rec-tbl td{padding:10px 14px;border-bottom:1px solid #eef2f8;vertical-align:middle}
-.rec-tbl tr:last-child td{border-bottom:none}
-.rec-badge{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:999px;font-size:11px;font-weight:700}
-
-/* EMPTY / LOADING */
 .empty{padding:50px 20px;text-align:center;color:#8090a8;font-size:13px;font-weight:600}
 .empty-title{font-size:18px;font-weight:800;color:var(--B);margin-bottom:8px}
 .loading{padding:30px;text-align:center;color:#8090a8;font-size:13px;font-weight:700}
 
-/* PDF PRINT */
-@media print{
-  .hero-actions,.filters,.tabs,.hbtn,.fsel,.filter-label{display:none!important}
-  .view{display:block!important}
-  .shell{padding:0}
-  body{background:#fff}
-  .card,.kpi{box-shadow:none;border:1px solid #dde}
-}
-
-@media(max-width:800px){
-  .kpi-row,.g2,.g3{grid-template-columns:1fr 1fr}
-  .dafo-results{grid-template-columns:1fr}
-}
+@media print{.hero-actions,.fbar,.tabs,.hbtn{display:none!important}body{background:#fff}.card,.kpi,.tcard,.global-score{box-shadow:none}}
+@media(max-width:900px){.kpi-row,.tech-cards{grid-template-columns:1fr 1fr}.g2,.dafo-cols{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 
-<!-- LOGIN -->
 <div id="login-wrap" class="login-wrap">
   <div class="login-card">
     <div class="login-logo">
-      <div class="login-logo-mark"><svg viewBox="0 0 22 22" fill="none"><path d="M11 2l2.2 6.5H20l-5.5 4 2 6.5L11 15l-5.5 4 2-6.5L2 8.5h6.8z" stroke="#F1BE48" stroke-width="1.5" stroke-linejoin="round"/></svg></div>
-      <span class="login-logo-txt">Polarier</span>
+      <div class="login-mark"><svg viewBox="0 0 22 22" fill="none"><path d="M11 2l2.2 6.5H20l-5.5 4 2 6.5L11 15l-5.5 4 2-6.5L2 8.5h6.8z" stroke="#F1BE48" stroke-width="1.5" stroke-linejoin="round"/></svg></div>
+      <span class="login-lbl">Polarier</span>
     </div>
     <div class="login-icon"><svg viewBox="0 0 30 30" fill="none"><path d="M15 5a5 5 0 100 10 5 5 0 000-10zM5 24c0-4.4 4.5-8 10-8s10 3.6 10 8" stroke="#F1BE48" stroke-width="2" stroke-linecap="round"/></svg></div>
     <div class="login-title">Dashboard privado</div>
-    <div class="login-sub">Acceso restringido al equipo directivo de Polarier.<br>Ingresa la contraseña para continuar.</div>
+    <div class="login-sub">Acceso restringido al equipo directivo de Polarier.</div>
     <input class="login-input" type="password" id="pwd" placeholder="••••••••" onkeydown="if(event.key==='Enter')login()"/>
     <button class="login-btn" onclick="login()">Acceder al dashboard</button>
-    <div class="login-err" id="pwd-err">Contraseña incorrecta. Inténtalo de nuevo.</div>
+    <div class="login-err" id="pwd-err">Contraseña incorrecta.</div>
   </div>
 </div>
 
-<!-- DASHBOARD -->
 <div id="dash-wrap" style="display:none">
-  <div class="shell">
-    <div class="hero">
-      <div class="hero-left">
-        <div class="hero-badge"><div class="bdot"></div>Vista privada · Dirección Polarier</div>
-        <h1>Dashboard — Puesta en Marcha Ibiza</h1>
-        <p>Resultados en tiempo real de todas las evaluaciones recibidas</p>
-      </div>
-      <div class="hero-actions">
-        <button class="hbtn hbtn-white" onclick="init()">↻ Actualizar</button>
-        <button class="hbtn hbtn-yellow" onclick="exportPDF()">Exportar PDF</button>
-        <button class="hbtn hbtn-red" onclick="clearAll()">Borrar todo</button>
-      </div>
+<div class="shell">
+  <div class="hero">
+    <div>
+      <div class="hero-badge"><div class="bdot"></div>Vista privada · Dirección Polarier</div>
+      <h1>Dashboard — Puesta en Marcha Ibiza</h1>
+      <p>Resultados en tiempo real de todas las evaluaciones recibidas</p>
     </div>
-
-    <div class="filters">
-      <span class="filter-label">Filtrar por evaluador:</span>
-      <select class="fsel" id="eval-filter" onchange="applyFilter()">
-        <option value="">Todos los evaluadores</option>
-      </select>
-      <span class="filter-label" style="margin-left:12px">Vista:</span>
-      <select class="fsel" id="tech-filter" onchange="applyFilter()">
-        <option value="">Todos los técnicos</option>
-      </select>
-    </div>
-
-    <div class="body">
-      <div class="tabs">
-        <button class="tab on" onclick="switchTab('resumen',this)">Resumen ejecutivo</button>
-        <button class="tab" onclick="switchTab('tecnico',this)">Por técnico</button>
-        <button class="tab" onclick="switchTab('valores',this)">Valores P7</button>
-        <button class="tab" onclick="switchTab('respuestas',this)">Respuestas individuales</button>
-      </div>
-      <div id="dash-content"><div class="loading">Cargando evaluaciones...</div></div>
+    <div class="hero-actions">
+      <button class="hbtn hbtn-w" onclick="init()">↻ Actualizar</button>
+      <button class="hbtn hbtn-y" onclick="window.print()">Exportar PDF</button>
+      <button class="hbtn hbtn-r" onclick="clearAll()">Borrar todo</button>
     </div>
   </div>
+  <div class="fbar">
+    <span class="flbl">Filtrar por evaluador:</span>
+    <select class="fsel" id="eval-filter" onchange="applyFilter()"><option value="">Todos los evaluadores</option></select>
+  </div>
+  <div class="body">
+    <div class="tabs">
+      <button class="tab on" onclick="switchTab('resumen',this)">Resumen ejecutivo</button>
+      <button class="tab" onclick="switchTab('tecnico',this)">Detalle por técnico</button>
+      <button class="tab" onclick="switchTab('valores',this)">7. Valores Polarier</button>
+      <button class="tab" onclick="switchTab('registros',this)">Registros</button>
+    </div>
+    <div id="dash-content"><div class="loading">Cargando evaluaciones...</div></div>
+  </div>
+</div>
 </div>
 
 <script>
@@ -247,20 +205,20 @@ const TECHS=[
   {key:'jacob',name:'Jacob Tec',init:'JT'}
 ];
 const P4_KEYS=[
-  {key:'plan',label:'Planificación'},
-  {key:'res',label:'Resultados'},
+  {key:'plan',label:'Planificación y organización'},
+  {key:'res',label:'Enfoque a resultados'},
   {key:'resp',label:'Responsabilidad'},
   {key:'impl',label:'Implicación'},
   {key:'team',label:'Trabajo en equipo'},
   {key:'com',label:'Comunicación'}
 ];
-const RECS=['No contaría con él','Sin aprendizaje previo','Como ayudante','Reforzando puntos','Indiscutiblemente'];
+const RECS=['No contaría con él','Sin aprendizaje previo','Como ayudante','Reforzando puntos débiles','Sí, indiscutiblemente'];
 const DAFO_ITEMS=["Adaptabilidad","Asertividad","Generación de confianza","Pensamiento estructurado","Orientación al cliente","Transferencia de conocimiento","Resiliencia","Autogestión","Escucha activa","Proactividad","Comunicación","Gestión de presión","Documentación","Organización personal","Autocontrol","Liderazgo situacional","Inteligencia emocional","Negociación"];
 const VALUES=["Excelencia","Proactividad","Innovación","Compromiso","Orientación al cliente","Responsabilidad"];
 const SC5=['','#D32F2F','#F4511E','#FDD835','#8BC34A','#4CAF50'];
 const SC5t=['','#fff','#fff','#5a3800','#2a4a00','#fff'];
 
-let allR=[];let filtR=[];let charts=[];let curTab='resumen';let curTech=TECHS[0].key;
+let allR=[],filtR=[],charts=[],curTab='resumen';
 
 function login(){
   if(document.getElementById('pwd').value===PWD){
@@ -272,414 +230,421 @@ function login(){
   }
 }
 
-function destCharts(){charts.forEach(c=>{try{c.destroy();}catch(e){}});charts=[];}
-function avg(a){const v=a.filter(x=>typeof x==='number'&&x!==null&&!isNaN(x));return v.length?v.reduce((a,b)=>a+b,0)/v.length:null;}
-function fmt(n,d=1){return n===null||n===undefined||isNaN(n)?'—':n.toFixed(d);}
-function sc(v,max=5){
-  if(v===null||v===undefined)return'#ccc';
-  const i=Math.min(max,Math.max(1,Math.round(v)));
-  return SC5[i]||'#ccc';
+function killCharts(){charts.forEach(c=>{try{c.destroy();}catch(e){}});charts=[];}
+
+function avg(arr){
+  const v=arr.filter(x=>typeof x==='number'&&x!==null&&!isNaN(x));
+  return v.length?v.reduce((a,b)=>a+b,0)/v.length:null;
 }
+
+function fmt(n,d=1){
+  return(n===null||n===undefined||isNaN(n))?'—':Number(n).toFixed(d);
+}
+
+function toPct(v){
+  return v!==null?Math.round(v/5*100):null;
+}
+
+function fmtPct(p){
+  return p===null?'—':p+'%';
+}
+
+function pctColor(p){
+  if(p===null)return'#ccc';
+  if(p>=80)return'#4CAF50';
+  if(p>=60)return'#8BC34A';
+  if(p>=40)return'#FDD835';
+  if(p>=20)return'#F4511E';
+  return'#D32F2F';
+}
+
+function sc(v){
+  if(v===null||v===undefined)return'#ccc';
+  return SC5[Math.min(5,Math.max(1,Math.round(v)))];
+}
+
+function sct(v){
+  if(v===null||v===undefined)return'#fff';
+  return SC5t[Math.min(5,Math.max(1,Math.round(v)))];
+}
+
+function chip(v){
+  return '<span class="schip" style="background:'+sc(v)+';color:'+sct(v)+'">'+fmt(v)+'</span>';
+}
+
 function parseKV(str){
   if(!str)return{};
   const m={};
-  str.split('||').forEach(p=>{const i=p.indexOf(':');if(i>-1){const k=p.slice(0,i);const v=parseInt(p.slice(i+1));if(!isNaN(v))m[k]=v;}});
+  str.split('||').forEach(function(p){
+    var i=p.indexOf(':');
+    if(i>-1){var k=p.slice(0,i);var vv=parseInt(p.slice(i+1));if(!isNaN(vv))m[k]=vv;}
+  });
   return m;
 }
-function dafoCls(v){if(v===null)return null;if(v<=2)return'd';if(v===3)return'o';return'f';}
-function dafoLabel(v){if(v<=2)return'Debilidad';if(v===3)return'Oportunidad';return'Fortaleza';}
 
 async function loadData(){
-  const res=await fetch(`${SB_URL}/rest/v1/${TABLE}?select=*&order=created_at.desc`,{
-    headers:{'apikey':SB_KEY,'Authorization':`Bearer ${SB_KEY}`}
+  const res=await fetch(SB_URL+'/rest/v1/'+TABLE+'?select=*&order=created_at.desc',{
+    headers:{'apikey':SB_KEY,'Authorization':'Bearer '+SB_KEY}
   });
-  if(!res.ok)throw new Error('Error cargando datos');
+  if(!res.ok)throw new Error('Error');
   return res.json();
 }
+
 async function deleteRow(id){
-  if(!confirm('¿Eliminar esta respuesta?'))return;
-  await fetch(`${SB_URL}/rest/v1/${TABLE}?id=eq.${id}`,{method:'DELETE',headers:{'apikey':SB_KEY,'Authorization':`Bearer ${SB_KEY}`}});
+  if(!confirm('¿Eliminar este registro?'))return;
+  await fetch(SB_URL+'/rest/v1/'+TABLE+'?id=eq.'+id,{
+    method:'DELETE',headers:{'apikey':SB_KEY,'Authorization':'Bearer '+SB_KEY}
+  });
   init();
 }
+
 async function clearAll(){
-  if(!confirm('¿Borrar TODAS las respuestas? No se puede deshacer.'))return;
-  await fetch(`${SB_URL}/rest/v1/${TABLE}?id=neq.0`,{method:'DELETE',headers:{'apikey':SB_KEY,'Authorization':`Bearer ${SB_KEY}`}});
+  if(!confirm('¿Borrar TODAS las respuestas?'))return;
+  await fetch(SB_URL+'/rest/v1/'+TABLE+'?id=neq.0',{
+    method:'DELETE',headers:{'apikey':SB_KEY,'Authorization':'Bearer '+SB_KEY}
+  });
   init();
 }
 
 async function init(){
   document.getElementById('dash-content').innerHTML='<div class="loading">Cargando evaluaciones...</div>';
-  destCharts();
-  try{allR=await loadData();}catch(e){
-    document.getElementById('dash-content').innerHTML='<div class="empty"><div class="empty-title">Error de conexión</div>Verifica tu conexión e intenta de nuevo.</div>';
+  killCharts();
+  try{allR=await loadData();}
+  catch(e){
+    document.getElementById('dash-content').innerHTML='<div class="empty"><div class="empty-title">Error de conexión</div>Verifica tu conexión.</div>';
     return;
   }
   if(!allR.length){
     document.getElementById('dash-content').innerHTML='<div class="empty"><div class="empty-title">Sin respuestas todavía</div>Comparte el formulario con los evaluadores.</div>';
     return;
   }
-  populateFilters();
+  populateFilter();
   applyFilter();
 }
 
-function populateFilters(){
-  const evalSel=document.getElementById('eval-filter');
-  const techSel=document.getElementById('tech-filter');
-  const evals=[...new Set(allR.map(r=>r.evaluador).filter(Boolean))].sort();
-  evalSel.innerHTML='<option value="">Todos los evaluadores</option>';
-  evals.forEach(e=>{const o=document.createElement('option');o.value=e;o.textContent=e;evalSel.appendChild(o);});
-  techSel.innerHTML='<option value="">Todos los técnicos</option>';
-  TECHS.forEach(t=>{const o=document.createElement('option');o.value=t.key;o.textContent=t.name;techSel.appendChild(o);});
+function populateFilter(){
+  const sel=document.getElementById('eval-filter');
+  const evals=[...new Set(allR.map(function(r){return r.evaluador;}).filter(Boolean))].sort();
+  sel.innerHTML='<option value="">Todos los evaluadores</option>';
+  evals.forEach(function(e){
+    var o=document.createElement('option');o.value=e;o.textContent=e;sel.appendChild(o);
+  });
 }
 
 function applyFilter(){
   const ev=document.getElementById('eval-filter').value;
-  filtR=ev?allR.filter(r=>r.evaluador===ev):allR;
+  filtR=ev?allR.filter(function(r){return r.evaluador===ev;}):allR;
   renderTab(curTab);
 }
 
 function switchTab(tab,btn){
   curTab=tab;
-  document.querySelectorAll('.tab').forEach(b=>b.classList.remove('on'));
+  document.querySelectorAll('.tab').forEach(function(b){b.classList.remove('on');});
   if(btn)btn.classList.add('on');
   renderTab(tab);
 }
 
 function renderTab(tab){
-  destCharts();
+  killCharts();
   if(tab==='resumen')renderResumen();
   else if(tab==='tecnico')renderTecnico();
   else if(tab==='valores')renderValores();
-  else renderRespuestas();
+  else renderRegistros();
 }
 
 /* ── RESUMEN EJECUTIVO ── */
 function renderResumen(){
-  const R=filtR;
-  const techAvgs=TECHS.map(t=>({
-    ...t,
-    p1:avg(R.map(r=>r[`q1_${t.key}`])),
-    p2:avg(R.map(r=>r[`q2_${t.key}`])),
-    p3:avg(R.map(r=>r[`q3_${t.key}`])),
-    rec:avg(R.map(r=>r[`rec_${t.key}`]))
-  }));
-  const globalP1=avg(R.flatMap(r=>TECHS.map(t=>r[`q1_${t.key}`])));
-  const globalP2=avg(R.flatMap(r=>TECHS.map(t=>r[`q2_${t.key}`])));
-  const globalP3=avg(R.flatMap(r=>TECHS.map(t=>r[`q3_${t.key}`])));
-  const globalRec=avg(R.flatMap(r=>TECHS.map(t=>r[`rec_${t.key}`])));
+  var R=filtR;
 
-  document.getElementById('dash-content').innerHTML=`
-  <div class="view on" id="v-resumen">
-    <div class="kpi-row">
-      <div class="kpi"><div class="kpi-val">${R.length}</div><div class="kpi-lbl">Evaluaciones</div></div>
-      <div class="kpi"><div class="kpi-val" style="color:${sc(globalP1)}">${fmt(globalP1)}</div><div class="kpi-lbl">Prom. desempeño P1</div></div>
-      <div class="kpi"><div class="kpi-val" style="color:${sc(globalP2)}">${fmt(globalP2)}</div><div class="kpi-lbl">Prom. metodología P2</div></div>
-      <div class="kpi"><div class="kpi-val" style="color:${sc(globalRec)}">${fmt(globalRec)}</div><div class="kpi-lbl">Recomendación prom.</div></div>
-    </div>
+  // P7 averages
+  var p7eq=avg(R.reduce(function(acc,r){return acc.concat(VALUES.map(function(v){var kv=parseKV(r.valores_equipo);return kv[v]!==undefined?kv[v]:null;}));},[]).filter(function(x){return x!==null;}));
+  var p7pr=avg(R.reduce(function(acc,r){return acc.concat(VALUES.map(function(v){var kv=parseKV(r.valores_proyecto);return kv[v]!==undefined?kv[v]:null;}));},[]).filter(function(x){return x!==null;}));
+  var p7avg=avg([p7eq,p7pr].filter(function(x){return x!==null;}));
+  var eqData=VALUES.map(function(v){return avg(R.map(function(r){var kv=parseKV(r.valores_equipo);return kv[v]!==undefined?kv[v]:null;}).filter(function(x){return x!==null;}));});
+  var prData=VALUES.map(function(v){return avg(R.map(function(r){var kv=parseKV(r.valores_proyecto);return kv[v]!==undefined?kv[v]:null;}).filter(function(x){return x!==null;}));});
 
-    <div class="card">
-      <div class="ch"><div class="ch-left"><div class="ch-dot"></div><span class="ch-title">P1, P2 y P3 — Comparativa por técnico</span></div></div>
-      <div class="cb"><div class="ch-wrap-lg"><canvas id="c-grouped" role="img" aria-label="Barras agrupadas P1 P2 P3 por técnico"></canvas></div>
-      <div style="display:flex;gap:16px;margin-top:10px;flex-wrap:wrap">
-        <span style="display:flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:#607080"><span style="width:12px;height:12px;border-radius:3px;background:var(--B);display:inline-block"></span>P1 Desempeño</span>
-        <span style="display:flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:#607080"><span style="width:12px;height:12px;border-radius:3px;background:var(--B2);display:inline-block"></span>P2 Metodología</span>
-        <span style="display:flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:#607080"><span style="width:12px;height:12px;border-radius:3px;background:var(--Y);display:inline-block"></span>P3 Resolución</span>
-      </div>
-      </div>
-    </div>
+  // Global score including P7
+  var techVals=[];
+  R.forEach(function(r){
+    TECHS.forEach(function(t){
+      techVals.push(r['q1_'+t.key],r['q2_'+t.key],r['q3_'+t.key],r['rec_'+t.key]);
+      P4_KEYS.forEach(function(p){techVals.push(r['p4_'+p.key+'_'+t.key]);});
+    });
+    VALUES.forEach(function(v){
+      var eq=parseKV(r.valores_equipo)[v];var pr=parseKV(r.valores_proyecto)[v];
+      if(eq!==undefined)techVals.push(eq);
+      if(pr!==undefined)techVals.push(pr);
+    });
+  });
+  var globalScore=avg(techVals.filter(function(x){return typeof x==='number'&&x!==null&&!isNaN(x);}));
+  var globalPct=toPct(globalScore);
 
-    <div class="g2">
-      <div class="card">
-        <div class="ch"><div class="ch-left"><div class="ch-dot"></div><span class="ch-title">Recomendación por técnico</span></div></div>
-        <div class="cb" id="rec-by-tech"></div>
-      </div>
-      <div class="card">
-        <div class="ch"><div class="ch-left"><div class="ch-dot"></div><span class="ch-title">Distribución de recomendación</span></div></div>
-        <div class="cb"><div class="ch-wrap"><canvas id="c-pie" role="img" aria-label="Distribución recomendación"></canvas></div></div>
-      </div>
-    </div>
+  // Per-tech data
+  var techData=TECHS.map(function(t){
+    var p1=avg(R.map(function(r){return r['q1_'+t.key];}).filter(function(x){return x!==null;}));
+    var p2=avg(R.map(function(r){return r['q2_'+t.key];}).filter(function(x){return x!==null;}));
+    var p3=avg(R.map(function(r){return r['q3_'+t.key];}).filter(function(x){return x!==null;}));
+    var rec=avg(R.map(function(r){return r['rec_'+t.key];}).filter(function(x){return x!==null;}));
+    var p4avg=avg(P4_KEYS.map(function(p){return avg(R.map(function(r){return r['p4_'+p.key+'_'+t.key];}).filter(function(x){return x!==null;}));}).filter(function(x){return x!==null;}));
+    var global=avg([p1,p2,p3,rec,p4avg,p7avg].filter(function(x){return x!==null;}));
+    return Object.assign({},t,{p1:p1,p2:p2,p3:p3,rec:rec,p4avg:p4avg,global:global,globalPct:toPct(global)});
+  });
 
-    <div class="card">
-      <div class="ch"><div class="ch-left"><div class="ch-dot"></div><span class="ch-title">Resumen ejecutivo — Todos los técnicos</span></div></div>
-      <div class="cb" style="overflow-x:auto">
-        <table class="stbl">
-          <thead><tr><th>Técnico</th><th>P1</th><th>P2</th><th>P3</th><th>Rec.</th>${P4_KEYS.map(p=>`<th>${p.label.split(' ')[0]}</th>`).join('')}</tr></thead>
-          <tbody>
-            ${techAvgs.map(t=>`
-              <tr>
-                <td><span class="tav">${t.init}</span>${t.name}</td>
-                <td><span class="schip" style="background:${sc(t.p1)};color:${SC5t[Math.round(t.p1)||1]}">${fmt(t.p1)}</span></td>
-                <td><span class="schip" style="background:${sc(t.p2)};color:${SC5t[Math.round(t.p2)||1]}">${fmt(t.p2)}</span></td>
-                <td><span class="schip" style="background:${sc(t.p3)};color:${SC5t[Math.round(t.p3)||1]}">${fmt(t.p3)}</span></td>
-                <td><span class="schip" style="background:${sc(t.rec)};color:${SC5t[Math.round(t.rec)||1]}">${fmt(t.rec)}</span></td>
-                ${P4_KEYS.map(p=>{const v=avg(R.map(r=>r[`p4_${p.key}_${t.key}`]));return`<td><span class="schip" style="background:${sc(v)};color:${SC5t[Math.round(v)||1]}">${fmt(v)}</span></td>`;}).join('')}
-              </tr>`).join('')}
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>`;
+  var rid1='ve'+Math.random().toString(36).slice(2,5);
+  var rid2='vp'+Math.random().toString(36).slice(2,5);
 
-  const labels=TECHS.map(t=>t.name.split(' ')[0]);
-  const c1=new Chart(document.getElementById('c-grouped'),{
+  var avgQ1=avg(R.reduce(function(acc,r){return acc.concat(TECHS.map(function(t){return r['q1_'+t.key];}));},[]).filter(function(x){return x!==null;}));
+  var avgQ2=avg(R.reduce(function(acc,r){return acc.concat(TECHS.map(function(t){return r['q2_'+t.key];}));},[]).filter(function(x){return x!==null;}));
+  var avgQ3=avg(R.reduce(function(acc,r){return acc.concat(TECHS.map(function(t){return r['q3_'+t.key];}));},[]).filter(function(x){return x!==null;}));
+  var avgRec=avg(R.reduce(function(acc,r){return acc.concat(TECHS.map(function(t){return r['rec_'+t.key];}));},[]).filter(function(x){return x!==null;}));
+
+  var html='<div>';
+  html+='<div class="global-score">';
+  html+='<div class="gs-circle"><div class="gs-num" style="color:'+pctColor(globalPct)+'">'+fmtPct(globalPct)+'</div><div class="gs-max">de 100%</div></div>';
+  html+='<div>';
+  html+='<div class="gs-title">Puntuación global del equipo</div>';
+  html+='<div class="gs-sub">Promedio consolidado de todas las dimensiones evaluadas (preguntas 1 a 7) para los '+TECHS.length+' técnicos, basado en '+R.length+' evaluación'+(R.length!==1?'es':'')+'.</div>';
+  html+='<div class="gs-chips">';
+  html+='<span class="gs-chip">1. Desempeño: '+fmtPct(toPct(avgQ1))+'</span>';
+  html+='<span class="gs-chip">2. Metodología: '+fmtPct(toPct(avgQ2))+'</span>';
+  html+='<span class="gs-chip">3. Resolución: '+fmtPct(toPct(avgQ3))+'</span>';
+  html+='<span class="gs-chip">5. Recomendación: '+fmtPct(toPct(avgRec))+'</span>';
+  html+='<span class="gs-chip">7. Valores Polarier: '+fmtPct(toPct(p7avg))+'</span>';
+  html+='</div></div></div>';
+
+  html+='<div class="kpi-row">';
+  html+='<div class="kpi"><div class="kpi-val">'+R.length+'</div><div class="kpi-lbl">Evaluaciones</div></div>';
+  html+='<div class="kpi"><div class="kpi-val">'+TECHS.length+'</div><div class="kpi-lbl">Técnicos evaluados</div></div>';
+  html+='<div class="kpi"><div class="kpi-val" style="color:'+pctColor(globalPct)+'">'+fmtPct(globalPct)+'</div><div class="kpi-lbl">Puntuación global</div></div>';
+  html+='<div class="kpi"><div class="kpi-val" style="color:'+pctColor(toPct(p7avg))+'">'+fmtPct(toPct(p7avg))+'</div><div class="kpi-lbl">7. Valores Polarier</div></div>';
+  html+='</div>';
+
+  html+='<div class="tech-cards" id="tech-cards-grid"></div>';
+
+  html+='<div class="card"><div class="ch"><div class="ch-left"><div class="ch-dot"></div><span class="ch-title">Preguntas 1, 2 y 3 — Comparativa por técnico</span></div></div>';
+  html+='<div class="cb"><div class="chw-lg"><canvas id="c-grouped" role="img" aria-label="Comparativa"></canvas></div>';
+  html+='<div style="display:flex;gap:16px;margin-top:12px;flex-wrap:wrap">';
+  html+='<span style="display:flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:#607080"><span style="width:12px;height:12px;border-radius:3px;background:#0E4174;display:inline-block"></span>1. Desempeño general</span>';
+  html+='<span style="display:flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:#607080"><span style="width:12px;height:12px;border-radius:3px;background:#1a5a9e;display:inline-block"></span>2. Enfoque metodológico y comunicación</span>';
+  html+='<span style="display:flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:#607080"><span style="width:12px;height:12px;border-radius:3px;background:#F1BE48;display:inline-block"></span>3. Resolución de problemas</span>';
+  html+='</div></div></div>';
+
+  html+='<div class="g2">';
+  html+='<div class="card"><div class="ch"><div class="ch-left"><div class="ch-dot"></div><span class="ch-title">5. Recomendación para proyecto similar</span></div></div><div class="cb" id="rec-bars"></div></div>';
+  html+='<div class="card"><div class="ch"><div class="ch-left"><div class="ch-dot"></div><span class="ch-title">5. Distribución de recomendación</span></div></div><div class="cb"><div class="chw"><canvas id="c-pie" role="img" aria-label="Recomendación"></canvas></div></div></div>';
+  html+='</div>';
+
+  html+='<div class="g2">';
+  html+='<div class="card"><div class="ch"><div class="ch-left"><div class="ch-dot"></div><span class="ch-title">7. Valores Polarier — Equipo</span></div></div><div class="cb"><div class="chw-lg"><canvas id="'+rid1+'" role="img" aria-label="Valores equipo"></canvas></div></div></div>';
+  html+='<div class="card"><div class="ch"><div class="ch-left"><div class="ch-dot"></div><span class="ch-title">7. Valores Polarier — Proyecto</span></div></div><div class="cb"><div class="chw-lg"><canvas id="'+rid2+'" role="img" aria-label="Valores proyecto"></canvas></div></div></div>';
+  html+='</div>';
+
+  html+='</div>';
+  document.getElementById('dash-content').innerHTML=html;
+
+  // Tech cards
+  var grid=document.getElementById('tech-cards-grid');
+  techData.forEach(function(t){
+    var card=document.createElement('div');
+    card.className='tcard';
+    var dims=[
+      {l:'1. Desempeño',v:t.p1},{l:'2. Metodología',v:t.p2},{l:'3. Resolución',v:t.p3},
+      {l:'4. Competencias',v:t.p4avg},{l:'5. Recomendación',v:t.rec}
+    ];
+    var barsHtml=dims.map(function(x){
+      return '<div class="mini-bar">'+
+        '<div class="mini-bar-head"><span class="mini-bar-lbl">'+x.l+'</span><span class="mini-bar-val" style="color:'+pctColor(toPct(x.v))+'">'+fmtPct(toPct(x.v))+'</span></div>'+
+        '<div class="mini-track"><div class="mini-fill" style="width:'+(x.v!==null?(x.v/5*100):0)+'%;background:'+sc(x.v)+'"></div></div>'+
+        '</div>';
+    }).join('');
+    card.innerHTML='<div class="tcard-head"><div class="tav">'+t.init+'</div><div><div class="tcard-name">'+t.name+'</div><div class="tcard-role">IOC · Proyecto Ibiza</div></div></div>'+
+      '<div style="display:flex;align-items:baseline;gap:8px;margin-bottom:4px"><div class="tcard-score" style="color:'+pctColor(t.globalPct)+'">'+(t.globalPct!==null?t.globalPct+'%':'—')+'</div></div>'+
+      '<div class="tcard-score-lbl">Puntuación global</div>'+
+      '<div class="tcard-bars" style="margin-top:14px">'+barsHtml+'</div>';
+    card.onclick=function(){
+      document.querySelector('.tab:nth-child(2)').click();
+      setTimeout(function(){showTech(t.key,document.querySelector('.ttab[data-key="'+t.key+'"]'));},150);
+    };
+    grid.appendChild(card);
+  });
+
+  // Grouped bar
+  var c1=new Chart(document.getElementById('c-grouped'),{
     type:'bar',
     data:{
-      labels,
+      labels:TECHS.map(function(t){return t.name.split(' ')[0];}),
       datasets:[
-        {label:'P1',data:techAvgs.map(t=>t.p1!==null?+t.p1.toFixed(2):0),backgroundColor:'#0E4174',borderRadius:6,borderSkipped:false},
-        {label:'P2',data:techAvgs.map(t=>t.p2!==null?+t.p2.toFixed(2):0),backgroundColor:'#1a5a9e',borderRadius:6,borderSkipped:false},
-        {label:'P3',data:techAvgs.map(t=>t.p3!==null?+t.p3.toFixed(2):0),backgroundColor:'#F1BE48',borderRadius:6,borderSkipped:false}
+        {label:'1. Desempeño',data:techData.map(function(t){return t.p1!==null?+t.p1.toFixed(2):0;}),backgroundColor:'#0E4174',borderRadius:6,borderSkipped:false},
+        {label:'2. Metodología',data:techData.map(function(t){return t.p2!==null?+t.p2.toFixed(2):0;}),backgroundColor:'#1a5a9e',borderRadius:6,borderSkipped:false},
+        {label:'3. Resolución',data:techData.map(function(t){return t.p3!==null?+t.p3.toFixed(2):0;}),backgroundColor:'#F1BE48',borderRadius:6,borderSkipped:false}
       ]
     },
     options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{y:{beginAtZero:true,max:5,ticks:{stepSize:1,font:{size:10}}},x:{grid:{display:false},ticks:{font:{size:10}}}}}
   });
   charts.push(c1);
 
-  const recCounts=[1,2,3,4,5].map(n=>R.reduce((acc,r)=>acc+TECHS.filter(t=>r[`rec_${t.key}`]===n).length,0));
-  const c2=new Chart(document.getElementById('c-pie'),{
+  // Rec bars
+  var rb=document.getElementById('rec-bars');
+  techData.forEach(function(t){
+    var vr=Math.max(1,Math.round(t.rec)||1);
+    var d=document.createElement('div');d.className='hbar-wrap';
+    d.innerHTML='<div class="hbar-head"><span class="hbar-lbl">'+t.name+'</span><span class="hbar-val" style="color:'+sc(t.rec)+'">'+fmt(t.rec)+' — '+(RECS[vr-1]||'—')+'</span></div>'+
+      '<div class="hbar-track"><div class="hbar-fill" style="width:'+(t.rec!==null?(t.rec/5*100):0)+'%;background:'+sc(t.rec)+'"></div></div>';
+    rb.appendChild(d);
+  });
+
+  // Doughnut
+  var recC=[1,2,3,4,5].map(function(n){return filtR.reduce(function(acc,r){return acc+TECHS.filter(function(t){return r['rec_'+t.key]===n;}).length;},0);});
+  var c2=new Chart(document.getElementById('c-pie'),{
     type:'doughnut',
-    data:{labels:RECS,datasets:[{data:recCounts,backgroundColor:SC5.slice(1),borderWidth:2,borderColor:'#fff'}]},
+    data:{labels:RECS,datasets:[{data:recC,backgroundColor:SC5.slice(1),borderWidth:2,borderColor:'#fff'}]},
     options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{font:{size:9},boxWidth:9,padding:8}}},cutout:'60%'}
   });
   charts.push(c2);
 
-  const recByTech=document.getElementById('rec-by-tech');
-  recByTech.innerHTML='';
-  TECHS.forEach(t=>{
-    const v=avg(R.map(r=>r[`rec_${t.key}`]));
-    const vr=Math.round(v)||1;
-    const div=document.createElement('div');div.className='hbar-wrap';
-    div.innerHTML=`
-      <div class="hbar-label">
-        <span class="hbar-name">${t.name}</span>
-        <span class="hbar-val" style="color:${SC5[vr]}">${fmt(v)} — ${RECS[vr-1]||'—'}</span>
-      </div>
-      <div class="hbar-track"><div class="hbar-fill" style="width:${v!==null?(v/5*100):0}%;background:${SC5[vr]}"></div></div>`;
-    recByTech.appendChild(div);
+  // P7 radars
+  [{id:rid1,data:eqData,color:'#0E4174'},{id:rid2,data:prData,color:'#F1BE48'}].forEach(function(cfg){
+    var c=new Chart(document.getElementById(cfg.id),{
+      type:'radar',
+      data:{labels:VALUES,datasets:[{data:cfg.data.map(function(v){return v!==null?+v.toFixed(2):0;}),backgroundColor:cfg.color+'22',borderColor:cfg.color,pointBackgroundColor:cfg.data.map(function(v){return sc(v);}),pointBorderColor:'#fff',pointBorderWidth:2,pointRadius:6,borderWidth:2.5}]},
+      options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:function(ctx){return ctx.label+': '+ctx.parsed.r.toFixed(1)+' / 5';}}}},scales:{r:{beginAtZero:true,max:5,ticks:{stepSize:1,font:{size:9},backdropColor:'transparent'},pointLabels:{font:{size:11,weight:'700'},color:'#1a2e44'},grid:{color:'rgba(14,65,116,.08)'},angleLines:{color:'rgba(14,65,116,.1)'}}}}
+    });
+    charts.push(c);
   });
 }
 
-/* ── POR TÉCNICO ── */
+/* ── DETALLE POR TÉCNICO ── */
 function renderTecnico(){
-  document.getElementById('dash-content').innerHTML=`
-  <div class="view on" id="v-tecnico">
-    <div class="tech-tabs" id="tech-tabs">
-      ${TECHS.map((t,i)=>`<button class="ttab${i===0?' on':''}" onclick="showTech('${t.key}',this)">${t.name.split(' ')[0]}</button>`).join('')}
-    </div>
-    <div id="tech-detail"></div>
-  </div>`;
+  var tabsHtml=TECHS.map(function(t,i){
+    return '<button class="ttab'+(i===0?' on':'')+'" data-key="'+t.key+'" onclick="showTech(\''+t.key+'\',this)">'+t.name+'</button>';
+  }).join('');
+  document.getElementById('dash-content').innerHTML='<div><div class="tech-tabs">'+tabsHtml+'</div><div id="tech-detail"></div></div>';
   showTech(TECHS[0].key,document.querySelector('.ttab.on'));
 }
 
 function showTech(key,btn){
-  document.querySelectorAll('.ttab').forEach(b=>b.classList.remove('on'));
+  document.querySelectorAll('.ttab').forEach(function(b){b.classList.remove('on');});
   if(btn)btn.classList.add('on');
-  curTech=key;
-  const R=filtR;
-  const t=TECHS.find(x=>x.key===key);
-  const p1=avg(R.map(r=>r[`q1_${key}`]));
-  const p2=avg(R.map(r=>r[`q2_${key}`]));
-  const p3=avg(R.map(r=>r[`q3_${key}`]));
-  const rec=avg(R.map(r=>r[`rec_${key}`]));
-  const recR=Math.round(rec)||1;
+  var R=filtR;
+  var t=TECHS.find(function(x){return x.key===key;});
+  var p1=avg(R.map(function(r){return r['q1_'+key];}).filter(function(x){return x!==null;}));
+  var p2=avg(R.map(function(r){return r['q2_'+key];}).filter(function(x){return x!==null;}));
+  var p3=avg(R.map(function(r){return r['q3_'+key];}).filter(function(x){return x!==null;}));
+  var rec=avg(R.map(function(r){return r['rec_'+key];}).filter(function(x){return x!==null;}));
+  var recR=Math.max(1,Math.round(rec)||1);
+  var p4Vals=P4_KEYS.map(function(p){return avg(R.map(function(r){return r['p4_'+p.key+'_'+key];}).filter(function(x){return x!==null;}));});
+  var global=avg([p1,p2,p3,rec].concat(p4Vals).filter(function(x){return x!==null;}));
 
-  const dafoParsed={f:[],o:[],d:[]};
-  DAFO_ITEMS.forEach(item=>{
-    const vals=R.map(r=>parseKV(r[`dafo_${key}`])[item]).filter(v=>typeof v==='number');
+  var dafoParsed={f:[],o:[],d:[]};
+  DAFO_ITEMS.forEach(function(item){
+    var vals=R.map(function(r){var kv=parseKV(r['dafo_'+key]);return kv[item]!==undefined?kv[item]:null;}).filter(function(x){return x!==null;});
     if(!vals.length)return;
-    const avgV=avg(vals);
-    const cls=dafoCls(Math.round(avgV));
-    if(cls)dafoParsed[cls].push({item,avg:avgV});
+    var av=avg(vals);var r2=Math.round(av);
+    if(r2<=2)dafoParsed.d.push({item:item,avg:av});
+    else if(r2===3)dafoParsed.o.push({item:item,avg:av});
+    else dafoParsed.f.push({item:item,avg:av});
   });
 
-  const rid1='r1'+Math.random().toString(36).slice(2,5);
+  var rid='r'+Math.random().toString(36).slice(2,6);
 
-  document.getElementById('tech-detail').innerHTML=`
-    <div class="kpi-row">
-      <div class="kpi"><div class="kpi-val">${R.length}</div><div class="kpi-lbl">Evaluaciones</div></div>
-      <div class="kpi"><div class="kpi-val" style="color:${sc(p1)}">${fmt(p1)}</div><div class="kpi-lbl">P1 Desempeño</div></div>
-      <div class="kpi"><div class="kpi-val" style="color:${sc(p2)}">${fmt(p2)}</div><div class="kpi-lbl">P2 Metodología</div></div>
-      <div class="kpi"><div class="kpi-val" style="color:${sc(p3)}">${fmt(p3)}</div><div class="kpi-lbl">P3 Resolución</div></div>
-    </div>
+  var dafoHtml=function(arr,cls){
+    if(!arr.length)return '<span style="font-size:10px;color:#a0b0c0">Sin datos</span>';
+    return arr.map(function(x){return '<span class="dpill '+cls+'"><span class="dpscore" style="background:'+sc(x.avg)+'">'+fmt(x.avg,0)+'</span>'+x.item+'</span>';}).join('');
+  };
 
-    <div class="g2">
-      <div class="card">
-        <div class="ch"><div class="ch-left"><div class="ch-dot"></div><span class="ch-title">P1, P2 y P3 — Barras de progreso</span></div></div>
-        <div class="cb">
-          ${[{l:'P1 — Desempeño general',v:p1},{l:'P2 — Enfoque metodológico',v:p2},{l:'P3 — Resolución de problemas',v:p3}].map(x=>`
-            <div class="hbar-wrap">
-              <div class="hbar-label"><span class="hbar-name">${x.l}</span><span class="hbar-val" style="color:${sc(x.v)}">${fmt(x.v)} / 5</span></div>
-              <div class="hbar-track"><div class="hbar-fill" style="width:${x.v!==null?(x.v/5*100):0}%;background:${sc(x.v)}"></div></div>
-            </div>`).join('')}
-        </div>
-      </div>
-      <div class="card">
-        <div class="ch"><div class="ch-left"><div class="ch-dot"></div><span class="ch-title">Recomendación</span></div></div>
-        <div class="cb" style="text-align:center;padding-top:30px">
-          <div style="font-size:52px;font-weight:900;color:${SC5[recR]};line-height:1">${fmt(rec)}</div>
-          <div style="font-size:12px;font-weight:700;color:#607080;margin-top:10px">${RECS[recR-1]||'—'}</div>
-          <div class="hbar-track" style="margin-top:16px"><div class="hbar-fill" style="width:${rec!==null?(rec/5*100):0}%;background:${SC5[recR]}"></div></div>
-        </div>
-      </div>
-    </div>
+  var html='<div class="kpi-row">';
+  html+='<div class="kpi"><div class="kpi-val" style="color:'+pctColor(toPct(global))+'">'+fmtPct(toPct(global))+'</div><div class="kpi-lbl">Puntuación global</div></div>';
+  html+='<div class="kpi"><div class="kpi-val" style="color:'+sc(p1)+'">'+fmt(p1)+'</div><div class="kpi-lbl">1. Desempeño general</div></div>';
+  html+='<div class="kpi"><div class="kpi-val" style="color:'+sc(p2)+'">'+fmt(p2)+'</div><div class="kpi-lbl">2. Metodología y comunicación</div></div>';
+  html+='<div class="kpi"><div class="kpi-val" style="color:'+sc(p3)+'">'+fmt(p3)+'</div><div class="kpi-lbl">3. Resolución de problemas</div></div>';
+  html+='</div>';
 
-    <div class="card">
-      <div class="ch"><div class="ch-left"><div class="ch-dot"></div><span class="ch-title">P4 — Competencias individuales (radar)</span></div></div>
-      <div class="cb">
-        <div class="ch-wrap-lg"><canvas id="${rid1}" role="img" aria-label="Radar competencias ${t.name}"></canvas></div>
-        <div style="margin-top:14px;display:grid;grid-template-columns:repeat(3,1fr);gap:8px">
-          ${P4_KEYS.map(p=>{const v=avg(R.map(r=>r[`p4_${p.key}_${key}`]));return`
-            <div style="background:#f7fafd;border-radius:10px;padding:10px 12px;border:1px solid rgba(14,65,116,.07)">
-              <div style="font-size:10px;font-weight:700;color:#8090a8;margin-bottom:4px">${p.label}</div>
-              <div style="font-size:18px;font-weight:900;color:${sc(v)}">${fmt(v)}<span style="font-size:11px;color:#8090a8;font-weight:600"> /5</span></div>
-            </div>`}).join('')}
-        </div>
-      </div>
-    </div>
+  html+='<div class="g2">';
+  html+='<div class="card"><div class="ch"><div class="ch-left"><div class="ch-dot"></div><span class="ch-title">Preguntas 1, 2 y 3 — Barras de progreso</span></div></div><div class="cb">';
+  [{l:'1. Desempeño general',v:p1},{l:'2. Enfoque metodológico y comunicación',v:p2},{l:'3. Resolución de problemas',v:p3}].forEach(function(x){
+    html+='<div class="hbar-wrap"><div class="hbar-head"><span class="hbar-lbl">'+x.l+'</span><span class="hbar-val" style="color:'+sc(x.v)+'">'+fmt(x.v)+' / 5</span></div><div class="hbar-track"><div class="hbar-fill" style="width:'+(x.v!==null?(x.v/5*100):0)+'%;background:'+sc(x.v)+'"></div></div></div>';
+  });
+  html+='</div></div>';
+  html+='<div class="card"><div class="ch"><div class="ch-left"><div class="ch-dot"></div><span class="ch-title">5. Recomendación para proyecto similar</span></div></div>';
+  html+='<div class="cb" style="text-align:center;padding-top:24px"><div style="font-size:56px;font-weight:900;color:'+SC5[recR]+';line-height:1">'+fmt(rec)+'</div>';
+  html+='<div style="font-size:12px;font-weight:700;color:#607080;margin:10px 0 16px">'+(RECS[recR-1]||'—')+'</div>';
+  html+='<div class="hbar-track"><div class="hbar-fill" style="width:'+(rec!==null?(rec/5*100):0)+'%;background:'+SC5[recR]+'"></div></div></div></div>';
+  html+='</div>';
 
-    <div class="card">
-      <div class="ch"><div class="ch-left"><div class="ch-dot"></div><span class="ch-title">P6 — Análisis FODA automático</span></div></div>
-      <div class="cb">
-        <div class="dafo-results">
-          <div class="dafo-col">
-            <div class="dafo-col-head f">🟢 Fortalezas (${dafoParsed.f.length})</div>
-            <div class="dafo-col-body">${dafoParsed.f.length?dafoParsed.f.map(x=>`<span class="dpill f"><span class="dpill-score" style="background:${sc(x.avg)}">${fmt(x.avg,0)}</span>${x.item}</span>`).join(''):'<span style="font-size:10px;color:#a0b0c0">Sin fortalezas destacadas</span>'}</div>
-          </div>
-          <div class="dafo-col">
-            <div class="dafo-col-head o">🔵 Oportunidades (${dafoParsed.o.length})</div>
-            <div class="dafo-col-body">${dafoParsed.o.length?dafoParsed.o.map(x=>`<span class="dpill o"><span class="dpill-score" style="background:${sc(x.avg)}">${fmt(x.avg,0)}</span>${x.item}</span>`).join(''):'<span style="font-size:10px;color:#a0b0c0">Sin oportunidades</span>'}</div>
-          </div>
-          <div class="dafo-col">
-            <div class="dafo-col-head d">🔴 Debilidades (${dafoParsed.d.length})</div>
-            <div class="dafo-col-body">${dafoParsed.d.length?dafoParsed.d.map(x=>`<span class="dpill d"><span class="dpill-score" style="background:${sc(x.avg)}">${fmt(x.avg,0)}</span>${x.item}</span>`).join(''):'<span style="font-size:10px;color:#a0b0c0">Sin debilidades detectadas</span>'}</div>
-          </div>
-        </div>
-      </div>
-    </div>`;
+  html+='<div class="card"><div class="ch"><div class="ch-left"><div class="ch-dot"></div><span class="ch-title">4. Competencias individuales — Radar</span></div></div><div class="cb">';
+  html+='<div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:center">';
+  html+='<div class="chw-lg"><canvas id="'+rid+'" role="img" aria-label="Radar competencias"></canvas></div>';
+  html+='<div>';
+  P4_KEYS.forEach(function(p,i){
+    var v=p4Vals[i];
+    html+='<div class="hbar-wrap"><div class="hbar-head"><span class="hbar-lbl">'+p.label+'</span><span class="hbar-val" style="color:'+sc(v)+'">'+fmt(v)+' / 5</span></div><div class="hbar-track"><div class="hbar-fill" style="width:'+(v!==null?(v/5*100):0)+'%;background:'+sc(v)+'"></div></div></div>';
+  });
+  html+='</div></div></div></div>';
 
-  const radarData=P4_KEYS.map(p=>avg(R.map(r=>r[`p4_${p.key}_${key}`]))).map(v=>v!==null?+v.toFixed(2):0);
-  const cr=new Chart(document.getElementById(rid1),{
+  html+='<div class="card"><div class="ch"><div class="ch-left"><div class="ch-dot"></div><span class="ch-title">6. Análisis FODA — Clasificación automática</span></div></div><div class="cb">';
+  html+='<div class="dafo-cols">';
+  html+='<div class="dafo-col"><div class="dafo-head f">🟢 Fortalezas ('+dafoParsed.f.length+')</div><div class="dafo-body">'+dafoHtml(dafoParsed.f,'f')+'</div></div>';
+  html+='<div class="dafo-col"><div class="dafo-head o">🔵 Oportunidades ('+dafoParsed.o.length+')</div><div class="dafo-body">'+dafoHtml(dafoParsed.o,'o')+'</div></div>';
+  html+='<div class="dafo-col"><div class="dafo-head d">🔴 Debilidades ('+dafoParsed.d.length+')</div><div class="dafo-body">'+dafoHtml(dafoParsed.d,'d')+'</div></div>';
+  html+='</div></div></div>';
+
+  html+='</div>';
+  document.getElementById('tech-detail').innerHTML=html;
+
+  var cr=new Chart(document.getElementById(rid),{
     type:'radar',
-    data:{
-      labels:P4_KEYS.map(p=>p.label),
-      datasets:[{label:t.name,data:radarData,backgroundColor:'rgba(14,65,116,.1)',borderColor:'#0E4174',pointBackgroundColor:radarData.map(v=>sc(v)),pointRadius:6,pointHoverRadius:8,borderWidth:2}]
-    },
-    options:{
-      responsive:true,maintainAspectRatio:false,
-      plugins:{legend:{display:false},tooltip:{callbacks:{label:(ctx)=>`${ctx.label}: ${ctx.parsed.r.toFixed(1)} / 5`}}},
-      scales:{r:{beginAtZero:true,max:5,ticks:{stepSize:1,font:{size:9},backdropColor:'transparent'},pointLabels:{font:{size:11,weight:'700'},color:'#1a2e44'},grid:{color:'rgba(14,65,116,.08)'},angleLines:{color:'rgba(14,65,116,.1)'}}}
-    }
+    data:{labels:P4_KEYS.map(function(p){return p.label;}),datasets:[{label:t.name,data:p4Vals.map(function(v){return v!==null?+v.toFixed(2):0;}),backgroundColor:'rgba(14,65,116,.1)',borderColor:'#0E4174',pointBackgroundColor:p4Vals.map(function(v){return sc(v);}),pointBorderColor:'#fff',pointBorderWidth:2,pointRadius:7,borderWidth:2.5}]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:function(ctx){return ctx.label+': '+ctx.parsed.r.toFixed(1)+' / 5';}}}},scales:{r:{beginAtZero:true,max:5,ticks:{stepSize:1,font:{size:9},backdropColor:'transparent'},pointLabels:{font:{size:11,weight:'700'},color:'#1a2e44'},grid:{color:'rgba(14,65,116,.08)'},angleLines:{color:'rgba(14,65,116,.1)'}}}}
   });
   charts.push(cr);
 }
 
 /* ── VALORES P7 ── */
 function renderValores(){
-  const R=filtR;
-  const eqData=VALUES.map(v=>avg(R.map(r=>parseKV(r.valores_equipo)[v]??null)));
-  const prData=VALUES.map(v=>avg(R.map(r=>parseKV(r.valores_proyecto)[v]??null)));
-  const rid1='ve'+Math.random().toString(36).slice(2,5);
-  const rid2='vp'+Math.random().toString(36).slice(2,5);
+  var R=filtR;
+  var eqData=VALUES.map(function(v){return avg(R.map(function(r){var kv=parseKV(r.valores_equipo);return kv[v]!==undefined?kv[v]:null;}).filter(function(x){return x!==null;}));});
+  var prData=VALUES.map(function(v){return avg(R.map(function(r){var kv=parseKV(r.valores_proyecto);return kv[v]!==undefined?kv[v]:null;}).filter(function(x){return x!==null;}));});
+  var rid1='ve'+Math.random().toString(36).slice(2,5);
+  var rid2='vp'+Math.random().toString(36).slice(2,5);
 
-  document.getElementById('dash-content').innerHTML=`
-  <div class="view on">
-    <div class="g2">
-      <div class="card">
-        <div class="ch"><div class="ch-left"><div class="ch-dot"></div><span class="ch-title">Equipo — Valores Polarier</span></div></div>
-        <div class="cb"><div class="ch-wrap-lg"><canvas id="${rid1}" role="img" aria-label="Radar valores equipo"></canvas></div></div>
-      </div>
-      <div class="card">
-        <div class="ch"><div class="ch-left"><div class="ch-dot"></div><span class="ch-title">Proyecto — Valores Polarier</span></div></div>
-        <div class="cb"><div class="ch-wrap-lg"><canvas id="${rid2}" role="img" aria-label="Radar valores proyecto"></canvas></div></div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="ch"><div class="ch-left"><div class="ch-dot"></div><span class="ch-title">Tabla comparativa — Equipo vs Proyecto</span></div></div>
-      <div class="cb">
-        <table class="vtbl">
-          <thead><tr><th>Valor</th><th>Equipo</th><th>Proyecto</th><th>Diferencia</th></tr></thead>
-          <tbody>
-            ${VALUES.map((v,i)=>{
-              const eq=eqData[i];const pr=prData[i];
-              const diff=eq!==null&&pr!==null?(eq-pr):null;
-              const diffTxt=diff===null?'—':(diff>0?`+${diff.toFixed(1)}`:`${diff.toFixed(1)}`);
-              const diffColor=diff===null?'#ccc':diff>0?'#4CAF50':diff<0?'#D32F2F':'#8090a8';
-              return`<tr>
-                <td>${v}</td>
-                <td><span class="schip" style="background:${sc(eq)};color:${SC5t[Math.min(5,Math.max(1,Math.round(eq)||1))]}">${fmt(eq)}</span></td>
-                <td><span class="schip" style="background:${sc(pr)};color:${SC5t[Math.min(5,Math.max(1,Math.round(pr)||1))]}">${fmt(pr)}</span></td>
-                <td style="font-weight:800;color:${diffColor}">${diffTxt}</td>
-              </tr>`;
-            }).join('')}
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>`;
+  var tblRows=VALUES.map(function(v,i){
+    var eq=eqData[i],pr=prData[i];
+    var diff=(eq!==null&&pr!==null)?+(eq-pr).toFixed(1):null;
+    var dc=diff===null?'#ccc':diff>0?'#4CAF50':diff<0?'#D32F2F':'#8090a8';
+    return '<tr><td>'+v+'</td><td>'+chip(eq)+'</td><td>'+chip(pr)+'</td><td style="font-weight:800;color:'+dc+'">'+(diff===null?'—':diff>0?'+'+diff:diff)+'</td></tr>';
+  }).join('');
 
-  function makeRadar(id,data,label,color){
-    const c=new Chart(document.getElementById(id),{
+  document.getElementById('dash-content').innerHTML=
+    '<div>'+
+    '<div class="g2">'+
+    '<div class="card"><div class="ch"><div class="ch-left"><div class="ch-dot"></div><span class="ch-title">7. Valores Polarier — Equipo</span></div></div><div class="cb"><div class="chw-lg"><canvas id="'+rid1+'" role="img" aria-label="Radar valores equipo"></canvas></div></div></div>'+
+    '<div class="card"><div class="ch"><div class="ch-left"><div class="ch-dot"></div><span class="ch-title">7. Valores Polarier — Proyecto</span></div></div><div class="cb"><div class="chw-lg"><canvas id="'+rid2+'" role="img" aria-label="Radar valores proyecto"></canvas></div></div></div>'+
+    '</div>'+
+    '<div class="card"><div class="ch"><div class="ch-left"><div class="ch-dot"></div><span class="ch-title">7. Tabla comparativa — Equipo vs Proyecto</span></div></div>'+
+    '<div class="cb"><table class="vtbl"><thead><tr><th>Valor</th><th>Equipo</th><th>Proyecto</th><th>Diferencia</th></tr></thead><tbody>'+tblRows+'</tbody></table></div></div>'+
+    '</div>';
+
+  [{id:rid1,data:eqData,color:'#0E4174'},{id:rid2,data:prData,color:'#F1BE48'}].forEach(function(cfg){
+    var c=new Chart(document.getElementById(cfg.id),{
       type:'radar',
-      data:{
-        labels:VALUES.map(v=>v.length>14?v.slice(0,12)+'…':v),
-        datasets:[{label,data:data.map(v=>v!==null?+v.toFixed(2):0),
-          backgroundColor:`${color}22`,borderColor:color,
-          pointBackgroundColor:data.map(v=>sc(v)),
-          pointRadius:6,pointHoverRadius:8,borderWidth:2.5}]
-      },
-      options:{
-        responsive:true,maintainAspectRatio:false,
-        plugins:{legend:{display:false},tooltip:{callbacks:{label:(ctx)=>`${ctx.label}: ${ctx.parsed.r.toFixed(1)} / 5`}}},
-        scales:{r:{beginAtZero:true,max:5,ticks:{stepSize:1,font:{size:9},backdropColor:'transparent'},pointLabels:{font:{size:10,weight:'700'},color:'#1a2e44'},grid:{color:'rgba(14,65,116,.08)'},angleLines:{color:'rgba(14,65,116,.1)'}}}
-      }
+      data:{labels:VALUES,datasets:[{data:cfg.data.map(function(v){return v!==null?+v.toFixed(2):0;}),backgroundColor:cfg.color+'22',borderColor:cfg.color,pointBackgroundColor:cfg.data.map(function(v){return sc(v);}),pointBorderColor:'#fff',pointBorderWidth:2,pointRadius:6,borderWidth:2.5}]},
+      options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:function(ctx){return ctx.label+': '+ctx.parsed.r.toFixed(1)+' / 5';}}}},scales:{r:{beginAtZero:true,max:5,ticks:{stepSize:1,font:{size:9},backdropColor:'transparent'},pointLabels:{font:{size:12,weight:'700'},color:'#1a2e44'},grid:{color:'rgba(14,65,116,.08)'},angleLines:{color:'rgba(14,65,116,.1)'}}}}
     });
     charts.push(c);
-  }
-  makeRadar(rid1,eqData,'Equipo','#0E4174');
-  makeRadar(rid2,prData,'Proyecto','#F1BE48');
+  });
 }
 
-/* ── RESPUESTAS INDIVIDUALES ── */
-function renderRespuestas(){
-  const R=filtR;
-  document.getElementById('dash-content').innerHTML=`
-  <div class="view on">
-    <div class="card">
-      <div class="ch"><div class="ch-left"><div class="ch-dot"></div><span class="ch-title">Respuestas individuales</span></div><span class="ch-badge">${R.length} registros</span></div>
-      <div class="cb" style="overflow-x:auto">
-        <table class="stbl">
-          <thead><tr><th>Evaluador</th><th>Fecha</th>${TECHS.map(t=>`<th>${t.name.split(' ')[0]}<br><span style="font-size:9px;opacity:.7">P1·P2·P3</span></th>`).join('')}<th></th></tr></thead>
-          <tbody>
-            ${R.map(r=>`
-              <tr>
-                <td>${r.evaluador||'—'}</td>
-                <td>${r.fecha||'—'}</td>
-                ${TECHS.map(t=>{
-                  const p1=r[`q1_${t.key}`];const p2=r[`q2_${t.key}`];const p3=r[`q3_${t.key}`];
-                  return`<td>
-                    <span class="schip" style="background:${sc(p1)};color:${SC5t[Math.min(5,Math.max(1,p1||1))]};font-size:10px">${p1??'—'}</span>
-                    <span class="schip" style="background:${sc(p2)};color:${SC5t[Math.min(5,Math.max(1,p2||1))]};font-size:10px;margin:0 2px">${p2??'—'}</span>
-                    <span class="schip" style="background:${sc(p3)};color:${SC5t[Math.min(5,Math.max(1,p3||1))]};font-size:10px">${p3??'—'}</span>
-                  </td>`;
-                }).join('')}
-                <td><button onclick="deleteRow(${r.id})" style="border:none;background:#fde8e8;color:#9b1515;padding:4px 10px;border-radius:6px;font-size:10px;font-weight:800;cursor:pointer;font-family:inherit">Borrar</button></td>
-              </tr>`).join('')}
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>`;
-}
-
-function exportPDF(){
-  window.print();
-}
-
-function switchTab(tab,btn){
-  curTab=tab;
-  document.querySelectorAll('.tab').forEach(b=>b.classList.remove('on'));
-  if(btn)btn.classList.add('on');
-  renderTab(tab);
+/* ── REGISTROS ── */
+function renderRegistros(){
+  var R=filtR;
+  var rows=R.map(function(r){
+    return '<tr><td style="font-weight:700">'+( r.evaluador||'—')+'</td><td style="color:#607080">'+(r.fecha||'—')+'</td><td><button class="del-btn" onclick="deleteRow('+r.id+')">Eliminar</button></td></tr>';
+  }).join('');
+  document.getElementById('dash-content').innerHTML=
+    '<div><div class="card">'+
+    '<div class="ch"><div class="ch-left"><div class="ch-dot"></div><span class="ch-title">Registros de evaluación</span></div><span class="ch-badge">'+R.length+' registro'+(R.length!==1?'s':'')+'</span></div>'+
+    '<div class="cb" style="overflow-x:auto"><table class="rtbl"><thead><tr><th>Evaluador</th><th>Fecha</th><th></th></tr></thead><tbody>'+rows+'</tbody></table></div>'+
+    '</div></div>';
 }
 </script>
 </body>
