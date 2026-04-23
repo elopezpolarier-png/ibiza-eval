@@ -457,7 +457,7 @@ function renderResumen(){
         '<div class="mini-track"><div class="mini-fill" style="width:'+(x.v!==null?(x.v/5*100):0)+'%;background:'+sc(x.v)+'"></div></div>'+
         '</div>';
     }).join('');
-    card.innerHTML='<div class="tcard-head"><div class="tav">'+t.init+'</div><div><div class="tcard-name">'+t.name+'</div><div class="tcard-role">IOC · Proyecto Ibiza</div></div></div>'+
+    card.innerHTML='<div class="tcard-head"><div class="tav">'+t.init+'</div><div><div class="tcard-name">'+t.name+'</div></div></div>'+
       '<div style="display:flex;align-items:baseline;gap:8px;margin-bottom:4px"><div class="tcard-score" style="color:'+pctColor(t.globalPct)+'">'+(t.globalPct!==null?t.globalPct+'%':'—')+'</div></div>'+
       '<div class="tcard-score-lbl">Puntuación global</div>'+
       '<div class="tcard-bars" style="margin-top:14px">'+barsHtml+'</div>';
