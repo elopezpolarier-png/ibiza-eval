@@ -213,7 +213,7 @@ const P4_KEYS=[
   {key:'com',label:'Comunicación'}
 ];
 const RECS=['No contaría con él','Sin aprendizaje previo','Como ayudante','Reforzando puntos débiles','Sí, indiscutiblemente'];
-const DAFO_ITEMS=["Adaptabilidad","Asertividad","Generación de confianza","Pensamiento estructurado","Orientación al cliente","Transferencia de conocimiento","Resiliencia","Autogestión","Escucha activa","Proactividad","Comunicación","Gestión de presión","Documentación","Organización personal","Autocontrol","Liderazgo situacional","Inteligencia emocional","Negociación"];
+const DAFO_ITEMS=["Adaptabilidad","Generación de confianza","Pensamiento estructurado","Orientación al cliente","Transferencia de conocimiento","Resiliencia","Autogestión","Proactividad","Inteligencia emocional","Gestión de presión","Negociación"];
 const VALUES=["Excelencia","Proactividad","Innovación","Compromiso","Orientación al cliente","Responsabilidad"];
 const SC5=['','#D32F2F','#F4511E','#FDD835','#8BC34A','#4CAF50'];
 const SC5t=['','#fff','#fff','#5a3800','#2a4a00','#fff'];
@@ -494,11 +494,13 @@ function renderResumen(){
   });
 
   // Doughnut
-  var recC=[1,2,3,4,5].map(function(n){return filtR.reduce(function(acc,r){return acc+TECHS.filter(function(t){return r['rec_'+t.key]===n;}).length;},0);});
+  var recRaw=[1,2,3,4,5].map(function(n){return filtR.reduce(function(acc,r){return acc+TECHS.filter(function(t){return r['rec_'+t.key]===n;}).length;},0);});
+  var recTotal=recRaw.reduce(function(a,b){return a+b;},0);
+  var recC=recRaw.map(function(n){return recTotal>0?Math.round(n/recTotal*1000)/10:0;});
   var c2=new Chart(document.getElementById('c-pie'),{
     type:'doughnut',
     data:{labels:RECS,datasets:[{data:recC,backgroundColor:SC5.slice(1),borderWidth:2,borderColor:'#fff'}]},
-    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{font:{size:9},boxWidth:9,padding:8}}},cutout:'60%'}
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{font:{size:9},boxWidth:9,padding:8}},tooltip:{callbacks:{label:function(ctx){return ctx.label+': '+ctx.parsed+'%';}}}},cutout:'60%'}
   });
   charts.push(c2);
 
