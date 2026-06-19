@@ -551,12 +551,23 @@ function showTech(key,btn){
         catch(e){return null;}
       }).filter(function(x){return x!==null&&!isNaN(x);});
       if(!vals.length)return;
+      // Count votes per category
+      var vD=vals.filter(function(v){return v<=2;}).length;
+      var vO=vals.filter(function(v){return v===3;}).length;
+      var vF=vals.filter(function(v){return v>=4;}).length;
       var av=avg(vals);
-      if(av===null||isNaN(av))return;
-      var r2=Math.round(av);
-      if(r2<=2)dafoParsed.d.push({item:item,avg:av});
-      else if(r2===3)dafoParsed.o.push({item:item,avg:av});
-      else dafoParsed.f.push({item:item,avg:av});
+      var cat;
+      var maxV=Math.max(vD,vO,vF);
+      if(vD===maxV&&vO===maxV&&vF===maxV){cat='o';} // triple tie -> oportunidad
+      else if(vD===vF&&vD===maxV){cat='o';}          // debilidad=fortaleza tie -> oportunidad
+      else if(vD===vO&&vD===maxV){cat='d';}          // debilidad=oportunidad tie -> debilidad (strictest)
+      else if(vF===vO&&vF===maxV){cat='f';}          // fortaleza=oportunidad tie -> fortaleza (merit)
+      else if(vF===maxV){cat='f';}
+      else if(vO===maxV){cat='o';}
+      else{cat='d';}
+      if(cat==='f')dafoParsed.f.push({item:item,avg:av});
+      else if(cat==='o')dafoParsed.o.push({item:item,avg:av});
+      else dafoParsed.d.push({item:item,avg:av});
     });
   }catch(e){console.warn('DAFO parse error',e);}
 
