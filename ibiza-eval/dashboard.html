@@ -273,12 +273,18 @@ function chip(v){
 }
 
 function parseKV(str){
-  if(!str)return{};
-  const m={};
-  str.split('||').forEach(function(p){
-    var i=p.indexOf(':');
-    if(i>-1){var k=p.slice(0,i);var vv=parseInt(p.slice(i+1));if(!isNaN(vv))m[k]=vv;}
-  });
+  if(!str||typeof str!=='string')return{};
+  var m={};
+  try{
+    str.split('||').forEach(function(p){
+      var i=p.lastIndexOf(':');
+      if(i>-1){
+        var k=p.slice(0,i).trim();
+        var vv=parseInt(p.slice(i+1).trim());
+        if(k&&!isNaN(vv))m[k]=vv;
+      }
+    });
+  }catch(e){}
   return m;
 }
 
@@ -538,14 +544,21 @@ function showTech(key,btn){
   var global=avg([p1,p2,p3,rec].concat(p4Vals).filter(function(x){return x!==null;}));
 
   var dafoParsed={f:[],o:[],d:[]};
-  DAFO_ITEMS.forEach(function(item){
-    var vals=R.map(function(r){var kv=parseKV(r['dafo_'+key]);return kv[item]!==undefined?kv[item]:null;}).filter(function(x){return x!==null;});
-    if(!vals.length)return;
-    var av=avg(vals);var r2=Math.round(av);
-    if(r2<=2)dafoParsed.d.push({item:item,avg:av});
-    else if(r2===3)dafoParsed.o.push({item:item,avg:av});
-    else dafoParsed.f.push({item:item,avg:av});
-  });
+  try{
+    DAFO_ITEMS.forEach(function(item){
+      var vals=R.map(function(r){
+        try{var kv=parseKV(r['dafo_'+key]);return typeof kv[item]==='number'?kv[item]:null;}
+        catch(e){return null;}
+      }).filter(function(x){return x!==null&&!isNaN(x);});
+      if(!vals.length)return;
+      var av=avg(vals);
+      if(av===null||isNaN(av))return;
+      var r2=Math.round(av);
+      if(r2<=2)dafoParsed.d.push({item:item,avg:av});
+      else if(r2===3)dafoParsed.o.push({item:item,avg:av});
+      else dafoParsed.f.push({item:item,avg:av});
+    });
+  }catch(e){console.warn('DAFO parse error',e);}
 
   var rid='r'+Math.random().toString(36).slice(2,6);
 
