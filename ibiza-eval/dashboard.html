@@ -557,14 +557,17 @@ function showTech(key,btn){
       var vF=vals.filter(function(v){return v>=4;}).length;
       var av=avg(vals);
       var cat;
-      var maxV=Math.max(vD,vO,vF);
-      if(vD===maxV&&vO===maxV&&vF===maxV){cat='o';} // triple tie -> oportunidad
-      else if(vD===vF&&vD===maxV){cat='o';}          // debilidad=fortaleza tie -> oportunidad
-      else if(vD===vO&&vD===maxV){cat='d';}          // debilidad=oportunidad tie -> debilidad (strictest)
-      else if(vF===vO&&vF===maxV){cat='f';}          // fortaleza=oportunidad tie -> fortaleza (merit)
-      else if(vF===maxV){cat='f';}
-      else if(vO===maxV){cat='o';}
-      else{cat='d';}
+      // Majority wins — in case of tie use avg to decide
+      if(vF>vD&&vF>=vO){cat='f';}
+      else if(vD>vF&&vD>=vO){cat='d';}
+      else if(vO>vF&&vO>vD){cat='o';}
+      else{
+        // Tie — use average as tiebreaker, rounds up from .6
+        var r=Math.floor(av+0.4);
+        if(r>=4){cat='f';}
+        else if(r===3){cat='o';}
+        else{cat='d';}
+      }
       if(cat==='f')dafoParsed.f.push({item:item,avg:av});
       else if(cat==='o')dafoParsed.o.push({item:item,avg:av});
       else dafoParsed.d.push({item:item,avg:av});
